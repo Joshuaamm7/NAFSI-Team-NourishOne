@@ -3,48 +3,95 @@ import { useTranslation } from 'react-i18next';
 
 /**
  * Voice keyword → dietary filter mapping (English).
+ * Includes common speech-recognition variants, misspellings, and natural phrasings.
+ * Longer phrases are listed first so they match before shorter substrings.
  */
 const VOICE_KEYWORD_MAP_EN = {
+  // Halal
   halal: 'halal',
+  'ha lal': 'halal',
+  // Vegan — includes common speech misrecognitions
   vegan: 'vegan',
+  'vegan only': 'vegan',
+  'plant based': 'vegan',
+  'plant-based': 'vegan',
+  'no animal products': 'vegan',
+  'no meat': 'vegan',
+  'vegetable only': 'vegan',
+  'vegetables only': 'vegan',
+  'vegitable only': 'vegan',
+  // Vegetarian
   vegetarian: 'vegetarian',
+  'vegetarian only': 'vegetarian',
+  veggie: 'vegetarian',
+  'no meat but dairy': 'vegetarian',
+  // No Beef
   'no beef': 'noBeef',
+  'beef free': 'noBeef',
+  'without beef': 'noBeef',
   beef: 'noBeef',
-  'low gi': 'lowGI',
+  // Low GI — speech often spells out letters or adds punctuation
+  'low glycemic index': 'lowGI',
   'low glycemic': 'lowGI',
+  'low g.i.': 'lowGI',
+  'low g i': 'lowGI',
+  'low gi': 'lowGI',
   diabetic: 'lowGI',
+  'diabetic friendly': 'lowGI',
+  'diabetes friendly': 'lowGI',
+  'blood sugar': 'lowGI',
+  // Fresh Produce
   'fresh produce': 'freshProduce',
-  fresh: 'freshProduce',
+  'fresh fruits and vegetables': 'freshProduce',
+  'fresh vegetables': 'freshProduce',
+  'fresh fruits': 'freshProduce',
   vegetables: 'freshProduce',
   fruits: 'freshProduce',
   produce: 'freshProduce',
+  fresh: 'freshProduce',
+  // Dairy Free
   'dairy free': 'dairyFree',
+  'dairy-free': 'dairyFree',
   'no dairy': 'dairyFree',
+  'without dairy': 'dairyFree',
   'lactose free': 'dairyFree',
+  'lactose-free': 'dairyFree',
+  'no milk': 'dairyFree',
+  'no cheese': 'dairyFree',
 };
 
 /**
  * Voice keyword → dietary filter mapping (Spanish).
+ * Includes common speech variants and natural phrasings.
  */
 const VOICE_KEYWORD_MAP_ES = {
   halal: 'halal',
   vegano: 'vegan',
   vegana: 'vegan',
+  'solo vegetales': 'vegan',
+  'solo verduras': 'vegan',
+  'sin productos animales': 'vegan',
   vegetariano: 'vegetarian',
   vegetariana: 'vegetarian',
-  'sin carne': 'noBeef',
   'sin carne de res': 'noBeef',
+  'sin carne': 'noBeef',
+  'sin res': 'noBeef',
   'bajo índice glucémico': 'lowGI',
+  'bajo indice glucemico': 'lowGI',
   'bajo gi': 'lowGI',
   diabético: 'lowGI',
+  diabetico: 'lowGI',
+  'para diabéticos': 'lowGI',
   'productos frescos': 'freshProduce',
   'frutas frescas': 'freshProduce',
   'verduras frescas': 'freshProduce',
   verduras: 'freshProduce',
   frutas: 'freshProduce',
   'sin lácteos': 'dairyFree',
+  'sin lacteos': 'dairyFree',
   'sin leche': 'dairyFree',
   'libre de lácteos': 'dairyFree',
+  'libre de lacteos': 'dairyFree',
 };
 
 /**

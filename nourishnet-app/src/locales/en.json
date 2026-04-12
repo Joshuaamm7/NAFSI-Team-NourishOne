@@ -1,24 +1,38 @@
 {
-  "gateway.title": "NourishNet",
-  "gateway.subtitle": "Connecting communities to food resources in the DC/Maryland area",
-  "gateway.familyPortal": "Find Food",
-  "gateway.familyPortalDesc": "Discover food pantries, meal programs, and community resources near you",
-  "gateway.donorPortal": "Donate",
-  "gateway.donorPortalDesc": "Support local food programs with donations of food, funds, or supplies",
-  "gateway.volunteerPortal": "Volunteer",
-  "gateway.volunteerPortalDesc": "Join missions to help distribute food and support your community",
-  "common.loading": "Loading...",
-  "common.error": "Something went wrong. Please try again.",
-  "common.backToHome": "Back to Home",
-  "common.nearMe": "Near Me",
-  "common.filter": "Filter",
-  "common.search": "Search...",
-  "common.noResults": "No results found. Try adjusting your filters.",
-  "common.comingSoon": "Coming soon",
-  "portal.family.title": "Family Portal",
-  "portal.family.placeholder": "This page will show nearby food distribution events.",
-  "portal.donor.title": "Donor Portal",
-  "portal.donor.placeholder": "This page will show organizations accepting donations.",
-  "portal.volunteer.title": "Volunteer Portal",
-  "portal.volunteer.placeholder": "This page will show volunteer missions near you."
+  "gateway": {
+    "title": "NourishNet",
+    "subtitle": "Connecting communities with food resources",
+    "selectLanguage": "Select your language",
+    "searchLanguage": "Search languages...",
+    "familyPortal": "Find Food",
+    "familyPortalDesc": "Locate food pantries, meal programs, and assistance near you",
+    "donorPortal": "Donate",
+    "donorPortalDesc": "Connect your donations with communities that need them most",
+    "volunteerPortal": "Volunteer",
+    "volunteerPortalDesc": "Join missions and help distribute food in your area"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "backToHome": "Back to Home",
+    "nearMe": "Near Me",
+    "filter": "Filter",
+    "search": "Search",
+    "noResults": "No results found",
+    "comingSoon": "Coming Soon"
+  },
+  "portal": {
+    "family": {
+      "title": "Find Food Near You",
+      "placeholder": "Browse food pantries and meal programs in your area"
+    },
+    "donor": {
+      "title": "Donor Portal",
+      "placeholder": "Connect with organizations that need your donations"
+    },
+    "volunteer": {
+      "title": "Volunteer Portal",
+      "placeholder": "Find volunteer missions and help your community"
+    }
+  }
 }

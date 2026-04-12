@@ -1,24 +1,38 @@
 {
-  "gateway.title": "NourishNet",
-  "gateway.subtitle": "Conectando comunidades con recursos alimentarios en el área de DC/Maryland",
-  "gateway.familyPortal": "Buscar Comida",
-  "gateway.familyPortalDesc": "Descubre despensas de alimentos, programas de comidas y recursos comunitarios cerca de ti",
-  "gateway.donorPortal": "Donar",
-  "gateway.donorPortalDesc": "Apoya programas locales de alimentos con donaciones de comida, fondos o suministros",
-  "gateway.volunteerPortal": "Voluntariado",
-  "gateway.volunteerPortalDesc": "Únete a misiones para ayudar a distribuir alimentos y apoyar a tu comunidad",
-  "common.loading": "Cargando...",
-  "common.error": "Algo salió mal. Por favor, inténtalo de nuevo.",
-  "common.backToHome": "Volver al Inicio",
-  "common.nearMe": "Cerca de Mí",
-  "common.filter": "Filtrar",
-  "common.search": "Buscar...",
-  "common.noResults": "No se encontraron resultados. Intenta ajustar tus filtros.",
-  "common.comingSoon": "Próximamente",
-  "portal.family.title": "Portal Familiar",
-  "portal.family.placeholder": "Esta página mostrará eventos de distribución de alimentos cercanos.",
-  "portal.donor.title": "Portal de Donantes",
-  "portal.donor.placeholder": "Esta página mostrará organizaciones que aceptan donaciones.",
-  "portal.volunteer.title": "Portal de Voluntarios",
-  "portal.volunteer.placeholder": "Esta página mostrará misiones de voluntariado cerca de ti."
+  "gateway": {
+    "title": "NourishNet",
+    "subtitle": "Conectando comunidades con recursos alimentarios",
+    "selectLanguage": "Selecciona tu idioma",
+    "searchLanguage": "Buscar idiomas...",
+    "familyPortal": "Buscar Comida",
+    "familyPortalDesc": "Encuentra despensas de alimentos, programas de comidas y asistencia cerca de ti",
+    "donorPortal": "Donar",
+    "donorPortalDesc": "Conecta tus donaciones con las comunidades que más las necesitan",
+    "volunteerPortal": "Voluntariado",
+    "volunteerPortalDesc": "Únete a misiones y ayuda a distribuir alimentos en tu área"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "backToHome": "Volver al Inicio",
+    "nearMe": "Cerca de Mí",
+    "filter": "Filtrar",
+    "search": "Buscar",
+    "noResults": "No se encontraron resultados",
+    "comingSoon": "Próximamente"
+  },
+  "portal": {
+    "family": {
+      "title": "Encuentra Comida Cerca de Ti",
+      "placeholder": "Explora despensas de alimentos y programas de comidas en tu área"
+    },
+    "donor": {
+      "title": "Portal de Donantes",
+      "placeholder": "Conéctate con organizaciones que necesitan tus donaciones"
+    },
+    "volunteer": {
+      "title": "Portal de Voluntarios",
+      "placeholder": "Encuentra misiones de voluntariado y ayuda a tu comunidad"
+    }
+  }
 }

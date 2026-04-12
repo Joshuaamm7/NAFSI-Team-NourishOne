@@ -94,13 +94,8 @@ git rebase main
 
 ### 👤 Joshua — ⚡ MERGE FIRST (no dependencies)
 
-<<<<<<< HEAD:.kiro/specs/foundation-setup/tasks.md
-- [ ✅ ] 3.1 **[Joshua]** Create `src/data/schema.md` documenting the frozen LocationEntry schema (all fields, types, required vs optional, example values) and the UserPreferences localStorage schema
-- [ ✅ ] 3.2 **[Joshua]** Create `src/data/locations_sample.json` with 3 mock LocationEntry objects conforming to the schema (include variety: one with all fields populated, one with null optional fields, one with minimal data)
-=======
 - [x] 3.1 **[Joshua]** Create `src/data/schema.md` documenting the frozen LocationEntry schema (all fields, types, required vs optional, example values) and the UserPreferences localStorage schema
 - [x] 3.2 **[Joshua]** Create `src/data/locations_sample.json` with 3 mock LocationEntry objects conforming to the schema (include variety: one with all fields populated, one with null optional fields, one with minimal data)
->>>>>>> c05ab1a874926a840940d88a7800779b7cae465f:.kiro/specs/foundation-setup/d1tasks.md
 
 > **Git note:** Joshua can branch, complete, and merge to `main` immediately — this has zero dependencies and unblocks Ryan's portal pages.
 

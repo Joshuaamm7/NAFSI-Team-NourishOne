@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/christian/Layout';
+import Gateway from './components/christian/Gateway';
+import FamilyPortal from './pages/FamilyPortal';
+import DonorPortal from './pages/DonorPortal';
+import VolunteerPortal from './pages/VolunteerPortal';
+import './utils/i18n';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Gateway />} />
+          <Route path="/family" element={<FamilyPortal />} />
+          <Route path="/donor" element={<DonorPortal />} />
+          <Route path="/volunteer" element={<VolunteerPortal />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Layout>
+    </HashRouter>
   );
 }
 

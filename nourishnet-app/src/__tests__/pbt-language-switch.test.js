@@ -6,13 +6,29 @@ import i18n from '../utils/i18n';
 import enJson from '../locales/en.json';
 import esJson from '../locales/es.json';
 
+/**
+ * Flatten a nested object into dot-notation keys with string leaf values.
+ */
+function flattenKeys(obj, prefix = '') {
+  const result = {};
+  for (const [key, value] of Object.entries(obj)) {
+    const fullKey = prefix ? `${prefix}.${key}` : key;
+    if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+      Object.assign(result, flattenKeys(value, fullKey));
+    } else {
+      result[fullKey] = value;
+    }
+  }
+  return result;
+}
+
 const translations = {
-  en: enJson,
-  es: esJson,
+  en: flattenKeys(enJson),
+  es: flattenKeys(esJson),
 };
 
 const supportedLanguages = ['en', 'es'];
-const allKeys = Object.keys(enJson);
+const allKeys = Object.keys(translations.en);
 
 describe('Property 5: Language switch updates all translations', () => {
   it('for any supported language and any i18n key, after changeLanguage(lang), t(key) returns the value from that language\'s translation file', async () => {

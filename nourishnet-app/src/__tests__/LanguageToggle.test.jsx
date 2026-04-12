@@ -1,57 +1,69 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
-import '../utils/i18n'; // initialize i18n
+import '../utils/i18n';
 import LanguageToggle from '../components/christian/LanguageToggle';
 import { getPreferences } from '../utils/preferences';
 
-beforeEach(() => {
+import i18n from '../utils/i18n';
+
+beforeEach(async () => {
   localStorage.clear();
+  await i18n.changeLanguage('en');
 });
 
 describe('LanguageToggle', () => {
-  it('renders EN and ES buttons', () => {
+  it('renders the language dropdown trigger with current language', () => {
     render(<LanguageToggle />);
-    expect(screen.getByText('EN')).toBeInTheDocument();
-    expect(screen.getByText('ES')).toBeInTheDocument();
+    expect(screen.getByLabelText('Change language')).toBeInTheDocument();
+    expect(screen.getByText('English')).toBeInTheDocument();
   });
 
-  it('highlights the active language button', () => {
+  it('opens dropdown and shows all languages on click', async () => {
     render(<LanguageToggle />);
-    const enBtn = screen.getByText('EN');
-    // EN should be active by default
-    expect(enBtn).toHaveAttribute('aria-pressed', 'true');
+    const trigger = screen.getByLabelText('Change language');
+
+    await userEvent.click(trigger);
+
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('listbox', { name: /language options/i })).toBeInTheDocument();
+    expect(screen.getByText('Español')).toBeInTheDocument();
+    expect(screen.getByText('中文')).toBeInTheDocument();
   });
 
-  it('switches language and persists preference on click', async () => {
+  it('switches language and persists preference on selection', async () => {
     render(<LanguageToggle />);
-    const esBtn = screen.getByText('ES');
 
-    await userEvent.click(esBtn);
+    // Open dropdown
+    await userEvent.click(screen.getByLabelText('Change language'));
+
+    // Select Spanish
+    const esOption = screen.getByText('Español');
+    await userEvent.click(esOption);
 
     // Preference should be saved
     const prefs = getPreferences();
     expect(prefs.language).toBe('es');
-
-    // ES button should now be active
-    expect(esBtn).toHaveAttribute('aria-pressed', 'true');
-    expect(screen.getByText('EN')).toHaveAttribute('aria-pressed', 'false');
   });
 
-  it('switches back to English', async () => {
+  it('highlights the active language with aria-selected', async () => {
     render(<LanguageToggle />);
 
-    await userEvent.click(screen.getByText('ES'));
-    await userEvent.click(screen.getByText('EN'));
+    // Open dropdown
+    await userEvent.click(screen.getByLabelText('Change language'));
 
-    const prefs = getPreferences();
-    expect(prefs.language).toBe('en');
-    expect(screen.getByText('EN')).toHaveAttribute('aria-pressed', 'true');
+    const listbox = screen.getByRole('listbox');
+    const options = within(listbox).getAllByRole('option');
+
+    // English should be selected by default
+    const enOption = options.find((opt) => opt.getAttribute('aria-selected') === 'true');
+    expect(enOption).toBeTruthy();
+    expect(enOption).toHaveTextContent('English');
   });
 
-  it('has accessible role group with label', () => {
+  it('has accessible aria-label on trigger', () => {
     render(<LanguageToggle />);
-    expect(screen.getByRole('group', { name: /language selector/i })).toBeInTheDocument();
+    expect(screen.getByLabelText('Change language')).toBeInTheDocument();
   });
 });

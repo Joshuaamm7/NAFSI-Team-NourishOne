@@ -19,7 +19,16 @@ function MapView({ locations = [] }) {
           <Marker key={loc.id || index} position={[loc.lat, loc.lng]}>
             <Popup>
               <strong>{loc.name}</strong>
-              {loc.address && <p>{loc.address}</p>}
+              {loc.address && (
+                <p>
+                  {typeof loc.address === 'string'
+                    ? loc.address
+                    : [loc.address.street, loc.address.city, loc.address.state, loc.address.zip]
+                        .filter(Boolean)
+                        .join(', ')}
+                </p>
+              )}
+              {loc.hours && <p style={{ fontSize: '0.85em', color: '#666' }}>{loc.hours}</p>}
             </Popup>
           </Marker>
         ))}

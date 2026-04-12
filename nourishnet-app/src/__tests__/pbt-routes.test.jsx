@@ -12,16 +12,17 @@ import FamilyPortal from '../pages/FamilyPortal';
 import DonorPortal from '../pages/DonorPortal';
 import VolunteerPortal from '../pages/VolunteerPortal';
 
-// Route table mapping paths to the unique text each component renders
+// Route table mapping paths to the unique text each component renders.
+// Texts must match what the components actually render via i18n (en.json defaults).
 const ROUTE_TABLE = {
   '/': { component: <Gateway />, expectedText: 'NourishNet' },
-  '/family': { component: <FamilyPortal />, expectedText: 'Family Portal' },
+  '/family': { component: <FamilyPortal />, expectedText: 'Find Food Near You' },
   '/donor': { component: <DonorPortal />, expectedText: 'Donor Portal' },
   '/volunteer': { component: <VolunteerPortal />, expectedText: 'Volunteer Portal' },
 };
 
 // Portal-specific texts (excluding Gateway since its text may appear in navbar)
-const PORTAL_TEXTS = ['Family Portal', 'Donor Portal', 'Volunteer Portal'];
+const PORTAL_TEXTS = ['Find Food Near You', 'Donor Portal', 'Volunteer Portal'];
 
 const ROUTE_PATHS = Object.keys(ROUTE_TABLE);
 

@@ -2,7 +2,7 @@
   "name": "nourishnet-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<username>.github.io/<repo-name>",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -25,6 +25,14 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-leaflet|@react-leaflet)/)"
+    ],
+    "moduleNameMapper": {
+      "leaflet/dist/leaflet\\.css$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   },
   "eslintConfig": {
     "extends": [

@@ -12,30 +12,40 @@
     "lng": -76.9713,
     "hours": "Mon-Fri 8:00 AM - 4:30 PM",
     "phone": "",
-    "website": "",
-    "requirements": [],
-    "foodTypes": [],
+    "website": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
+    "requirements": [
+      "No registration required"
+    ],
+    "foodTypes": [
+      "Fresh produce",
+      "Shelf-stable items",
+      "Essential groceries"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
       "family-friendly",
-      "coords-approximate"
+      "coords-approximate",
+      "no-id-required",
+      "walk-ins-welcome",
+      "government-run"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-002",
@@ -50,29 +60,39 @@
     "lng": -76.860318,
     "hours": "Mon-Fri 8:00 AM - 4:30 PM",
     "phone": "",
-    "website": "",
-    "requirements": [],
-    "foodTypes": [],
+    "website": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
+    "requirements": [
+      "No registration required"
+    ],
+    "foodTypes": [
+      "Fresh produce",
+      "Shelf-stable items",
+      "Essential groceries"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "no-id-required",
+      "walk-ins-welcome",
+      "government-run"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-003",
@@ -87,29 +107,39 @@
     "lng": -76.942396,
     "hours": "Mon-Fri 8:00 AM - 4:30 PM",
     "phone": "",
-    "website": "",
-    "requirements": [],
-    "foodTypes": [],
+    "website": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
+    "requirements": [
+      "No registration required"
+    ],
+    "foodTypes": [
+      "Fresh produce",
+      "Shelf-stable items",
+      "Essential groceries"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "no-id-required",
+      "walk-ins-welcome",
+      "government-run"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-004",
@@ -126,27 +156,34 @@
     "phone": "",
     "website": "https://www.afrithrive.org",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Culturally appropriate foods",
+      "Fresh African vegetables"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "mobile-market",
+      "non-english-friendly",
+      "culturally-appropriate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-005",
@@ -177,14 +214,15 @@
       "family-friendly",
       "coords-approximate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-007",
@@ -198,30 +236,42 @@
     "lat": 39.049891,
     "lng": -76.938915,
     "hours": "Tue Thu Fri Sat 8:00 AM - 3:00 PM (by appointment)",
-    "phone": "",
+    "phone": "240-201-3300",
     "website": "https://kgcdc.org/kingdom-cares-fresh-food-market",
-    "requirements": [],
-    "foodTypes": [],
+    "requirements": [
+      "Photo ID required",
+      "Proof of address required",
+      "Appointment required"
+    ],
+    "foodTypes": [
+      "Fruits",
+      "Vegetables",
+      "Nutrient-dense foods"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "grocery-style",
+      "appointment-required",
+      "culturally-appropriate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-008",
@@ -238,7 +288,9 @@
     "phone": "(301) 322-5700",
     "website": "https://www.ucappgc.org",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Nutritional food options"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -250,16 +302,19 @@
     },
     "tags": [
       "family-friendly",
-      "coords-approximate"
+      "baby-supplies",
+      "hygiene-products",
+      "appointment-required"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "PG County Government / sengov.com",
       "source_url": "https://www.princegeorgescountymd.gov/departments-offices/food-pantry-services",
       "extracted_from": "https://www.princegeorgescountymd.gov/departments-offices/county-executive/federal-government-shutdown/food-and-basic-needs-clothing-medical-and-emergency"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-009",
@@ -276,7 +331,14 @@
     "phone": "(301) 336-1219",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Groceries",
+      "Perishable items",
+      "Cereal",
+      "Pasta",
+      "Milk",
+      "Eggs"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -289,14 +351,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-010",
@@ -309,31 +372,38 @@
     },
     "lat": 38.873735,
     "lng": -76.933342,
-    "hours": "",
+    "hours": "Mon-Fri",
     "phone": "(301) 735-0121",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Meat",
+      "Basic foods",
+      "Fresh produce"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "snap-assistance",
+      "baby-supplies"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-011",
@@ -350,7 +420,11 @@
     "phone": "(301) 277-6103",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Emergency food",
+      "Soup kitchen meals",
+      "Holiday meals"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -361,16 +435,20 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "emergency-food",
+      "holiday-meals",
+      "soup-kitchen"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-012",
@@ -400,14 +478,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-013",
@@ -438,14 +517,15 @@
       "family-friendly",
       "coords-approximate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-014",
@@ -475,14 +555,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-015",
@@ -499,7 +580,12 @@
     "phone": "(301) 262-8479",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Groceries",
+      "Hot meals",
+      "Sandwiches",
+      "Christmas food baskets"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -510,16 +596,20 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "meals-on-wheels",
+      "elderly-services",
+      "holiday-meals"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-016",
@@ -549,14 +639,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-017",
@@ -573,7 +664,10 @@
     "phone": "(301) 345-6660",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Food",
+      "Rice"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -584,16 +678,19 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "hygiene-products",
+      "baby-supplies"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-018",
@@ -610,7 +707,9 @@
     "phone": "(301) 336-3344",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Shelf-stable food"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -621,16 +720,19 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "holiday-meals",
+      "hygiene-products"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-019",
@@ -660,14 +762,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-020",
@@ -684,27 +787,33 @@
     "phone": "(202) 341-5159",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Groceries",
+      "Fruits",
+      "Vegetables"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "meals-on-wheels"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-021",
@@ -721,7 +830,11 @@
     "phone": "(240) 346-4169",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Dry goods",
+      "Canned goods",
+      "Hot meals"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -732,16 +845,19 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "hygiene-products",
+      "holiday-meals"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com / foodpantries.org",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-022",
@@ -771,14 +887,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-023",
@@ -795,7 +912,10 @@
     "phone": "(301) 277-2302",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Groceries",
+      "Baby formula"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -806,16 +926,18 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "baby-supplies"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-024",
@@ -845,14 +967,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com / foodpantries.org",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-025",
@@ -869,7 +992,10 @@
     "phone": "(301) 333-0500",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Groceries",
+      "Personal hygiene items"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -881,16 +1007,18 @@
     },
     "tags": [
       "family-friendly",
+      "hygiene-products",
       "coords-approximate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-026",
@@ -906,28 +1034,39 @@
     "hours": "Saturday 9:30 AM - 11:00 AM",
     "phone": "",
     "website": "https://www.collegeparkcommunityfoodbank.org",
-    "requirements": [],
-    "foodTypes": [],
+    "requirements": [
+      "Zip code and family size only"
+    ],
+    "foodTypes": [
+      "Fresh produce",
+      "Canned produce",
+      "Protein",
+      "Rice",
+      "Pasta"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "no-id-required",
+      "drive-thru"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "The Diamondback (UMD)",
       "source_url": "https://dbknews.com/2025/11/04/food-banks-prince-georges-county/",
       "extracted_from": "https://dbknews.com/2025/11/04/food-banks-prince-georges-county/"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-027",
@@ -957,14 +1096,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "The Diamondback (UMD) / 211 Maryland",
       "source_url": "https://dbknews.com/2025/11/04/food-banks-prince-georges-county/",
       "extracted_from": "https://dbknews.com/2025/11/04/food-banks-prince-georges-county/"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-028",
@@ -980,8 +1120,13 @@
     "hours": "Mon Wed Fri 9:00 AM - 11:00 AM",
     "phone": "(301) 262-6765",
     "website": "",
-    "requirements": [],
-    "foodTypes": [],
+    "requirements": [
+      "PG County resident",
+      "First-time clients arrive by 10:30 AM"
+    ],
+    "foodTypes": [
+      "Emergency food"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
@@ -992,16 +1137,19 @@
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "drive-thru",
+      "emergency-food"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com / foodpantries.org",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://www.foodpantries.org/co/md-prince_georges"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-030",
@@ -1031,14 +1179,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "foodpantries.org",
       "source_url": "https://www.foodpantries.org/co/md-prince_georges",
       "extracted_from": "https://www.foodpantries.org/co/md-prince_georges"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-031",
@@ -1068,14 +1217,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-032",
@@ -1105,14 +1255,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-033",
@@ -1142,14 +1293,15 @@
     "tags": [
       "family-friendly"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-034",
@@ -1166,28 +1318,34 @@
     "phone": "(301) 372-1700",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Fresh fruits",
+      "Fresh vegetables",
+      "Snacks"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
       "family-friendly",
+      "student-friendly",
       "coords-approximate"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   },
   {
     "id": "loc-035",
@@ -1204,26 +1362,36 @@
     "phone": "(240) 460-0842",
     "website": "",
     "requirements": [],
-    "foodTypes": [],
+    "foodTypes": [
+      "Soup",
+      "Pasta",
+      "Dairy",
+      "Canned meats",
+      "Fresh produce",
+      "Diapers"
+    ],
     "healthAttributes": {
       "halal": false,
       "vegan": false,
       "vegetarian": false,
       "noBeef": false,
       "lowGI": false,
-      "freshProduce": false,
+      "freshProduce": true,
       "dairyFree": false
     },
     "tags": [
-      "family-friendly"
+      "family-friendly",
+      "baby-supplies",
+      "hygiene-products"
     ],
-    "insecurityIndex": 7.0,
+    "insecurityIndex": 7.4,
     "type": "customer",
     "lastVerified": "2026-04-11",
     "source": {
       "source_name": "sengov.com Free Food Pantries PG County",
       "source_url": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county",
       "extracted_from": "https://help.sengov.com/posts/free-food-pantries-prince-george-s-county"
-    }
+    },
+    "insecurityIndexNote": "County-level rate from Feeding America Map the Meal Gap 2021 via Stacker. Not location-specific."
   }
 ]

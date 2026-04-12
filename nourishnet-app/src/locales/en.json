@@ -33,6 +33,23 @@
     "communityTitle": "Community Total",
     "communityDonated": "Total Donated"
   },
+  "filter": {
+    "halal": "Halal",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "noBeef": "No Beef",
+    "lowGI": "Low GI",
+    "freshProduce": "Fresh Produce",
+    "dairyFree": "Dairy Free"
+  },
+  "map": {
+    "show": "Show Map",
+    "hide": "Hide Map"
+  },
+  "results": {
+    "count": "locations found",
+    "countSingular": "location found"
+  },
   "portal": {
     "family": {
       "title": "Find Food Near You",

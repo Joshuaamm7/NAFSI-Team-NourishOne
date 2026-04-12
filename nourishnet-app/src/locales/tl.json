@@ -33,6 +33,23 @@
     "communityTitle": "Kabuuang Komunidad",
     "communityDonated": "Kabuuang Idinonate"
   },
+  "filter": {
+    "halal": "Halal",
+    "vegan": "Vegan",
+    "vegetarian": "Vegetarian",
+    "noBeef": "Walang Baka",
+    "lowGI": "Mababang GI",
+    "freshProduce": "Sariwang Produkto",
+    "dairyFree": "Walang Gatas"
+  },
+  "map": {
+    "show": "Ipakita ang Mapa",
+    "hide": "Itago ang Mapa"
+  },
+  "results": {
+    "count": "mga lokasyon ang nahanap",
+    "countSingular": "lokasyon ang nahanap"
+  },
   "portal": {
     "family": {
       "title": "Maghanap ng Pagkain Malapit sa Iyo",

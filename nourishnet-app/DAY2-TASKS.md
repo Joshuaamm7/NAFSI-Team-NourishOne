@@ -44,9 +44,9 @@
 
 ### 👤 Christian — depends on Task 1 (Joshua's data merge)
 
-- [ ] 2.1 **[Christian]** Verify `FamilyPortal.jsx` correctly loads and displays all customer-type locations from the enriched `locations.json` — confirm FilterEngine, VoiceSearch, MapView, and LocationCard all render without errors
-- [ ] 2.2 **[Christian]** Add i18n keys for filter labels, map toggle text, and result count text to all 6 locale files (`en.json`, `es.json`, `zh.json`, `fr.json`, `am.json`, `tl.json`) — keys: `filter.halal`, `filter.vegan`, `filter.vegetarian`, `filter.noBeef`, `filter.lowGI`, `filter.freshProduce`, `filter.dairyFree`, `map.show`, `map.hide`, `results.count`, `results.countSingular`
-- [ ] 2.3 **[Christian]** Wire up the "Near Me" button: use `navigator.geolocation.getCurrentPosition` to get user location, pass it to `applyFilters` as `origin` with a default `radiusMiles` of 10, show a loading state while geolocation resolves
+- [x] 2.1 **[Christian]** Verify `FamilyPortal.jsx` correctly loads and displays all customer-type locations from the enriched `locations.json` — confirm FilterEngine, VoiceSearch, MapView, and LocationCard all render without errors
+- [x] 2.2 **[Christian]** Add i18n keys for filter labels, map toggle text, and result count text to all 6 locale files (`en.json`, `es.json`, `zh.json`, `fr.json`, `am.json`, `tl.json`) — keys: `filter.halal`, `filter.vegan`, `filter.vegetarian`, `filter.noBeef`, `filter.lowGI`, `filter.freshProduce`, `filter.dairyFree`, `map.show`, `map.hide`, `results.count`, `results.countSingular`
+- [x] 2.3 **[Christian]** Wire up the "Near Me" button: use `navigator.geolocation.getCurrentPosition` to get user location, pass it to `applyFilters` as `origin` with a default `radiusMiles` of 10, show a loading state while geolocation resolves
 
 **Deliverables**: Fully functional Customer Portal with i18n, geolocation, and all filters working
 

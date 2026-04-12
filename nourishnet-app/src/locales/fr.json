@@ -33,6 +33,23 @@
     "communityTitle": "Total Communautaire",
     "communityDonated": "Total Donné"
   },
+  "filter": {
+    "halal": "Halal",
+    "vegan": "Végétalien",
+    "vegetarian": "Végétarien",
+    "noBeef": "Sans Bœuf",
+    "lowGI": "Faible IG",
+    "freshProduce": "Produits Frais",
+    "dairyFree": "Sans Produits Laitiers"
+  },
+  "map": {
+    "show": "Afficher la Carte",
+    "hide": "Masquer la Carte"
+  },
+  "results": {
+    "count": "emplacements trouvés",
+    "countSingular": "emplacement trouvé"
+  },
   "portal": {
     "family": {
       "title": "Trouvez de la Nourriture Près de Vous",

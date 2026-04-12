@@ -76,8 +76,8 @@ git rebase main
 
 ### 👤 Christian — Tasks 1.1, 1.2 | Ryan — Task 1.5 | Joe — Tasks 1.3, 1.4
 
-- [ ] 1.1 **[Christian]** Update `tailwind.config.js` with design system tokens (colors: primary green palette, secondary orange palette, surface, muted, danger, success; borderRadius: 2xl; boxShadow: soft; fontFamily: Inter + system stack)
-- [ ] 1.2 **[Christian]** Update `src/index.css` to include Tailwind directives (`@tailwind base; @tailwind components; @tailwind utilities;`) and set base font-family to the design system font stack
+- [x] 1.1 **[Christian]** Update `tailwind.config.js` with design system tokens (colors: primary green palette, secondary orange palette, surface, muted, danger, success; borderRadius: 2xl; boxShadow: soft; fontFamily: Inter + system stack)
+- [x] 1.2 **[Christian]** Update `src/index.css` to include Tailwind directives (`@tailwind base; @tailwind components; @tailwind utilities;`) and set base font-family to the design system font stack
 - [ ] 1.3 **[Joe]** Add `gh-pages` as a dev dependency (`npm install --save-dev gh-pages --legacy-peer-deps`)
 - [ ] 1.4 **[Joe]** Add `"homepage"` field and `"predeploy"` / `"deploy"` scripts to `package.json` for GitHub Pages deployment
 - [x] 1.5 **[Ryan]** Create `src/styles/DESIGN_SYSTEM.md` documenting all design tokens (colors, spacing, radii, shadows, fonts, breakpoints) for team reference
@@ -86,9 +86,9 @@ git rebase main
 
 ### 👤 Christian
 
-- [ ] 2.1 **[Christian]** Create `src/locales/en.json` with all required translation keys (gateway.title, gateway.subtitle, gateway.familyPortal, gateway.familyPortalDesc, gateway.donorPortal, gateway.donorPortalDesc, gateway.volunteerPortal, gateway.volunteerPortalDesc, common.loading, common.error, common.backToHome, common.nearMe, common.filter, common.search, common.noResults, common.comingSoon, portal.family.title, portal.family.placeholder, portal.donor.title, portal.donor.placeholder, portal.volunteer.title, portal.volunteer.placeholder)
-- [ ] 2.2 **[Christian]** Create `src/locales/es.json` with corresponding Spanish translations for all keys in `en.json`
-- [ ] 2.3 **[Christian]** Create `src/utils/i18n.js` — initialize i18next with `initReactI18next`, bundle EN/ES resources, read saved language from `localStorage` key `nourishnet_prefs`, set `fallbackLng: 'en'`, set `interpolation: { escapeValue: false }`
+- [x] 2.1 **[Christian]** Create `src/locales/en.json` with all required translation keys (gateway.title, gateway.subtitle, gateway.familyPortal, gateway.familyPortalDesc, gateway.donorPortal, gateway.donorPortalDesc, gateway.volunteerPortal, gateway.volunteerPortalDesc, common.loading, common.error, common.backToHome, common.nearMe, common.filter, common.search, common.noResults, common.comingSoon, portal.family.title, portal.family.placeholder, portal.donor.title, portal.donor.placeholder, portal.volunteer.title, portal.volunteer.placeholder)
+- [x] 2.2 **[Christian]** Create `src/locales/es.json` with corresponding Spanish translations for all keys in `en.json`
+- [x] 2.3 **[Christian]** Create `src/utils/i18n.js` — initialize i18next with `initReactI18next`, bundle EN/ES resources, read saved language from `localStorage` key `nourishnet_prefs`, set `fallbackLng: 'en'`, set `interpolation: { escapeValue: false }`
 
 ## Task 3: Data Contract & Sample Data
 
@@ -103,15 +103,15 @@ git rebase main
 
 ### 👤 Christian — depends on Task 2
 
-- [ ] 4.1 **[Christian]** Create `src/components/christian/LanguageToggle.jsx` — render "EN" and "ES" buttons, call `i18n.changeLanguage()` on click, highlight active language with distinct styling, persist choice to `localStorage` under `nourishnet_prefs.language`, read saved preference on mount
-- [ ] 4.2 **[Christian]** Create `src/components/christian/Layout.jsx` — accept `children` prop, render top navbar with app name (links to `/`), `LanguageToggle`, and "Back to Home" link (hidden when `useLocation().pathname === '/'`), render children in main content area, mobile-first responsive layout
+- [x] 4.1 **[Christian]** Create `src/components/christian/LanguageToggle.jsx` — render "EN" and "ES" buttons, call `i18n.changeLanguage()` on click, highlight active language with distinct styling, persist choice to `localStorage` under `nourishnet_prefs.language`, read saved preference on mount
+- [x] 4.2 **[Christian]** Create `src/components/christian/Layout.jsx` — accept `children` prop, render top navbar with app name (links to `/`), `LanguageToggle`, and "Back to Home" link (hidden when `useLocation().pathname === '/'`), render children in main content area, mobile-first responsive layout
 
 ## Task 5: Gateway Page
 
 ### 👤 Christian — depends on Tasks 2, 4
 
-- [ ] 5.1 **[Christian]** Create `src/components/christian/Gateway.jsx` — display translated app title (`gateway.title`), tagline (`gateway.subtitle`), and three portal navigation cards in a responsive grid (1 column mobile, 3 columns on `md:`)
-- [ ] 5.2 **[Christian]** Each portal card uses `<Link>` from react-router-dom: "Find Food" → `/family`, "Donate" → `/donor`, "Volunteer" → `/volunteer`; each card includes an emoji icon, translated title, and translated description; cards use `rounded-2xl`, `shadow-soft`, and `surface` background from design tokens
+- [x] 5.1 **[Christian]** Create `src/components/christian/Gateway.jsx` — display translated app title (`gateway.title`), tagline (`gateway.subtitle`), and three portal navigation cards in a responsive grid (1 column mobile, 3 columns on `md:`)
+- [x] 5.2 **[Christian]** Each portal card uses `<Link>` from react-router-dom: "Find Food" → `/family`, "Donate" → `/donor`, "Volunteer" → `/volunteer`; each card includes an emoji icon, translated title, and translated description; cards use `rounded-2xl`, `shadow-soft`, and `surface` background from design tokens
 
 ## Task 6: Portal Placeholder Pages
 

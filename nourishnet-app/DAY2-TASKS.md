@@ -29,12 +29,12 @@
 
 ### 👤 Joshua — ⚡ MERGE FIRST
 
-- [ ] 1.1 **[Joshua]** Add donor-specific fields to `locations.json` entries: `wishlist` (string[] of needed items), `acceptsPerishable` (boolean), `dropOffHours` (string) for locations that accept donations
-- [ ] 1.2 **[Joshua]** Add volunteer-specific fields to `locations.json` entries: `missions` (array of `{ title, description, skillsRequired, languagesNeeded, date }`), `volunteersNeeded` (number) for locations that need volunteers
-- [ ] 1.3 **[Joshua]** Validate all location coordinates are within PG County bounds (lat: 38.5–39.1, lng: -77.1–-76.6) and fix any outliers
-- [ ] 1.4 **[Joshua]** Ensure all 50+ locations have complete `healthAttributes` objects (all 7 boolean fields present, no missing keys)
-- [ ] 1.5 **[Joshua]** Update `DATA_DICTIONARY.md` with new donor/volunteer fields, document which fields are required vs optional, and add example entries
-- [ ] 1.6 **[Joshua]** Create `locations_backup.json` as a safety copy of the validated dataset
+- [x] 1.1 **[Joshua]** Add donor-specific fields to `locations.json` entries: `wishlist` (string[] of needed items), `acceptsPerishable` (boolean), `dropOffHours` (string) for locations that accept donations
+- [x] 1.2 **[Joshua]** Add volunteer-specific fields to `locations.json` entries: `missions` (array of `{ title, description, skillsRequired, languagesNeeded, date }`), `volunteersNeeded` (number) for locations that need volunteers
+- [x] 1.3 **[Joshua]** Validate all location coordinates are within PG County bounds (lat: 38.5–39.1, lng: -77.1–-76.6) and fix any outliers
+- [x] 1.4 **[Joshua]** Ensure all 50+ locations have complete `healthAttributes` objects (all 7 boolean fields present, no missing keys)
+- [x] 1.5 **[Joshua]** Update `DATA_DICTIONARY.md` with new donor/volunteer fields, document which fields are required vs optional, and add example entries
+- [x] 1.6 **[Joshua]** Create `locations_backup.json` as a safety copy of the validated dataset
 
 **Deliverables**: Enhanced `locations.json` with donor/volunteer data, updated `DATA_DICTIONARY.md`
 

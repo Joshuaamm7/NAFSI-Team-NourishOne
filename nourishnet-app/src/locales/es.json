@@ -33,6 +33,23 @@
     "communityTitle": "Total de la Comunidad",
     "communityDonated": "Total Donado"
   },
+  "filter": {
+    "halal": "Halal",
+    "vegan": "Vegano",
+    "vegetarian": "Vegetariano",
+    "noBeef": "Sin Carne de Res",
+    "lowGI": "Bajo Índice Glucémico",
+    "freshProduce": "Productos Frescos",
+    "dairyFree": "Sin Lácteos"
+  },
+  "map": {
+    "show": "Mostrar Mapa",
+    "hide": "Ocultar Mapa"
+  },
+  "results": {
+    "count": "ubicaciones encontradas",
+    "countSingular": "ubicación encontrada"
+  },
   "portal": {
     "family": {
       "title": "Encuentra Comida Cerca de Ti",

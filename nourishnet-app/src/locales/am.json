@@ -33,6 +33,23 @@
     "communityTitle": "የማህበረሰብ ድምር",
     "communityDonated": "ጠቅላላ ልገሳ"
   },
+  "filter": {
+    "halal": "ሐላል",
+    "vegan": "ቪጋን",
+    "vegetarian": "ቬጀቴሪያን",
+    "noBeef": "የበሬ ስጋ የለም",
+    "lowGI": "ዝቅተኛ ጂአይ",
+    "freshProduce": "ትኩስ ምርቶች",
+    "dairyFree": "የወተት ተዋጽኦ የለም"
+  },
+  "map": {
+    "show": "ካርታ አሳይ",
+    "hide": "ካርታ ደብቅ"
+  },
+  "results": {
+    "count": "ቦታዎች ተገኝተዋል",
+    "countSingular": "ቦታ ተገኝቷል"
+  },
   "portal": {
     "family": {
       "title": "በአቅራቢያዎ ምግብ ያግኙ",

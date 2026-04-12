@@ -33,6 +33,23 @@
     "communityTitle": "社区总计",
     "communityDonated": "总捐赠量"
   },
+  "filter": {
+    "halal": "清真",
+    "vegan": "纯素",
+    "vegetarian": "素食",
+    "noBeef": "无牛肉",
+    "lowGI": "低升糖指数",
+    "freshProduce": "新鲜农产品",
+    "dairyFree": "无乳制品"
+  },
+  "map": {
+    "show": "显示地图",
+    "hide": "隐藏地图"
+  },
+  "results": {
+    "count": "个地点",
+    "countSingular": "个地点"
+  },
   "portal": {
     "family": {
       "title": "查找您附近的食物",

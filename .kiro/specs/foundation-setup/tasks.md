@@ -78,8 +78,8 @@ git rebase main
 
 - [x] 1.1 **[Christian]** Update `tailwind.config.js` with design system tokens (colors: primary green palette, secondary orange palette, surface, muted, danger, success; borderRadius: 2xl; boxShadow: soft; fontFamily: Inter + system stack)
 - [x] 1.2 **[Christian]** Update `src/index.css` to include Tailwind directives (`@tailwind base; @tailwind components; @tailwind utilities;`) and set base font-family to the design system font stack
-- [x] 1.3 **[Joe]** Add `gh-pages` as a dev dependency (`npm install --save-dev gh-pages --legacy-peer-deps`)
-- [x] 1.4 **[Joe]** Add `"homepage"` field and `"predeploy"` / `"deploy"` scripts to `package.json` for GitHub Pages deployment
+- [ ] 1.3 **[Joe]** Add `gh-pages` as a dev dependency (`npm install --save-dev gh-pages --legacy-peer-deps`)
+- [ ] 1.4 **[Joe]** Add `"homepage"` field and `"predeploy"` / `"deploy"` scripts to `package.json` for GitHub Pages deployment
 - [x] 1.5 **[Ryan]** Create `src/styles/DESIGN_SYSTEM.md` documenting all design tokens (colors, spacing, radii, shadows, fonts, breakpoints) for team reference
 
 ## Task 2: i18n System & Translation Files
@@ -127,8 +127,8 @@ git rebase main
 
 ### 👤 Christian — depends on Tasks 4, 5, 6
 
-- [x] 7.1 **[Christian]** Rewrite `src/App.js` — import `HashRouter`, `Routes`, `Route`, `Navigate` from react-router-dom; import `Layout`, `Gateway`, `FamilyPortal`, `DonorPortal`, `VolunteerPortal`; import `./utils/i18n` for side-effect initialization; wrap app in `<HashRouter>` → `<Layout>` → `<Routes>` with routes for `/` (Gateway), `/family`, `/donor`, `/volunteer`, and `*` (redirect to `/`)
-- [x] 7.2 **[Christian]** Remove default CRA boilerplate from `src/App.js` (logo import, App.css import, default JSX) and delete `src/App.css` if no longer needed
+- [ ] 7.1 **[Christian]** Rewrite `src/App.js` — import `HashRouter`, `Routes`, `Route`, `Navigate` from react-router-dom; import `Layout`, `Gateway`, `FamilyPortal`, `DonorPortal`, `VolunteerPortal`; import `./utils/i18n` for side-effect initialization; wrap app in `<HashRouter>` → `<Layout>` → `<Routes>` with routes for `/` (Gateway), `/family`, `/donor`, `/volunteer`, and `*` (redirect to `/`)
+- [ ] 7.2 **[Christian]** Remove default CRA boilerplate from `src/App.js` (logo import, App.css import, default JSX) and delete `src/App.css` if no longer needed
 
 > **Git note:** Christian should merge AFTER Ryan's portal pages are on `main`, so the imports in App.js resolve. Alternatively, Christian can create stub portal files and Ryan overwrites them — coordinate on this.
 
@@ -136,8 +136,8 @@ git rebase main
 
 ### 👤 Joe — no hard dependencies (can start immediately)
 
-- [x] 8.1 **[Joe]** Create `src/utils/preferences.js` — export `getPreferences()` (reads and parses `nourishnet_prefs` from localStorage with try/catch, returns default object if missing/invalid), `savePreferences(prefs)` (merges with existing prefs and saves to localStorage), and `DEFAULT_PREFS` constant (`{ language: 'en', role: null, dietary_tags: [], household_size: null }`)
-- [x] 8.2 **[Joe]** Integrate preferences utility into `LanguageToggle.jsx` (use `savePreferences` when language changes) and `i18n.js` (use `getPreferences` to read saved language on init)
+- [ ] 8.1 **[Joe]** Create `src/utils/preferences.js` — export `getPreferences()` (reads and parses `nourishnet_prefs` from localStorage with try/catch, returns default object if missing/invalid), `savePreferences(prefs)` (merges with existing prefs and saves to localStorage), and `DEFAULT_PREFS` constant (`{ language: 'en', role: null, dietary_tags: [], household_size: null }`)
+- [ ] 8.2 **[Joe]** Integrate preferences utility into `LanguageToggle.jsx` (use `savePreferences` when language changes) and `i18n.js` (use `getPreferences` to read saved language on init)
 
 > **Git note:** Task 8.1 (preferences.js) can be built independently. Task 8.2 touches Christian's files — coordinate with Christian. Best approach: Joe creates preferences.js, Christian integrates it into LanguageToggle and i18n.js during his own work.
 
@@ -154,14 +154,14 @@ git rebase main
 
 ### 👤 Joe — after all branches merged to main
 
-- [x] 10.1 **[Joe]** Install `fast-check` as a dev dependency (`npm install --save-dev fast-check --legacy-peer-deps`)
-- [x] 10.2 **[Joe]** [PBT] Property 1: Defined routes render correct components — *For any* route in the defined route table, navigating to that route should render the mapped component and no other portal component (use `MemoryRouter` with each route, verify correct component text appears)
-- [x] 10.3 **[Joe]** [PBT] Property 2: Undefined routes redirect to Gateway — *For any* URL path string that is not a defined route, navigating to it should redirect to the Gateway page (generate random alphanumeric path strings with fast-check, render in `MemoryRouter`, verify Gateway renders)
-- [x] 10.4 **[Joe]** [PBT] Property 3: LocationEntry schema conformance and null-safety — *For any* LocationEntry object with random combinations of null optional fields, the entry should have all required fields with correct types AND rendering it in a portal component should not throw
-- [x] 10.5 **[Joe]** [PBT] Property 4: Translation key parity and format — *For any* key in `en.json`, that key should also exist in `es.json` with a non-empty string value AND the key should match dot-notation format
-- [x] 10.6 **[Joe]** [PBT] Property 5: Language switch updates all translations — *For any* supported language and any i18n key, after `i18n.changeLanguage(lang)`, `t(key)` should return the value from that language's translation file
-- [x] 10.7 **[Joe]** [PBT] Property 6: Language preference persistence round-trip — *For any* supported language code, selecting it should persist to localStorage such that reading `nourishnet_prefs.language` returns the same code
-- [x] 10.8 **[Joe]** [PBT] Property 7: User preferences localStorage round-trip — *For any* valid UserPreferences object, saving to localStorage and reading back should produce an equivalent object with all required fields
+- [ ] 10.1 **[Joe]** Install `fast-check` as a dev dependency (`npm install --save-dev fast-check --legacy-peer-deps`)
+- [ ] 10.2 **[Joe]** [PBT] Property 1: Defined routes render correct components — *For any* route in the defined route table, navigating to that route should render the mapped component and no other portal component (use `MemoryRouter` with each route, verify correct component text appears)
+- [ ] 10.3 **[Joe]** [PBT] Property 2: Undefined routes redirect to Gateway — *For any* URL path string that is not a defined route, navigating to it should redirect to the Gateway page (generate random alphanumeric path strings with fast-check, render in `MemoryRouter`, verify Gateway renders)
+- [ ] 10.4 **[Joe]** [PBT] Property 3: LocationEntry schema conformance and null-safety — *For any* LocationEntry object with random combinations of null optional fields, the entry should have all required fields with correct types AND rendering it in a portal component should not throw
+- [ ] 10.5 **[Joe]** [PBT] Property 4: Translation key parity and format — *For any* key in `en.json`, that key should also exist in `es.json` with a non-empty string value AND the key should match dot-notation format
+- [ ] 10.6 **[Joe]** [PBT] Property 5: Language switch updates all translations — *For any* supported language and any i18n key, after `i18n.changeLanguage(lang)`, `t(key)` should return the value from that language's translation file
+- [ ] 10.7 **[Joe]** [PBT] Property 6: Language preference persistence round-trip — *For any* supported language code, selecting it should persist to localStorage such that reading `nourishnet_prefs.language` returns the same code
+- [ ] 10.8 **[Joe]** [PBT] Property 7: User preferences localStorage round-trip — *For any* valid UserPreferences object, saving to localStorage and reading back should produce an equivalent object with all required fields
 
 ---
 

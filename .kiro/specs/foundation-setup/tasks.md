@@ -145,8 +145,8 @@ git rebase main
 
 ### 👤 Ryan — after all branches merged to main
 
-- [ ] 9.1 **[Ryan]** Run `npm start` and verify the app renders without console errors, Gateway displays with 3 portal cards, navigation between all routes works, language toggle switches between EN/ES, and sample data displays on portal pages
-- [ ] 9.2 **[Ryan]** Run `npm run build` and verify the production build completes without errors
+- [x] 9.1 **[Ryan]** Run `npm start` and verify the app renders without console errors, Gateway displays with 3 portal cards, navigation between all routes works, language toggle switches between EN/ES, and sample data displays on portal pages
+- [x] 9.2 **[Ryan]** Run `npm run build` and verify the production build completes without errors
 
 > **Git note:** This is the final verification step. All 4 branches must be merged to `main` first. Ryan pulls latest `main` and runs these checks.
 

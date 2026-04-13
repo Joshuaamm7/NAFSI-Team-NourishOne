@@ -16,19 +16,26 @@ function FoodTypesPage() {
         <button className="ft-back" onClick={() => navigate('/customer')} aria-label="Back">
           <img src={arrowIcon} alt="" className="ft-back-icon" />
         </button>
-        <span className="ft-logo">NourishOne</span>
-        <LanguagePopover />
+        <nav className="ft-nav-pill">
+          <button className="ft-nav-btn ft-nav-btn--active">Home</button>
+          <button className="ft-nav-btn" onClick={() => navigate('/customer/map')}>Map</button>
+          <button className="ft-nav-btn">About Us</button>
+        </nav>
+        <div className="ft-header-right">
+          <div className="ft-search-bar">
+            <span className="ft-search-icon">🔍</span>
+            <input className="ft-search-input" placeholder="Search" aria-label="Search" />
+          </div>
+          <button className="ft-voice-btn" aria-label="Voice search">🎙</button>
+          <LanguagePopover />
+        </div>
       </header>
 
       <h1 className="ft-title">Food Type</h1>
 
       <div className="ft-grid">
         {FOOD_TYPES.map((ft) => (
-          <button
-            key={ft}
-            className="ft-card"
-            onClick={() => navigate(`/customer/food/${encodeURIComponent(ft)}`)}
-          >
+          <button key={ft} className="ft-card" onClick={() => navigate(`/customer/food/${encodeURIComponent(ft)}`)}>
             <span className="ft-card-label">{ft}</span>
           </button>
         ))}

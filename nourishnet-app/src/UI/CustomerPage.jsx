@@ -5,24 +5,10 @@ import LanguagePopover from './LanguagePopover';
 import arrowIcon from './assets/arrow-right.svg';
 import locations from '../data/locations.json';
 
-const FOOD_TYPES = [...new Set(locations.flatMap((l) => l.foodTypes || []))].sort();
-
-const NAV_ITEMS = [
-  { label: 'Home', key: 'home', bold: true },
-  { label: 'Map', key: 'map' },
-  { label: 'About Us', key: 'about' },
-];
-
 function CustomerPage() {
   const navigate = useNavigate();
-  const foodScrollRef = useRef(null);
-  const nearbyScrollRef = useRef(null);
-
-  const handleDrag = useScrollDrag();
-
-  const handleFoodTypeClick = (foodType) => {
-    navigate(`/customer/food/${encodeURIComponent(foodType)}`);
-  };
+  const nearbyRef = useRef(null);
+  const drag = useScrollDrag();
 
   return (
     <div className="cust-root">
@@ -31,97 +17,82 @@ function CustomerPage() {
         <button className="cust-back" onClick={() => navigate('/portal')} aria-label="Back">
           <img src={arrowIcon} alt="" className="cust-back-icon" />
         </button>
-        <span className="cust-logo">NourishOne</span>
-        <LanguagePopover />
+        <nav className="cust-nav-pill">
+          <button className="cust-nav-btn cust-nav-btn--active">Home</button>
+          <button className="cust-nav-btn" onClick={() => navigate('/customer/map')}>Map</button>
+          <button className="cust-nav-btn">About Us</button>
+        </nav>
+        <div className="cust-header-right">
+          <div className="cust-search-bar">
+            <span className="cust-search-icon">🔍</span>
+            <input className="cust-search-input" placeholder="Search" aria-label="Search" />
+          </div>
+          <button className="cust-voice-btn" aria-label="Voice search">🎙</button>
+          <LanguagePopover />
+        </div>
       </header>
 
-      {/* Nav */}
-      <nav className="cust-nav">
-        {NAV_ITEMS.map((item) => (
-          <button
-            key={item.key}
-            className={`cust-nav-item${item.bold ? ' cust-nav-item--active' : ''}`}
-            onClick={() => item.key === 'map' && navigate('/customer/map')}
-          >{item.label}</button>
-        ))}
-      </nav>
+      {/* Title */}
+      <section className="cust-hero">
+        <h1 className="cust-title">Customer's Portal</h1>
+        <p className="cust-subtitle">Browse food pantries and meal programs in your area</p>
+      </section>
 
-      {/* Search */}
-      <div className="cust-search-wrap">
-        <input className="cust-search" placeholder="Search" aria-label="Search locations" />
-      </div>
-
-      {/* Food Type section */}
+      {/* Nearby You */}
       <section className="cust-section">
-        <div className="cust-section-header">
-          <h2 className="cust-section-title">Food Type</h2>
-          <button className="cust-section-arrow" onClick={() => navigate('/customer/food-types')} aria-label="See all food types">
-            <img src={arrowIcon} alt="" className="cust-arrow-icon" />
+        <div className="cust-section-row">
+          <h2 className="cust-section-title">Nearby You</h2>
+          <button className="cust-section-arrow" onClick={() => navigate('/customer/nearby')} aria-label="See all nearby">
+            <img src={arrowIcon} alt="" className="cust-arrow-flip" />
           </button>
         </div>
-        <div
-          className="cust-hscroll"
-          ref={foodScrollRef}
-          {...handleDrag(foodScrollRef)}
-        >
-          {FOOD_TYPES.map((ft) => (
-            <button key={ft} className="cust-card cust-card--food" onClick={() => handleFoodTypeClick(ft)}>
-              <span className="cust-card-label">{ft}</span>
-            </button>
+        <div className="cust-hscroll" ref={nearbyRef} {...drag(nearbyRef)}>
+          {locations.slice(0, 20).map((loc) => (
+            <div key={loc.id} className="cust-loc-card">
+              <div className="cust-loc-top">
+                <div>
+                  <span className="cust-loc-name">{loc.name}</span>
+                  <span className="cust-loc-partner">Capital Area Food Bank Partner</span>
+                </div>
+                <button className="cust-loc-details" onClick={() => navigate(`/customer/location/${loc.id}`)}>
+                  Show Details ›
+                </button>
+              </div>
+              <div className="cust-loc-meta">
+                <span>🕐 {loc.hours || 'Contact for hours'}</span>
+                <span>📍 {loc.address.street}, {loc.address.city}, {loc.address.state} {loc.address.zip}</span>
+              </div>
+              <div className="cust-loc-tags">
+                {(loc.foodTypes || []).slice(0, 5).map((t) => (
+                  <span key={t} className="cust-loc-tag">{t}</span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Nearby You section */}
+      {/* Food Type */}
       <section className="cust-section">
-        <div className="cust-section-header">
-          <h2 className="cust-section-title">Nearby You</h2>
-          <button className="cust-section-arrow" onClick={() => navigate('/customer/nearby')} aria-label="See all nearby">
-            <img src={arrowIcon} alt="" className="cust-arrow-icon" />
+        <div className="cust-section-row">
+          <h2 className="cust-section-title">Food Type</h2>
+          <button className="cust-section-arrow" onClick={() => navigate('/customer/food-types')} aria-label="See all food types">
+            <img src={arrowIcon} alt="" className="cust-arrow-flip" />
           </button>
-        </div>
-        <div
-          className="cust-hscroll"
-          ref={nearbyScrollRef}
-          {...handleDrag(nearbyScrollRef)}
-        >
-          {locations.slice(0, 20).map((loc) => (
-            <button key={loc.id} className="cust-card cust-card--nearby" onClick={() => navigate(`/customer/location/${loc.id}`)}>
-              <span className="cust-card-name">{loc.name}</span>
-              <span className="cust-card-addr">{loc.address.street}, {loc.address.city}</span>
-              <span className="cust-card-hours">{loc.hours}</span>
-              {loc.foodTypes && (
-                <div className="cust-card-tags">
-                  {loc.foodTypes.slice(0, 3).map((t) => (
-                    <span key={t} className="cust-card-tag">{t}</span>
-                  ))}
-                </div>
-              )}
-            </button>
-          ))}
         </div>
       </section>
     </div>
   );
 }
 
-/* Hook for mouse/touch drag scrolling */
 function useScrollDrag() {
-  return useCallback((scrollRef) => {
-    let isDown = false, startX = 0, scrollLeft = 0;
+  return useCallback((ref) => {
+    let down = false, sx = 0, sl = 0;
     return {
-      onMouseDown: (e) => {
-        isDown = true; startX = e.pageX;
-        scrollLeft = scrollRef.current.scrollLeft;
-        scrollRef.current.style.cursor = 'grabbing';
-      },
-      onMouseLeave: () => { isDown = false; scrollRef.current && (scrollRef.current.style.cursor = 'grab'); },
-      onMouseUp: () => { isDown = false; scrollRef.current && (scrollRef.current.style.cursor = 'grab'); },
-      onMouseMove: (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        scrollRef.current.scrollLeft = scrollLeft - (e.pageX - startX);
-      },
+      onMouseDown: (e) => { down = true; sx = e.pageX; sl = ref.current.scrollLeft; ref.current.style.cursor = 'grabbing'; },
+      onMouseLeave: () => { down = false; if (ref.current) ref.current.style.cursor = 'grab'; },
+      onMouseUp: () => { down = false; if (ref.current) ref.current.style.cursor = 'grab'; },
+      onMouseMove: (e) => { if (!down) return; e.preventDefault(); ref.current.scrollLeft = sl - (e.pageX - sx); },
     };
   }, []);
 }

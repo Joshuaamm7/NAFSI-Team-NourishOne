@@ -1,106 +1,102 @@
-.cust-root {
-  min-height: 100vh; background: #dcfce8;
-  font-family: 'Inter', sans-serif;
-  display: flex; flex-direction: column;
-}
+.cust-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; }
 
 /* Header */
 .cust-header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 32px;
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 32px; flex-wrap: wrap;
 }
 .cust-back { background: none; border: none; cursor: pointer; padding: 8px; display: flex; }
-.cust-back-icon { width: 24px; height: 24px; }
-.cust-logo { font-family: 'Inria Serif', serif; font-weight: 400; font-size: 30px; color: #4a7c59; }
+.cust-back-icon { width: 22px; height: 22px; }
 
-/* Nav */
-.cust-nav {
-  display: flex; gap: 24px; padding: 0 40px 12px;
-  border-bottom: 1px solid rgba(74,124,89,0.2);
+.cust-nav-pill {
+  display: flex; border: 1px solid #4a7c59; border-radius: 30px; overflow: hidden;
 }
-.cust-nav-item {
+.cust-nav-btn {
   background: none; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-size: 15px; color: #4a7c59;
-  padding: 8px 0; font-weight: 400;
+  padding: 10px 20px; font-family: 'Inter', sans-serif;
+  font-size: 14px; color: #4a7c59; font-weight: 400;
 }
-.cust-nav-item--active { font-weight: 700; }
+.cust-nav-btn--active { font-weight: 700; }
 
-/* Search */
-.cust-search-wrap { padding: 16px 40px; }
-.cust-search {
-  width: 100%; padding: 12px 20px;
-  border: 1px solid #4a7c59; border-radius: 10px;
-  background: transparent; font-size: 14px; color: #4a7c59;
+.cust-header-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+
+.cust-search-bar {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #4a7c59; border-radius: 30px;
+  padding: 8px 20px; min-width: 200px;
+}
+.cust-search-icon { font-size: 14px; }
+.cust-search-input {
+  border: none; background: none; outline: none;
+  font-size: 14px; color: #4a7c59; width: 100%;
   font-family: 'Inter', sans-serif;
 }
-.cust-search::placeholder { color: #646464; }
-.cust-search:focus { outline: none; border-color: #4a7c59; box-shadow: 0 0 0 2px rgba(74,124,89,0.15); }
+.cust-search-input::placeholder { color: #999; }
+
+.cust-voice-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #4a7c59; border: none; cursor: pointer;
+  font-size: 18px; display: flex; align-items: center; justify-content: center;
+}
+
+/* Hero */
+.cust-hero { padding: 24px 40px 8px; }
+.cust-title {
+  font-family: 'Inria Serif', serif; font-weight: 700;
+  font-size: 40px; color: #4a7c59; margin: 0;
+  display: inline;
+}
+.cust-subtitle {
+  display: inline; margin-left: 16px;
+  font-size: 16px; color: #4a7c59; opacity: 0.6;
+}
 
 /* Sections */
-.cust-section { padding: 16px 0 8px; }
-.cust-section-header {
+.cust-section { padding: 20px 0; }
+.cust-section-row {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px 12px;
 }
 .cust-section-title {
   font-family: 'Inria Serif', serif; font-weight: 700;
-  font-size: 30px; color: #4a7c59; margin: 0;
+  font-size: 28px; color: #4a7c59; margin: 0;
 }
-.cust-section-arrow {
-  background: none; border: none; cursor: pointer; padding: 8px;
-}
-.cust-arrow-icon { width: 20px; height: 20px; transform: scaleX(-1); }
+.cust-section-arrow { background: none; border: none; cursor: pointer; padding: 8px; }
+.cust-arrow-flip { width: 20px; height: 20px; transform: scaleX(-1); }
 
 /* Horizontal scroll */
 .cust-hscroll {
   display: flex; gap: 16px; overflow-x: auto;
-  padding: 0 40px 16px; cursor: grab;
-  scrollbar-width: none; -ms-overflow-style: none;
+  padding: 0 40px 8px; cursor: grab;
+  scrollbar-width: none;
 }
 .cust-hscroll::-webkit-scrollbar { display: none; }
 
-/* Cards */
-.cust-card {
-  flex-shrink: 0; border: 1px solid #4a7c59; border-radius: 30px;
-  background: transparent; cursor: pointer;
-  display: flex; flex-direction: column; align-items: flex-start;
-  text-align: left; transition: background 0.2s, transform 0.2s;
+/* Location cards */
+.cust-loc-card {
+  flex-shrink: 0; width: 420px;
+  border: 1px solid rgba(74,124,89,0.3); border-radius: 16px;
+  padding: 20px; display: flex; flex-direction: column; gap: 8px;
+  background: rgba(255,255,255,0.3);
 }
-.cust-card:hover { background: rgba(74,124,89,0.06); transform: translateY(-2px); }
-
-.cust-card--food {
-  width: 180px; height: 120px; align-items: center; justify-content: center;
-  padding: 16px;
+.cust-loc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.cust-loc-name { font-weight: 700; font-size: 15px; color: #4a7c59; display: block; }
+.cust-loc-partner { font-size: 12px; color: #4a7c59; opacity: 0.6; display: block; }
+.cust-loc-details {
+  background: none; border: none; cursor: pointer;
+  font-size: 13px; color: #4a7c59; white-space: nowrap; font-weight: 500;
 }
-.cust-card-label {
-  font-family: 'Inter', sans-serif; font-weight: 600;
-  font-size: 15px; color: #4a7c59; text-align: center;
-}
-
-.cust-card--nearby {
-  width: 260px; min-height: 160px; padding: 20px; gap: 6px;
-}
-.cust-card-name {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 15px; color: #4a7c59;
-}
-.cust-card-addr {
-  font-family: 'Inter', sans-serif; font-weight: 400;
-  font-size: 13px; color: #4a7c59; opacity: 0.7;
-}
-.cust-card-hours {
-  font-family: 'Inter', sans-serif; font-weight: 400;
-  font-size: 12px; color: #4a7c59; opacity: 0.6;
-}
-.cust-card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
-.cust-card-tag {
-  font-size: 11px; color: #4a7c59; background: rgba(74,124,89,0.1);
-  padding: 2px 8px; border-radius: 8px;
+.cust-loc-meta { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #4a7c59; opacity: 0.7; }
+.cust-loc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.cust-loc-tag {
+  font-size: 12px; color: #dcfce8; background: #4a7c59;
+  padding: 4px 12px; border-radius: 20px;
 }
 
-@media (max-width: 640px) {
-  .cust-header, .cust-nav, .cust-search-wrap, .cust-section-header, .cust-hscroll {
-    padding-left: 20px; padding-right: 20px;
-  }
-  .cust-section-title { font-size: 24px; }
+@media (max-width: 768px) {
+  .cust-header { padding: 12px 16px; }
+  .cust-hero, .cust-section-row { padding-left: 20px; padding-right: 20px; }
+  .cust-hscroll { padding-left: 20px; padding-right: 20px; }
+  .cust-title { font-size: 28px; }
+  .cust-loc-card { width: 320px; }
 }

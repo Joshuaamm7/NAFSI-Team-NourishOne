@@ -58,9 +58,9 @@ function Gateway() {
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
             <div className="text-6xl mb-4">🥗</div>
-            <h1 className="text-3xl font-bold text-primary-700 mb-2">NourishNet</h1>
-            <p className="text-neutral-500 text-lg">Select your language</p>
-            <p className="text-neutral-400 text-sm">Selecciona tu idioma · 选择您的语言</p>
+            <h1 className="text-3xl font-bold text-primary-700 mb-2">{t('gateway.title')}</h1>
+            <p className="text-neutral-500 text-lg">{t('gateway.selectLanguage')}</p>
+            <p className="text-neutral-400 text-sm">{t('gateway.selectLanguageHint')}</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-soft border border-neutral-200 overflow-hidden">
@@ -79,9 +79,9 @@ function Gateway() {
                   type="text"
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  placeholder="Search languages..."
+                  placeholder={t('gateway.searchLanguage')}
                   className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-neutral-200 focus:outline-none focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
-                  aria-label="Search languages"
+                  aria-label={t('gateway.searchLanguage')}
                 />
               </div>
             </div>
@@ -105,7 +105,7 @@ function Gateway() {
               ))}
               {filtered.length === 0 && (
                 <li className="px-5 py-4 text-sm text-neutral-400 text-center">
-                  No languages found
+                  {t('gateway.noLanguagesFound')}
                 </li>
               )}
             </ul>

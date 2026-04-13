@@ -1,7 +1,11 @@
+import { useTranslation } from 'react-i18next';
+
 function ViewToggle({ activeMode, onChange }) {
+  const { t } = useTranslation();
+
   const modes = [
-    { key: 'markers', label: '📍 Markers' },
-    { key: 'heatmap', label: '🔥 Heatmap' },
+    { key: 'markers', label: '📍 ' + t('map.markers') },
+    { key: 'heatmap', label: '🔥 ' + t('map.heatmap') },
   ];
 
   return (

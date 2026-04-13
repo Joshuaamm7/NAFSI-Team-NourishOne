@@ -115,12 +115,12 @@ function FilterEngine({
             value={radiusMiles || ''}
             onChange={(e) => onRadiusChange(e.target.value ? Number(e.target.value) : null)}
             className="px-3 py-1.5 text-sm rounded-lg border border-neutral-200 bg-white text-neutral-600 focus:outline-none focus:border-primary-400"
-            aria-label="Filter by distance"
+            aria-label={t('common.filter')}
           >
-            <option value="">Any distance</option>
+            <option value="">{t('filter.anyDistance')}</option>
             {RADIUS_OPTIONS.map((opt) => (
               <option key={opt.value} value={opt.value}>
-                Within {opt.label}
+                {t('filter.within', { distance: opt.label })}
               </option>
             ))}
           </select>
@@ -143,7 +143,7 @@ function FilterEngine({
               aria-pressed={isActive}
             >
               <span aria-hidden="true">{filter.emoji}</span>
-              {filter.label}
+              {t(`filter.${filter.key}`)}
             </button>
           );
         })}

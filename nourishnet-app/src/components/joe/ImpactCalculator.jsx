@@ -108,7 +108,7 @@ function ImpactCalculator({ locations = [] }) {
           onClick={handleShare}
           className="w-full mb-6 py-2 px-4 text-sm font-medium rounded-xl border border-primary-200 text-primary-600 hover:bg-primary-50 transition-colors"
         >
-          {copied ? '✅ Copied!' : '📋 ' + t('impact.share')}
+          {copied ? '✅ ' + t('common.copied') : '📋 ' + t('impact.share')}
         </button>
       )}
 

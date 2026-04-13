@@ -155,6 +155,12 @@
     "locationRange": "位置范围",
     "healthAttribute": "健康属性",
     "clearFilter": "清除筛选",
-    "noLocationsFound": "未找到相关地点"
+    "noLocationsFound": "未找到相关地点",
+    "donorsPortal": "捐赠者门户",
+    "donorsPortalDesc": "与需要您捐赠的组织联系",
+    "highNeedAreas": "高需求地区",
+    "highNeed": "高需求",
+    "impactCalculator": "影响计算器",
+    "impactCalcDesc": "估算您的食物捐赠的影响"
   }
 }

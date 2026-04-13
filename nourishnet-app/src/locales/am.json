@@ -155,6 +155,12 @@
     "locationRange": "የቦታ ክልል",
     "healthAttribute": "የጤና ባህሪ",
     "clearFilter": "ማጣሪያ አጽዳ",
-    "noLocationsFound": "ምንም ቦታዎች አልተገኙም ለ"
+    "noLocationsFound": "ምንም ቦታዎች አልተገኙም ለ",
+    "donorsPortal": "የለጋሾች መግቢያ",
+    "donorsPortalDesc": "ልገሳዎን ከሚያስፈልጋቸው ድርጅቶች ጋር ይገናኙ",
+    "highNeedAreas": "ከፍተኛ ፍላጎት ያላቸው አካባቢዎች",
+    "highNeed": "ከፍተኛ ፍላጎት",
+    "impactCalculator": "ተጽዕኖ ካልኩሌተር",
+    "impactCalcDesc": "የምግብ ልገሳዎን ተጽዕኖ ይገምቱ"
   }
 }

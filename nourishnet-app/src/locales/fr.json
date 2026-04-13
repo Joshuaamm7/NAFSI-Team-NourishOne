@@ -155,6 +155,12 @@
     "locationRange": "Rayon de Recherche",
     "healthAttribute": "Attribut de Santé",
     "clearFilter": "Effacer le Filtre",
-    "noLocationsFound": "Aucun emplacement trouvé pour"
+    "noLocationsFound": "Aucun emplacement trouvé pour",
+    "donorsPortal": "Portail des Donateurs",
+    "donorsPortalDesc": "Connectez-vous avec des organisations qui ont besoin de vos dons",
+    "highNeedAreas": "Zones à Fort Besoin",
+    "highNeed": "Fort Besoin",
+    "impactCalculator": "Calculateur d'Impact",
+    "impactCalcDesc": "Estimez l'impact de vos dons alimentaires"
   }
 }

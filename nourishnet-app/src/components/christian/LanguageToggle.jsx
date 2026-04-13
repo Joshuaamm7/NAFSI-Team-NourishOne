@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LANGUAGES } from '../../utils/i18n';
 
 function LanguageToggle() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState('');
   const dropdownRef = useRef(null);
@@ -92,9 +92,9 @@ function LanguageToggle() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder={currentLang.code === 'en' ? 'Search languages...' : '🔍'}
+              placeholder={t('gateway.searchLanguage')}
               className="w-full px-3 py-2 text-sm rounded-lg border border-neutral-200 focus:outline-none focus:border-primary-400 focus:ring-1 focus:ring-primary-400"
-              aria-label="Search languages"
+              aria-label={t('gateway.searchLanguage')}
             />
           </div>
           <ul className="max-h-60 overflow-y-auto py-1">
@@ -125,7 +125,7 @@ function LanguageToggle() {
             ))}
             {filtered.length === 0 && (
               <li className="px-4 py-3 text-sm text-neutral-400 text-center">
-                No languages found
+                {t('gateway.noLanguagesFound')}
               </li>
             )}
           </ul>

@@ -125,7 +125,7 @@ function VolunteerPortal() {
       {/* Results count + map toggle */}
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-neutral-500">
-          {locationsWithMissions.length} {t('volunteer.missions')}
+          {locationsWithMissions.length} {locationsWithMissions.length === 1 ? t('results.missionSingular') : t('results.missions')}
         </p>
         <button
           onClick={() => setShowMap((v) => !v)}

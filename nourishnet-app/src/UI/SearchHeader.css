@@ -1,21 +1,22 @@
-/* Grid layout: search truly centered on page width */
+/* Header uses position-based centering so search is always at page center */
 .sh-header {
-  display: grid; grid-template-columns: auto 1fr auto;
-  align-items: center; padding: 16px 32px; gap: 16px;
+  position: relative;
+  display: flex; align-items: center;
+  padding: 16px 32px; min-height: 64px;
 }
 
-.sh-left { display: flex; align-items: center; gap: 12px; }
+/* Left: back + nav — positioned at start */
+.sh-left { display: flex; align-items: center; gap: 12px; z-index: 2; }
 
 .sh-back {
   background: none; border: none; cursor: pointer; padding: 4px;
-  display: flex; align-items: center; justify-content: center;
-  transition: transform 0.2s;
+  display: flex; align-items: center; transition: transform 0.2s;
 }
 .sh-back:hover { transform: translateX(-3px); }
 
 .sh-nav-pill {
   display: flex; border: 1px solid #4a7c59; border-radius: 30px; overflow: hidden;
-  animation: fadeIn 0.4s ease-out;
+  animation: shFadeIn 0.4s ease-out;
 }
 .sh-nav-btn {
   background: none; border: none; cursor: pointer;
@@ -26,15 +27,22 @@
 .sh-nav-btn:hover { background: rgba(74,124,89,0.06); }
 .sh-nav-btn--active { font-weight: 700; }
 
-/* Center column — search bar centered on full page width */
-.sh-center { display: flex; justify-content: center; }
+/* Center: search bar — absolutely centered on full page width */
+.sh-center {
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; width: 100%; max-width: 360px;
+  display: flex; justify-content: center;
+  pointer-events: none;
+}
 
 .sh-search-bar {
   display: flex; align-items: center; gap: 8px;
   border: 1px solid #4a7c59; border-radius: 30px;
-  padding: 8px 12px 8px 20px; width: 100%; max-width: 360px;
+  padding: 8px 12px 8px 20px; width: 100%;
   transition: box-shadow 0.3s, border-color 0.3s;
-  animation: fadeIn 0.5s ease-out;
+  animation: shFadeIn 0.5s ease-out;
+  pointer-events: auto;
 }
 .sh-search-bar:focus-within {
   border-color: #4a7c59; box-shadow: 0 0 0 3px rgba(74,124,89,0.12);
@@ -53,17 +61,16 @@
   flex-shrink: 0; transition: transform 0.2s, box-shadow 0.2s;
 }
 .sh-mic-btn:hover { transform: scale(1.08); }
-.sh-mic-btn--active { box-shadow: 0 0 0 3px rgba(74,124,89,0.4); animation: pulse 1s infinite; }
+.sh-mic-btn--active { box-shadow: 0 0 0 3px rgba(74,124,89,0.4); animation: shPulse 1s infinite; }
 
-.sh-right { display: flex; align-items: center; justify-self: end; }
+/* Right: language — pushed to end */
+.sh-right { display: flex; align-items: center; margin-left: auto; z-index: 2; }
 
-/* Animations */
-@keyframes pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(74,124,89,0.4); } 50% { box-shadow: 0 0 0 6px rgba(74,124,89,0.2); } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shPulse { 0%,100% { box-shadow: 0 0 0 3px rgba(74,124,89,0.4); } 50% { box-shadow: 0 0 0 6px rgba(74,124,89,0.2); } }
+@keyframes shFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 @media (max-width: 768px) {
-  .sh-header { padding: 12px 16px; gap: 8px; grid-template-columns: 1fr; }
-  .sh-left { justify-content: flex-start; }
-  .sh-search-bar { max-width: 100%; }
+  .sh-header { padding: 12px 16px; flex-wrap: wrap; }
+  .sh-center { position: relative; left: auto; top: auto; transform: none; max-width: 100%; width: 100%; order: 3; margin-top: 8px; }
   .sh-nav-btn { padding: 8px 12px; font-size: 13px; }
 }

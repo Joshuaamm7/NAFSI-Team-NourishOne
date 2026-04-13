@@ -1,4 +1,4 @@
-.donor-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; }
+.donor-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; padding-bottom: 40px; }
 
 .donor-hero { padding: 24px 40px 8px; }
 .donor-title { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 40px; color: #4a7c59; margin: 0; display: inline; }
@@ -7,61 +7,69 @@
 .donor-section { padding: 20px 40px; }
 .donor-section-row { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; }
 .donor-section-title { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 28px; color: #4a7c59; margin: 0 0 12px; }
-.donor-section-arrow { background: none; border: none; cursor: pointer; padding: 8px; }
-.donor-arrow-flip { width: 20px; height: 20px; transform: scaleX(-1); }
+.donor-section-arrow { background: none; border: none; cursor: pointer; padding: 4px; transition: transform 0.2s; }
+.donor-section-arrow:hover { transform: translateX(4px); }
 
 /* Upload boxes */
 .donor-upload-row { display: flex; gap: 16px; margin-bottom: 16px; }
 .donor-upload-box {
   flex: 1; min-height: 120px; border: 1px dashed #4a7c59; border-radius: 30px;
   background: none; cursor: pointer; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 8px;
-  transition: background 0.2s;
+  align-items: center; justify-content: center; gap: 8px; transition: background 0.3s, transform 0.2s;
 }
-.donor-upload-box:hover { background: rgba(74,124,89,0.06); }
+.donor-upload-box:hover { background: rgba(74,124,89,0.06); transform: translateY(-2px); }
 .donor-upload-icon { font-size: 28px; }
 .donor-upload-label { font-size: 15px; color: #4a7c59; text-align: center; }
-
 .donor-qty-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
 .donor-qty-label { font-size: 15px; font-weight: 500; color: #4a7c59; }
-.donor-qty-input {
-  border: 1px solid #4a7c59; border-radius: 10px; padding: 10px 16px;
-  background: none; font-size: 15px; color: #4a7c59; width: 120px;
-}
+.donor-qty-input { border: 1px solid #4a7c59; border-radius: 10px; padding: 10px 16px; background: none; font-size: 15px; color: #4a7c59; width: 120px; transition: box-shadow 0.3s; }
+.donor-qty-input:focus { outline: none; box-shadow: 0 0 0 3px rgba(74,124,89,0.12); }
 .donor-qty-input::placeholder { color: #999; }
 .donor-qty-unit { font-size: 14px; color: #4a7c59; opacity: 0.6; }
-
 .donor-donate-btn {
-  background: #4a7c59; border: none; border-radius: 30px;
-  padding: 14px 48px; font-size: 12px; font-weight: 700;
-  color: #dcfce8; cursor: pointer; letter-spacing: 1px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: #4a7c59; border: none; border-radius: 30px; padding: 14px 48px;
+  font-size: 12px; font-weight: 700; color: #dcfce8; cursor: pointer; letter-spacing: 1px;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
-.donor-donate-btn:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(74,124,89,0.3); }
+.donor-donate-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(74,124,89,0.3); }
 
 /* Horizontal scroll */
 .donor-hscroll { display: flex; gap: 16px; overflow-x: auto; cursor: grab; scrollbar-width: none; padding-bottom: 8px; }
 .donor-hscroll::-webkit-scrollbar { display: none; }
 
-/* Location cards */
+/* Location cards with DONATE button */
 .donor-loc-card {
   flex-shrink: 0; width: 420px; border: 1px solid rgba(74,124,89,0.3); border-radius: 16px;
   padding: 20px; display: flex; flex-direction: column; gap: 8px; background: rgba(255,255,255,0.3);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.donor-loc-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(74,124,89,0.12); }
+.donor-loc-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(74,124,89,0.15); }
 .donor-loc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .donor-loc-name { font-weight: 700; font-size: 15px; color: #4a7c59; display: block; }
 .donor-loc-partner { font-size: 12px; color: #4a7c59; opacity: 0.6; display: block; }
 .donor-loc-details { background: none; border: none; cursor: pointer; font-size: 13px; color: #4a7c59; white-space: nowrap; font-weight: 500; }
 .donor-loc-meta { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #4a7c59; opacity: 0.7; }
-.donor-loc-need { display: flex; align-items: center; gap: 8px; }
-.donor-need-badge { font-size: 11px; color: #dcfce8; background: #b45309; padding: 3px 10px; border-radius: 12px; font-weight: 600; }
-.donor-need-score { font-size: 13px; color: #4a7c59; font-weight: 600; }
 .donor-loc-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
 .donor-loc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .donor-loc-tag { font-size: 12px; color: #dcfce8; background: #4a7c59; padding: 4px 12px; border-radius: 20px; }
 .donor-loc-dir { font-size: 13px; color: #4a7c59; font-weight: 600; text-decoration: underline; white-space: nowrap; }
+.donor-card-donate-btn {
+  width: 100%; background: #4a7c59; border: none; border-radius: 30px;
+  padding: 12px; font-size: 12px; font-weight: 700; color: #dcfce8;
+  cursor: pointer; letter-spacing: 1px; margin-top: 8px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.donor-card-donate-btn:hover { transform: scale(1.02); box-shadow: 0 4px 16px rgba(74,124,89,0.25); }
+
+/* Green food cards */
+.donor-green-card {
+  flex-shrink: 0; width: 200px; height: 140px;
+  background: #4a7c59; border: none; border-radius: 16px;
+  cursor: pointer; display: flex; align-items: flex-end; padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.donor-green-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 12px 32px rgba(74,124,89,0.3); }
+.donor-green-label { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 22px; color: #dcfce8; }
 
 /* Impact */
 .donor-impact-desc { font-size: 15px; color: #4a7c59; opacity: 0.7; margin: 0 0 16px; }
@@ -69,10 +77,19 @@
 .donor-impact-card {
   flex: 1; border: 1px solid rgba(74,124,89,0.3); border-radius: 16px;
   padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 4px;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.3); transition: transform 0.3s;
 }
+.donor-impact-card:hover { transform: translateY(-3px); }
 .donor-impact-value { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 28px; color: #4a7c59; }
 .donor-impact-label { font-size: 13px; color: #4a7c59; opacity: 0.6; }
+
+/* Animations */
+.anim-fade-up { opacity: 0; transform: translateY(28px); animation: donorFadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
+.anim-d1 { animation-delay: 0.1s; }
+.anim-d2 { animation-delay: 0.2s; }
+.anim-d3 { animation-delay: 0.3s; }
+.anim-d4 { animation-delay: 0.4s; }
+@keyframes donorFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 768px) {
   .donor-section { padding: 16px 20px; }

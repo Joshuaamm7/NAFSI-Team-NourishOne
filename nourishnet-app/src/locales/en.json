@@ -170,6 +170,7 @@
     "nowAvailable": "Now Available",
     "dietaryOptions": "Dietary Options",
     "openNow": "Open Now",
-    "closed": "Closed"
+    "closed": "Closed",
+    "sortByNeeds": "Sort by Needs"
   }
 }

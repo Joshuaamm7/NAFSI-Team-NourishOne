@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import locations from '../data/locations_expanded.json';
+import locations from '../data/locations_final_merged.json';
 import { filterBySearch } from '../utils/filterUtils';
 import LocationCard from '../components/shared/LocationCard';
 import MapView from '../components/ryan/MapView';
@@ -47,13 +47,13 @@ function VolunteerPortal() {
       {/* Results count + map toggle */}
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm text-neutral-500">
-          {filtered.length} {filtered.length === 1 ? 'mission' : 'missions'} available
+          {filtered.length} {filtered.length === 1 ? t('results.missionSingular') : t('results.missions')}
         </p>
         <button
           onClick={() => setShowMap((v) => !v)}
           className="text-sm text-primary-600 hover:text-primary-700 font-medium"
         >
-          {showMap ? 'Hide Map' : 'Show Map'}
+          {showMap ? t('map.hide') : t('map.show')}
         </button>
       </div>
 

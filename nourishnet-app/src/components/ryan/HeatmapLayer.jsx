@@ -1,4 +1,5 @@
 import { Circle, Popup } from 'react-leaflet';
+import { useTranslation } from 'react-i18next';
 
 const URGENCY_COLORS = {
   1: '#22c55e', // Low - green
@@ -8,12 +9,12 @@ const URGENCY_COLORS = {
   5: '#b91c1c', // Critical - dark red
 };
 
-const URGENCY_LABELS = {
-  1: 'Low',
-  2: 'Moderate',
-  3: 'Elevated',
-  4: 'High',
-  5: 'Critical',
+const URGENCY_LABEL_KEYS = {
+  1: 'urgency.lowShort',
+  2: 'urgency.moderateShort',
+  3: 'urgency.elevatedShort',
+  4: 'urgency.highShort',
+  5: 'urgency.criticalShort',
 };
 
 const CIRCLE_RADIUS = 800; // meters
@@ -26,13 +27,15 @@ const CIRCLE_RADIUS = 800; // meters
  * @param {Array<{lat, lng, name, urgencyLevel, nearbyCount}>} props.locations
  */
 function UrgencyCircles({ locations }) {
+  const { t } = useTranslation();
+
   if (!locations || locations.length === 0) return null;
 
   return (
     <>
       {locations.map((loc, index) => {
         const color = URGENCY_COLORS[loc.urgencyLevel] || URGENCY_COLORS[3];
-        const label = URGENCY_LABELS[loc.urgencyLevel] || 'Unknown';
+        const labelKey = URGENCY_LABEL_KEYS[loc.urgencyLevel] || 'urgency.elevatedShort';
 
         return (
           <Circle
@@ -50,10 +53,10 @@ function UrgencyCircles({ locations }) {
             <Popup>
               <strong>{loc.name}</strong>
               <p style={{ margin: '4px 0 0', fontSize: '0.85em' }}>
-                Urgency: <span style={{ color, fontWeight: 'bold' }}>{label}</span>
+                {t('map.urgency')}: <span style={{ color, fontWeight: 'bold' }}>{t(labelKey)}</span>
               </p>
               <p style={{ margin: '2px 0 0', fontSize: '0.8em', color: '#666' }}>
-                {loc.nearbyCount} pantry{loc.nearbyCount !== 1 ? 'ies' : ''} within 2 miles
+                {t(loc.nearbyCount !== 1 ? 'map.pantriesNearby_plural' : 'map.pantriesNearby', { count: loc.nearbyCount })}
               </p>
             </Popup>
           </Circle>

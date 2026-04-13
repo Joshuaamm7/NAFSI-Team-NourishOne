@@ -2,7 +2,10 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { computeUrgencyLevels } from '../../utils/heatmapUtils';
+import { detectPlaceCategory } from '../../utils/placeCategory';
+import { translateHours } from '../../utils/translateHours';
 import UrgencyCircles from './HeatmapLayer';
 import ViewToggle from './ViewToggle';
 import Legend from './Legend';
@@ -35,9 +38,9 @@ function formatAddress(a) {
   return [a.street, a.city, a.state, a.zip].filter(Boolean).join(', ');
 }
 
-const HEALTH_LABELS = {
-  halal: 'Halal', vegan: 'Vegan', vegetarian: 'Vegetarian',
-  noBeef: 'No Beef', lowGI: 'Low GI', freshProduce: 'Fresh Produce', dairyFree: 'Dairy Free',
+const HEALTH_LABEL_KEYS = {
+  halal: 'filter.halal', vegan: 'filter.vegan', vegetarian: 'filter.vegetarian',
+  noBeef: 'filter.noBeef', lowGI: 'filter.lowGI', freshProduce: 'filter.freshProduce', dairyFree: 'filter.dairyFree',
 };
 
 function MapSetup({ locations }) {
@@ -52,6 +55,7 @@ function MapSetup({ locations }) {
 }
 
 function MapView({ locations = [], showUserLocation = true }) {
+  const { t, i18n } = useTranslation();
   const [userPos, setUserPos] = useState(null);
   const [viewMode, setViewMode] = useState('markers');
   // eslint-disable-next-line no-unused-vars
@@ -87,27 +91,30 @@ function MapView({ locations = [], showUserLocation = true }) {
 
         {userPos && (
           <Marker position={userPos} icon={userIcon}>
-            <Popup><strong>Your Location</strong></Popup>
+            <Popup><strong>{t('map.yourLocation')}</strong></Popup>
           </Marker>
         )}
 
         {viewMode === 'markers' && validLocations.map((loc, index) => {
           const addr = formatAddress(loc.address);
           const badges = loc.healthAttributes
-            ? Object.entries(loc.healthAttributes).filter(([, v]) => v).map(([k]) => HEALTH_LABELS[k]).filter(Boolean)
+            ? Object.entries(loc.healthAttributes).filter(([, v]) => v).map(([k]) => HEALTH_LABEL_KEYS[k] ? t(HEALTH_LABEL_KEYS[k]) : k).filter(Boolean)
             : [];
+          const isNonEnglish = i18n.language !== 'en';
+          const catKey = isNonEnglish ? detectPlaceCategory(loc.name) : null;
           return (
             <Marker key={loc.id || index} position={[loc.lat, loc.lng]} icon={createColoredIcon(loc.type)}>
               <Popup>
                 <strong>{loc.name}</strong>
+                {catKey && <p style={{ margin: '2px 0 0', fontSize: '0.75em', color: '#9ca3af' }}>🏷️ {t(`placeCategory.${catKey}`)}</p>}
                 {addr && <p style={{ margin: '4px 0 0', fontSize: '0.85em' }}>{addr}</p>}
-                {loc.hours && <p style={{ margin: '2px 0 0', fontSize: '0.8em', color: '#666' }}>🕐 {loc.hours}</p>}
+                {loc.hours && <p style={{ margin: '2px 0 0', fontSize: '0.8em', color: '#666' }}>🕐 {translateHours(loc.hours, t, i18n.language)}</p>}
                 {badges.length > 0 && <p style={{ margin: '4px 0 0', fontSize: '0.8em' }}>{badges.join(' · ')}</p>}
                 <a
                   href={`https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}`}
                   target="_blank" rel="noopener noreferrer"
                   style={{ fontSize: '0.85em', color: '#16a34a', display: 'inline-block', marginTop: '4px' }}
-                >📍 Get Directions</a>
+                >📍 {t('map.getDirections')}</a>
               </Popup>
             </Marker>
           );

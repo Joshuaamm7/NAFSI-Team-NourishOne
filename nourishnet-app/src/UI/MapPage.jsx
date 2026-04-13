@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import SearchHeader from './SearchHeader';
 import './MapPage.css';
-import LanguagePopover from './LanguagePopover';
-import arrowIcon from './assets/arrow-right.svg';
 import locations from '../data/locations.json';
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -21,7 +19,6 @@ const FOOD_TYPES = [...new Set(locations.flatMap((l) => l.foodTypes || []))].sor
 const center = [38.9, -76.95];
 
 function MapPage() {
-  const navigate = useNavigate();
   const { t } = useTranslation();
   const [selected, setSelected] = useState(null);
   const [range, setRange] = useState(10);
@@ -29,19 +26,7 @@ function MapPage() {
 
   return (
     <div className="mp-root">
-      <header className="mp-header">
-        <button className="mp-back" onClick={() => navigate('/customer')}><img src={arrowIcon} alt="" className="mp-back-icon" /></button>
-        <nav className="mp-nav-pill">
-          <button className="mp-nav-btn" onClick={() => navigate('/customer')}>{t('ui.home')}</button>
-          <button className="mp-nav-btn mp-nav-btn--active">{t('ui.map')}</button>
-          <button className="mp-nav-btn">{t('ui.aboutUs')}</button>
-        </nav>
-        <div className="mp-header-right">
-          <div className="mp-search-bar"><span>🔍</span><input className="mp-search-input" placeholder={t('ui.search')} /></div>
-          <button className="mp-voice-btn">🎙</button>
-          <LanguagePopover />
-        </div>
-      </header>
+      <SearchHeader backTo="/customer" activeNav="map" navPrefix="/customer" />
       <div className="mp-body">
         <aside className="mp-sidebar">
           <h3 className="mp-filter-title">{t('ui.filter')}</h3>
@@ -75,8 +60,7 @@ function MapPage() {
             <TileLayer attribution='&copy; OpenStreetMap' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             {locations.map((loc) => loc.lat && loc.lng && (
               <Marker key={loc.id} position={[loc.lat, loc.lng]} eventHandlers={{ click: () => setSelected(loc) }}>
-                <Popup>
-                  <strong>{loc.name}</strong><br />{loc.address.street}, {loc.address.city}<br />
+                <Popup><strong>{loc.name}</strong><br />{loc.address.street}, {loc.address.city}<br />
                   <a href={`https://www.google.com/maps/dir/?api=1&destination=${loc.lat},${loc.lng}`} target="_blank" rel="noopener noreferrer">📍 {t('ui.getDirections')}</a>
                 </Popup>
               </Marker>

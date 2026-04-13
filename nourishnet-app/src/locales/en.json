@@ -155,6 +155,12 @@
     "locationRange": "Location Range",
     "healthAttribute": "Health Attribute",
     "clearFilter": "Clear Filter",
-    "noLocationsFound": "No locations found for"
+    "noLocationsFound": "No locations found for",
+    "donorsPortal": "Donor's Portal",
+    "donorsPortalDesc": "Connect with organizations that need your donations",
+    "highNeedAreas": "High Need Areas",
+    "highNeed": "High Need",
+    "impactCalculator": "Impact Calculator",
+    "impactCalcDesc": "Estimate the impact of your food donations"
   }
 }

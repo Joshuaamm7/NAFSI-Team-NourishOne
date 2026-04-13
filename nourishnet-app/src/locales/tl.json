@@ -155,6 +155,12 @@
     "locationRange": "Saklaw ng Lokasyon",
     "healthAttribute": "Katangian ng Kalusugan",
     "clearFilter": "Burahin ang Filter",
-    "noLocationsFound": "Walang nahanap na lokasyon para sa"
+    "noLocationsFound": "Walang nahanap na lokasyon para sa",
+    "donorsPortal": "Portal ng Donor",
+    "donorsPortalDesc": "Kumonekta sa mga organisasyong nangangailangan ng iyong mga donasyon",
+    "highNeedAreas": "Mga Lugar na Mataas ang Pangangailangan",
+    "highNeed": "Mataas ang Pangangailangan",
+    "impactCalculator": "Kalkulator ng Epekto",
+    "impactCalcDesc": "Tantiyahin ang epekto ng iyong mga donasyon ng pagkain"
   }
 }

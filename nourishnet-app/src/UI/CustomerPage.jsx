@@ -1,8 +1,8 @@
 import React, { useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SearchHeader, { useGeolocation } from './SearchHeader';
 import './CustomerPage.css';
-import LanguagePopover from './LanguagePopover';
 import arrowIcon from './assets/arrow-right.svg';
 import locations from '../data/locations.json';
 
@@ -11,31 +11,17 @@ function CustomerPage() {
   const { t } = useTranslation();
   const nearbyRef = useRef(null);
   const drag = useScrollDrag();
+  useGeolocation(); // request location permission on mount
 
   return (
     <div className="cust-root">
-      <header className="cust-header">
-        <button className="cust-back" onClick={() => navigate('/portal')} aria-label="Back">
-          <img src={arrowIcon} alt="" className="cust-back-icon" />
-        </button>
-        <nav className="cust-nav-pill">
-          <button className="cust-nav-btn cust-nav-btn--active">{t('ui.home')}</button>
-          <button className="cust-nav-btn" onClick={() => navigate('/customer/map')}>{t('ui.map')}</button>
-          <button className="cust-nav-btn">{t('ui.aboutUs')}</button>
-        </nav>
-        <div className="cust-header-right">
-          <div className="cust-search-bar">
-            <span className="cust-search-icon">🔍</span>
-            <input className="cust-search-input" placeholder={t('ui.search')} aria-label={t('ui.search')} />
-          </div>
-          <button className="cust-voice-btn" aria-label="Voice search">🎙</button>
-          <LanguagePopover />
-        </div>
-      </header>
+      <SearchHeader backTo="/portal" activeNav="home" navPrefix="/customer" />
+
       <section className="cust-hero">
         <h1 className="cust-title">{t('ui.customersPortal')}</h1>
         <p className="cust-subtitle">{t('ui.browseFood')}</p>
       </section>
+
       <section className="cust-section">
         <div className="cust-section-row">
           <h2 className="cust-section-title">{t('ui.nearbyYou')}</h2>
@@ -62,6 +48,7 @@ function CustomerPage() {
           ))}
         </div>
       </section>
+
       <section className="cust-section">
         <div className="cust-section-row">
           <h2 className="cust-section-title">{t('ui.foodType')}</h2>

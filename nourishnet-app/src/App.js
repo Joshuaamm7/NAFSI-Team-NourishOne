@@ -10,6 +10,7 @@ import HealthTypesPage from './UI/HealthTypesPage';
 import NearbyPage from './UI/NearbyPage';
 import NowAvailablePage from './UI/NowAvailablePage';
 import SearchResultsPage from './UI/SearchResultsPage';
+import AboutPage from './UI/AboutPage';
 import MapPage from './UI/MapPage';
 import DonorPage from './UI/DonorPage';
 import DonorMapPage from './UI/DonorMapPage';
@@ -46,6 +47,7 @@ function App() {
         <Route path="/customer/nearby" element={<NearbyPage />} />
         <Route path="/customer/available" element={<NowAvailablePage />} />
         <Route path="/customer/search" element={<SearchResultsPage />} />
+        <Route path="/customer/about" element={<AboutPage />} />
         <Route path="/customer/map" element={<MapPage />} />
 
         {/* Donor */}
@@ -58,6 +60,7 @@ function App() {
         <Route path="/donor/donate/:locId" element={<DonateToPage />} />
         <Route path="/donor/search" element={<DonorSearchResultsPage />} />
         <Route path="/donor/needs" element={<DonorNeedsPage />} />
+        <Route path="/donor/about" element={<AboutPage />} />
 
         {/* Volunteer */}
         <Route path="/volunteer" element={<VolunteerPage />} />

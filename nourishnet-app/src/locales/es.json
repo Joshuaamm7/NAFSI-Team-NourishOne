@@ -212,6 +212,11 @@
     "openNow": "Abierto Ahora",
     "closed": "Cerrado",
     "sortByNeeds": "Ordenar por Necesidades",
+    "sortBy": "Ordenar Por",
+    "nameAZ": "Nombre (A-Z)",
+    "insecurityIndex": "Índice de Inseguridad",
+    "filterAndSort": "Filtrar y Ordenar",
+    "showingOf": "Mostrando {{filtered}} de {{total}}",
     "oneTool": "Una Herramienta.",
     "oneMission": "Una Misión."
   },

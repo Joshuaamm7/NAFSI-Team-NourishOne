@@ -3,7 +3,9 @@
     "title": "NourishNet",
     "subtitle": "ማህበረሰቦችን ከምግብ ሀብቶች ጋር ማገናኘት",
     "selectLanguage": "ቋንቋዎን ይምረጡ",
+    "selectLanguageHint": "Selecciona tu idioma · 选择您的语言",
     "searchLanguage": "ቋንቋዎችን ይፈልጉ...",
+    "noLanguagesFound": "ምንም ቋንቋ አልተገኘም",
     "familyPortal": "ምግብ ያግኙ",
     "familyPortalDesc": "በአቅራቢያዎ ያሉ የምግብ ማከማቻዎችን፣ የምግብ ፕሮግራሞችን እና እርዳታዎችን ያግኙ",
     "donorPortal": "ለግሱ",
@@ -19,7 +21,10 @@
     "filter": "አጣራ",
     "search": "ፈልግ",
     "noResults": "ምንም ውጤት አልተገኘም",
-    "comingSoon": "በቅርቡ ይመጣል"
+    "comingSoon": "በቅርቡ ይመጣል",
+    "website": "ድረ-ገጽ",
+    "unknownLocation": "ያልታወቀ ቦታ",
+    "copied": "ተቀድቷል!"
   },
   "impact": {
     "title": "ተጽዕኖ ካልኩሌተር",
@@ -40,15 +45,49 @@
     "noBeef": "የበሬ ስጋ የለም",
     "lowGI": "ዝቅተኛ ጂአይ",
     "freshProduce": "ትኩስ ምርቶች",
-    "dairyFree": "የወተት ተዋጽኦ የለም"
+    "dairyFree": "የወተት ተዋጽኦ የለም",
+    "anyDistance": "ማንኛውም ርቀት",
+    "within": "በ{{distance}} ውስጥ"
   },
   "map": {
     "show": "ካርታ አሳይ",
-    "hide": "ካርታ ደብቅ"
+    "hide": "ካርታ ደብቅ",
+    "markers": "ምልክቶች",
+    "heatmap": "የሙቀት ካርታ",
+    "yourLocation": "የእርስዎ ቦታ",
+    "getDirections": "አቅጣጫ ያግኙ",
+    "urgencyLevel": "የአስቸኳይነት ደረጃ",
+    "urgency": "አስቸኳይነት",
+    "pantriesNearby": "በ2 ማይል ውስጥ {{count}} የምግብ ማከማቻ",
+    "pantriesNearby_plural": "በ2 ማይል ውስጥ {{count}} የምግብ ማከማቻዎች"
+  },
+  "urgency": {
+    "critical": "ወሳኝ (0–1 በአቅራቢያ)",
+    "high": "ከፍተኛ (2–3 በአቅራቢያ)",
+    "elevated": "ከፍ ያለ (4–5 በአቅራቢያ)",
+    "moderate": "መካከለኛ (6–8 በአቅራቢያ)",
+    "low": "ዝቅተኛ (9+ በአቅራቢያ)",
+    "criticalShort": "ወሳኝ",
+    "highShort": "ከፍተኛ",
+    "elevatedShort": "ከፍ ያለ",
+    "moderateShort": "መካከለኛ",
+    "lowShort": "ዝቅተኛ"
   },
   "results": {
     "count": "ቦታዎች ተገኝተዋል",
-    "countSingular": "ቦታ ተገኝቷል"
+    "countSingular": "ቦታ ተገኝቷል",
+    "organizations": "ድርጅቶች",
+    "organizationSingular": "ድርጅት",
+    "missions": "ተልዕኮዎች ይገኛሉ",
+    "missionSingular": "ተልዕኮ ይገኛል"
+  },
+  "voice": {
+    "listening": "በማዳመጥ ላይ...",
+    "notSupported": "የድምጽ ፍለጋ በዚህ አሳሽ አይደገፍም",
+    "micDenied": "የማይክሮፎን ፈቃድ ተከልክሏል። እባክዎ በአሳሽ ቅንብሮችዎ ውስጥ የማይክሮፎን ፈቃዶችን ይፍቀዱ።",
+    "noSpeech": "ድምጽ አልተገኘም። እንደገና ይሞክሩ።",
+    "searchByVoice": "በድምጽ ፈልግ",
+    "stopVoice": "የድምጽ ፍለጋ አቁም"
   },
   "donor": {
     "wishlist": "የምኞት ዝርዝር",

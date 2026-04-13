@@ -71,7 +71,7 @@ function DonorPortal() {
 
       {/* Results */}
       <p className="text-sm text-neutral-500 mb-4">
-        {filtered.length} {filtered.length === 1 ? t('results.countSingular') : t('results.count')}
+        {filtered.length} {filtered.length === 1 ? t('results.organizationSingular') : t('results.organizations')}
       </p>
 
       {filtered.length === 0 ? (

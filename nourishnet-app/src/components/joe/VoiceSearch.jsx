@@ -187,7 +187,7 @@ function VoiceSearch({ onResult }) {
 
   const startListening = useCallback(() => {
     if (!isSpeechSupported()) {
-      setError('Voice search is not supported in this browser');
+      setError(t('voice.notSupported'));
       return;
     }
 
@@ -223,9 +223,9 @@ function VoiceSearch({ onResult }) {
       }
 
       if (event.error === 'not-allowed') {
-        setError('Microphone access denied. Please allow microphone permissions in your browser settings.');
+        setError(t('voice.micDenied'));
       } else if (event.error === 'no-speech') {
-        setError('No speech detected. Try again.');
+        setError(t('voice.noSpeech'));
       } else {
         setError(`Error: ${event.error}`);
       }
@@ -243,7 +243,7 @@ function VoiceSearch({ onResult }) {
     retryRef.current = false;
     recognition.start();
     setListening(true);
-  }, [i18n.language, onResult, showFeedback]);
+  }, [i18n.language, onResult, showFeedback, t]);
 
   const stopListening = useCallback(() => {
     retryRef.current = false;
@@ -256,9 +256,9 @@ function VoiceSearch({ onResult }) {
   if (!isSpeechSupported()) return null;
 
   const FILTER_LABELS = {
-    halal: 'Halal', vegan: 'Vegan', vegetarian: 'Vegetarian',
-    noBeef: 'No Beef', lowGI: 'Low GI', freshProduce: 'Fresh Produce',
-    dairyFree: 'Dairy Free',
+    halal: t('filter.halal'), vegan: t('filter.vegan'), vegetarian: t('filter.vegetarian'),
+    noBeef: t('filter.noBeef'), lowGI: t('filter.lowGI'), freshProduce: t('filter.freshProduce'),
+    dairyFree: t('filter.dairyFree'),
   };
 
   return (
@@ -270,8 +270,8 @@ function VoiceSearch({ onResult }) {
             ? 'bg-danger text-white animate-pulse shadow-hover'
             : 'bg-primary-100 text-primary-600 hover:bg-primary-200'
         }`}
-        aria-label={listening ? 'Stop voice search' : t('common.search') + ' by voice'}
-        title={listening ? 'Listening...' : 'Voice search'}
+        aria-label={listening ? t('voice.stopVoice') : t('voice.searchByVoice')}
+        title={listening ? t('voice.listening') : t('voice.searchByVoice')}
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           {listening ? (
@@ -283,7 +283,7 @@ function VoiceSearch({ onResult }) {
       </button>
       {listening && (
         <span className="text-xs text-danger font-medium animate-pulse">
-          Listening...
+          {t('voice.listening')}
         </span>
       )}
       {error && (

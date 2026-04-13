@@ -3,7 +3,9 @@
     "title": "NourishNet",
     "subtitle": "Conectando comunidades con recursos alimentarios",
     "selectLanguage": "Selecciona tu idioma",
+    "selectLanguageHint": "Selecciona tu idioma · 选择您的语言",
     "searchLanguage": "Buscar idiomas...",
+    "noLanguagesFound": "No se encontraron idiomas",
     "familyPortal": "Buscar Comida",
     "familyPortalDesc": "Encuentra despensas de alimentos, programas de comidas y asistencia cerca de ti",
     "donorPortal": "Donar",
@@ -19,7 +21,10 @@
     "filter": "Filtrar",
     "search": "Buscar",
     "noResults": "No se encontraron resultados",
-    "comingSoon": "Próximamente"
+    "comingSoon": "Próximamente",
+    "website": "Sitio Web",
+    "unknownLocation": "Ubicación Desconocida",
+    "copied": "¡Copiado!"
   },
   "impact": {
     "title": "Calculadora de Impacto",
@@ -40,15 +45,49 @@
     "noBeef": "Sin Carne de Res",
     "lowGI": "Bajo Índice Glucémico",
     "freshProduce": "Productos Frescos",
-    "dairyFree": "Sin Lácteos"
+    "dairyFree": "Sin Lácteos",
+    "anyDistance": "Cualquier distancia",
+    "within": "Dentro de {{distance}}"
   },
   "map": {
     "show": "Mostrar Mapa",
-    "hide": "Ocultar Mapa"
+    "hide": "Ocultar Mapa",
+    "markers": "Marcadores",
+    "heatmap": "Mapa de Calor",
+    "yourLocation": "Tu Ubicación",
+    "getDirections": "Obtener Direcciones",
+    "urgencyLevel": "Nivel de Urgencia",
+    "urgency": "Urgencia",
+    "pantriesNearby": "{{count}} despensa dentro de 2 millas",
+    "pantriesNearby_plural": "{{count}} despensas dentro de 2 millas"
+  },
+  "urgency": {
+    "critical": "Crítico (0–1 cercanos)",
+    "high": "Alto (2–3 cercanos)",
+    "elevated": "Elevado (4–5 cercanos)",
+    "moderate": "Moderado (6–8 cercanos)",
+    "low": "Bajo (9+ cercanos)",
+    "criticalShort": "Crítico",
+    "highShort": "Alto",
+    "elevatedShort": "Elevado",
+    "moderateShort": "Moderado",
+    "lowShort": "Bajo"
   },
   "results": {
     "count": "ubicaciones encontradas",
-    "countSingular": "ubicación encontrada"
+    "countSingular": "ubicación encontrada",
+    "organizations": "organizaciones",
+    "organizationSingular": "organización",
+    "missions": "misiones disponibles",
+    "missionSingular": "misión disponible"
+  },
+  "voice": {
+    "listening": "Escuchando...",
+    "notSupported": "La búsqueda por voz no es compatible con este navegador",
+    "micDenied": "Acceso al micrófono denegado. Permite los permisos del micrófono en la configuración de tu navegador.",
+    "noSpeech": "No se detectó voz. Inténtalo de nuevo.",
+    "searchByVoice": "Buscar por voz",
+    "stopVoice": "Detener búsqueda por voz"
   },
   "donor": {
     "wishlist": "Lista de Deseos",

@@ -3,7 +3,9 @@
     "title": "NourishNet",
     "subtitle": "Connecter les communautés aux ressources alimentaires",
     "selectLanguage": "Sélectionnez votre langue",
+    "selectLanguageHint": "Selecciona tu idioma · 选择您的语言",
     "searchLanguage": "Rechercher des langues...",
+    "noLanguagesFound": "Aucune langue trouvée",
     "familyPortal": "Trouver de la Nourriture",
     "familyPortalDesc": "Trouvez des garde-manger, des programmes de repas et de l'aide près de chez vous",
     "donorPortal": "Donner",
@@ -19,7 +21,10 @@
     "filter": "Filtrer",
     "search": "Rechercher",
     "noResults": "Aucun résultat trouvé",
-    "comingSoon": "Bientôt Disponible"
+    "comingSoon": "Bientôt Disponible",
+    "website": "Site Web",
+    "unknownLocation": "Lieu Inconnu",
+    "copied": "Copié !"
   },
   "impact": {
     "title": "Calculateur d'Impact",
@@ -40,15 +45,49 @@
     "noBeef": "Sans Bœuf",
     "lowGI": "Faible IG",
     "freshProduce": "Produits Frais",
-    "dairyFree": "Sans Produits Laitiers"
+    "dairyFree": "Sans Produits Laitiers",
+    "anyDistance": "Toute distance",
+    "within": "Dans {{distance}}"
   },
   "map": {
     "show": "Afficher la Carte",
-    "hide": "Masquer la Carte"
+    "hide": "Masquer la Carte",
+    "markers": "Marqueurs",
+    "heatmap": "Carte Thermique",
+    "yourLocation": "Votre Position",
+    "getDirections": "Obtenir l'Itinéraire",
+    "urgencyLevel": "Niveau d'Urgence",
+    "urgency": "Urgence",
+    "pantriesNearby": "{{count}} garde-manger dans un rayon de 2 miles",
+    "pantriesNearby_plural": "{{count}} garde-manger dans un rayon de 2 miles"
+  },
+  "urgency": {
+    "critical": "Critique (0–1 à proximité)",
+    "high": "Élevé (2–3 à proximité)",
+    "elevated": "Accru (4–5 à proximité)",
+    "moderate": "Modéré (6–8 à proximité)",
+    "low": "Faible (9+ à proximité)",
+    "criticalShort": "Critique",
+    "highShort": "Élevé",
+    "elevatedShort": "Accru",
+    "moderateShort": "Modéré",
+    "lowShort": "Faible"
   },
   "results": {
     "count": "emplacements trouvés",
-    "countSingular": "emplacement trouvé"
+    "countSingular": "emplacement trouvé",
+    "organizations": "organisations",
+    "organizationSingular": "organisation",
+    "missions": "missions disponibles",
+    "missionSingular": "mission disponible"
+  },
+  "voice": {
+    "listening": "Écoute en cours...",
+    "notSupported": "La recherche vocale n'est pas prise en charge dans ce navigateur",
+    "micDenied": "Accès au microphone refusé. Veuillez autoriser les permissions du microphone dans les paramètres de votre navigateur.",
+    "noSpeech": "Aucune voix détectée. Réessayez.",
+    "searchByVoice": "Recherche vocale",
+    "stopVoice": "Arrêter la recherche vocale"
   },
   "donor": {
     "wishlist": "Liste de Souhaits",

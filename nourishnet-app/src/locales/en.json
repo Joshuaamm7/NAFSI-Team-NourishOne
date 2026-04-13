@@ -3,7 +3,9 @@
     "title": "NourishNet",
     "subtitle": "Connecting communities with food resources",
     "selectLanguage": "Select your language",
+    "selectLanguageHint": "Selecciona tu idioma · 选择您的语言",
     "searchLanguage": "Search languages...",
+    "noLanguagesFound": "No languages found",
     "familyPortal": "Find Food",
     "familyPortalDesc": "Locate food pantries, meal programs, and assistance near you",
     "donorPortal": "Donate",
@@ -19,7 +21,10 @@
     "filter": "Filter",
     "search": "Search",
     "noResults": "No results found",
-    "comingSoon": "Coming Soon"
+    "comingSoon": "Coming Soon",
+    "website": "Website",
+    "unknownLocation": "Unknown Location",
+    "copied": "Copied!"
   },
   "impact": {
     "title": "Impact Calculator",
@@ -40,15 +45,49 @@
     "noBeef": "No Beef",
     "lowGI": "Low GI",
     "freshProduce": "Fresh Produce",
-    "dairyFree": "Dairy Free"
+    "dairyFree": "Dairy Free",
+    "anyDistance": "Any distance",
+    "within": "Within {{distance}}"
   },
   "map": {
     "show": "Show Map",
-    "hide": "Hide Map"
+    "hide": "Hide Map",
+    "markers": "Markers",
+    "heatmap": "Heatmap",
+    "yourLocation": "Your Location",
+    "getDirections": "Get Directions",
+    "urgencyLevel": "Urgency Level",
+    "urgency": "Urgency",
+    "pantriesNearby": "{{count}} pantry within 2 miles",
+    "pantriesNearby_plural": "{{count}} pantries within 2 miles"
+  },
+  "urgency": {
+    "critical": "Critical (0–1 nearby)",
+    "high": "High (2–3 nearby)",
+    "elevated": "Elevated (4–5 nearby)",
+    "moderate": "Moderate (6–8 nearby)",
+    "low": "Low (9+ nearby)",
+    "criticalShort": "Critical",
+    "highShort": "High",
+    "elevatedShort": "Elevated",
+    "moderateShort": "Moderate",
+    "lowShort": "Low"
   },
   "results": {
     "count": "locations found",
-    "countSingular": "location found"
+    "countSingular": "location found",
+    "organizations": "organizations",
+    "organizationSingular": "organization",
+    "missions": "missions available",
+    "missionSingular": "mission available"
+  },
+  "voice": {
+    "listening": "Listening...",
+    "notSupported": "Voice search is not supported in this browser",
+    "micDenied": "Microphone access denied. Please allow microphone permissions in your browser settings.",
+    "noSpeech": "No speech detected. Try again.",
+    "searchByVoice": "Search by voice",
+    "stopVoice": "Stop voice search"
   },
   "donor": {
     "wishlist": "Wishlist",

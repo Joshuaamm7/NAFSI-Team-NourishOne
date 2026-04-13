@@ -3,7 +3,9 @@
     "title": "NourishNet",
     "subtitle": "Ikinokonekta ang mga komunidad sa mga mapagkukunan ng pagkain",
     "selectLanguage": "Piliin ang iyong wika",
+    "selectLanguageHint": "Selecciona tu idioma · 选择您的语言",
     "searchLanguage": "Maghanap ng mga wika...",
+    "noLanguagesFound": "Walang nahanap na wika",
     "familyPortal": "Maghanap ng Pagkain",
     "familyPortalDesc": "Hanapin ang mga pantry ng pagkain, programa sa pagkain, at tulong malapit sa iyo",
     "donorPortal": "Mag-donate",
@@ -19,7 +21,10 @@
     "filter": "I-filter",
     "search": "Maghanap",
     "noResults": "Walang nahanap na resulta",
-    "comingSoon": "Malapit Na"
+    "comingSoon": "Malapit Na",
+    "website": "Website",
+    "unknownLocation": "Hindi Kilalang Lokasyon",
+    "copied": "Nakopya!"
   },
   "impact": {
     "title": "Kalkulator ng Epekto",
@@ -40,15 +45,49 @@
     "noBeef": "Walang Baka",
     "lowGI": "Mababang GI",
     "freshProduce": "Sariwang Produkto",
-    "dairyFree": "Walang Gatas"
+    "dairyFree": "Walang Gatas",
+    "anyDistance": "Anumang distansya",
+    "within": "Sa loob ng {{distance}}"
   },
   "map": {
     "show": "Ipakita ang Mapa",
-    "hide": "Itago ang Mapa"
+    "hide": "Itago ang Mapa",
+    "markers": "Mga Marker",
+    "heatmap": "Heatmap",
+    "yourLocation": "Iyong Lokasyon",
+    "getDirections": "Kumuha ng Direksyon",
+    "urgencyLevel": "Antas ng Pagkaapurahan",
+    "urgency": "Pagkaapurahan",
+    "pantriesNearby": "{{count}} pantry sa loob ng 2 milya",
+    "pantriesNearby_plural": "{{count}} pantry sa loob ng 2 milya"
+  },
+  "urgency": {
+    "critical": "Kritikal (0–1 malapit)",
+    "high": "Mataas (2–3 malapit)",
+    "elevated": "Pataas (4–5 malapit)",
+    "moderate": "Katamtaman (6–8 malapit)",
+    "low": "Mababa (9+ malapit)",
+    "criticalShort": "Kritikal",
+    "highShort": "Mataas",
+    "elevatedShort": "Pataas",
+    "moderateShort": "Katamtaman",
+    "lowShort": "Mababa"
   },
   "results": {
     "count": "mga lokasyon ang nahanap",
-    "countSingular": "lokasyon ang nahanap"
+    "countSingular": "lokasyon ang nahanap",
+    "organizations": "mga organisasyon",
+    "organizationSingular": "organisasyon",
+    "missions": "mga misyon na available",
+    "missionSingular": "misyon na available"
+  },
+  "voice": {
+    "listening": "Nakikinig...",
+    "notSupported": "Hindi sinusuportahan ang voice search sa browser na ito",
+    "micDenied": "Tinanggihan ang access sa mikropono. Pakipayagan ang mga pahintulot ng mikropono sa mga setting ng iyong browser.",
+    "noSpeech": "Walang nadetect na boses. Subukan muli.",
+    "searchByVoice": "Maghanap gamit ang boses",
+    "stopVoice": "Itigil ang voice search"
   },
   "donor": {
     "wishlist": "Listahan ng Kailangan",

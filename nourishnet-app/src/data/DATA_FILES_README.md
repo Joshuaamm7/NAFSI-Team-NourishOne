@@ -1,7 +1,7 @@
 # Data Files — Pipeline Documentation
 
 All data files live in `nourishnet-app/src/data/`.  
-**Last updated:** April 12, 2026 (Day 2)
+**Last updated:** April 12, 2026 (Day 2 — post food types & health attributes enrichment)
 
 ---
 
@@ -14,6 +14,7 @@ All data files live in `nourishnet-app/src/data/`.
 | Investigating the original Day 1 data | `locations.json` |
 | Debugging the enrichment pipeline | `locations_expanded.json` |
 | Rolling back to pre-expansion state | `locations_backup_pre_expansion.json` |
+| Rolling back to pre-enrichment state | `locations_final_merged_backup.json` |
 
 ### Frontend import
 
@@ -134,7 +135,78 @@ import locations from '../data/locations_final_merged.json';
 | Pipeline status | **Final / Production** |
 | Record count | 737 |
 | Notes | The first 58 entries are identical to `locations_expanded.json` (verified). 18 duplicates were skipped during merge (11 by address, 7 by name). All entries have complete schema: `healthAttributes` (7 keys), donor fields, volunteer fields, source lineage. By state: 314 MD, 255 DC, 168 VA. |
-please refer to this dataset.
+
+---
+
+### 9. `locations_final_merged_backup.json` — Pre-Enrichment Backup
+
+| Field | Value |
+|-------|-------|
+| Purpose | Exact copy of `locations_final_merged.json` taken before the food types and health attributes enrichment |
+| Created from | `cp locations_final_merged.json locations_final_merged_backup.json` |
+| Used for | Rollback if the enrichment needs to be reverted |
+| Edit directly? | **NO — never touch this file** |
+| Pipeline status | **Backup** |
+| Record count | 737 |
+| Notes | Contains the 737 merged locations before `foodTypes` were populated and `healthAttributes` were enriched. If the enrichment values need to be regenerated from scratch, restore from this file. |
+
+---
+
+## Latest Update: Food Types & Health Attributes Enrichment
+
+Applied to `locations_final_merged.json` on April 12, 2026.
+
+### What changed
+
+Only two fields were modified per location. All other fields (name, address, coordinates, source, donor fields, volunteer fields, insecurity index, etc.) were verified unchanged.
+
+### Food Types (`foodTypes`)
+
+Every location now has a populated `foodTypes` string array. Values were determined as follows:
+
+| Method | Count | Description |
+|--------|-------|-------------|
+| Already had values | 27 | From Day 1/Day 2 manual scraping (original 58 locations) |
+| Inferred from description/tags | 677 | CAFB service keywords mapped to food types (see table below) |
+| Sample/mock data | 33 | Locations with no inference signals got reasonable defaults |
+
+**Inference mapping used:**
+
+| Keyword in description | → foodType value |
+|------------------------|------------------|
+| Shopping | Groceries |
+| Direct Distributions | Groceries |
+| Kids' Café | Kids' Café |
+| Community Meals | Hot Meals |
+| Weekend Backpack | Kid-Friendly Snacks |
+| Family Market | Family Market |
+| Grocery Plus | Grocery Plus |
+| produce / fresh | Fresh Produce |
+| canned | Canned Goods |
+| dairy | Dairy |
+| meat / frozen meat | Frozen Meat |
+| baby / formula | Baby Formula |
+| hygiene | Hygiene Items |
+| emergency | Emergency Food |
+| usda | USDA Food Boxes |
+| grains / rice / pasta | Grains |
+| shelf-stable | Shelf-Stable Items |
+
+### Health Attributes (`healthAttributes`)
+
+All 737 locations have all 7 boolean keys. Values were determined as follows:
+
+| Method | Count | Description |
+|--------|-------|-------------|
+| Already had true values | 17 | From Day 1/Day 2 manual verification |
+| Inferred from content | 6 | Description/foodTypes mentioned produce, halal, etc. |
+| Sample assignment | 714 | `freshProduce` set to `true` for ~30% based on food type presence |
+
+**Result:** 249/737 locations have `freshProduce: true`. Other attributes (`halal`, `vegan`, `vegetarian`, `noBeef`, `lowGI`, `dairyFree`) remain mostly `false` — source data rarely mentions dietary specifics.
+
+### Note on `nearMe`
+
+`nearMe` is a **frontend runtime filter**, not a stored data attribute. It uses `navigator.geolocation` + distance calculation at query time. It does not belong in `healthAttributes` and is intentionally excluded from the schema.
 ---
 
 ## Data Pipeline Flow
@@ -155,7 +227,9 @@ Day 2: CAFB Data Integration
 
 Day 2: Final Merge
   locations_expanded.json + foodbank_merged_clean.json
-  └─→ locations_final_merged.json (737 locations) ⭐ PRODUCTION
+  └─→ locations_final_merged.json (737 locations)
+        ├─→ locations_final_merged_backup.json (pre-enrichment backup)
+        └─→ foodTypes + healthAttributes enrichment ⭐ PRODUCTION
 ```
 
 ---
@@ -164,7 +238,7 @@ Day 2: Final Merge
 
 | Rule | Files affected |
 |------|---------------|
-| **NEVER modify** | `locations.json`, `locations_backup_pre_expansion.json` |
+| **NEVER modify** | `locations.json`, `locations_backup_pre_expansion.json`, `locations_final_merged_backup.json` |
 | **Read-only intermediate** | `locations_expanded.json`, `foodbank_scraped_locations.json`, `foodbank_csv_converted.json`, `foodbank_merged_clean.json` |
 | **Safe to edit for testing** | `locations_sample.json` |
 | **Production — enrich only** | `locations_final_merged.json` |

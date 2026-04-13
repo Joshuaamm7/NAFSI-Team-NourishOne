@@ -1,4 +1,3 @@
-# NAFSI-Team-NourishSync
 # 🥦 NourishOne
 
 **One Tool. One Community. One Mission.**
@@ -14,7 +13,7 @@ Connecting families, donors, and volunteers to food resources across metropolita
 
 ## What is NourishOne?
 
-NourishOne is a static React web app that helps people in the DC/Maryland/Virginia region find food assistance. It aggregates **737 verified food pantry locations** into a searchable, filterable, map-driven interface with three dedicated portals:
+NourishOne is a static React web app that helps people in the DC, Maryland, and Virginia region find food assistance. It aggregates **737 verified food pantry locations** into a searchable, filterable, map-driven interface with three dedicated portals:
 
 - **Find Food** — Families search for nearby pantries by food type, dietary need, and distance
 - **Donate** — Donors see wishlists and high-need areas to direct their contributions
@@ -24,11 +23,30 @@ Built in 72 hours for the **NourishNet Data Challenge 2026** at the University o
 
 ---
 
+## Features
+
+- **737 verified food assistance locations** across MD, DC, and VA
+- **Interactive Leaflet map** with color-coded markers (green/orange/blue by portal type) and rich popups
+- **Heatmap overlay** showing food insecurity density with urgency legend
+- **Smart filtering** by food type, 7 dietary attributes, distance radius, and AND/OR filter mode
+- **Voice search** — speak your needs via Web Speech API with English and Spanish keyword mappings
+- **6 languages** — English, Spanish, Chinese, French, Amharic, Tagalog
+- **First-visit language selector** — full-screen language picker on first launch
+- **"Near Me" geolocation** — find the closest pantries with configurable radius (1/5/10/25 mi)
+- **Donor wishlists** — see what each pantry needs, sort by highest community need
+- **Impact calculator** — estimate CO₂ saved, meals provided, and water conserved from donations
+- **Volunteer missions** — filter by required skills and languages, see urgency and nearby opportunities
+- **Persistent preferences** — dietary filters, language, search query, and filter mode survive page refresh
+- **Fully static** — no backend, no API keys, no cloud services required
+- **100% real data** — every location traceable to a verified public source
+
+---
+
 ## Quick Start
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or later)
+- [Node.js](https://nodejs.org/) v18 or later
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
 ### 1. Clone the repository
@@ -52,9 +70,7 @@ npm install --legacy-peer-deps
 npm start
 ```
 
-The app will open automatically at **http://localhost:3000**.
-
-That's it — you're running NourishOne locally.
+The app opens automatically at **http://localhost:3000**.
 
 ---
 
@@ -62,9 +78,9 @@ That's it — you're running NourishOne locally.
 
 | Command | What it does |
 |---------|-------------|
-| `npm start` | Starts the dev server at http://localhost:3000 |
+| `npm start` | Starts the dev server at localhost:3000 |
 | `npm test` | Runs the test suite (includes property-based tests) |
-| `npm run build` | Creates a production build in the `build/` folder |
+| `npm run build` | Creates a production build in `build/` |
 | `npm run deploy` | Builds and deploys to GitHub Pages |
 
 ---
@@ -73,13 +89,13 @@ That's it — you're running NourishOne locally.
 
 ### First-time setup
 
-1. In `package.json`, update the `homepage` field with your GitHub Pages URL:
+1. Update the `homepage` field in `package.json` with your GitHub Pages URL:
 
 ```json
 "homepage": "https://YOUR_USERNAME.github.io/NAFSI-Team-NourishSync"
 ```
 
-2. Make sure `gh-pages` is installed (it should already be in devDependencies):
+2. Ensure `gh-pages` is installed (already in devDependencies):
 
 ```bash
 npm install --save-dev gh-pages --legacy-peer-deps
@@ -91,13 +107,12 @@ npm install --save-dev gh-pages --legacy-peer-deps
 npm run deploy
 ```
 
-This runs `npm run build` automatically, then pushes the `build/` folder to the `gh-pages` branch. Your site will be live at the URL in the `homepage` field within a few minutes.
+This runs `npm run build` automatically, then pushes `build/` to the `gh-pages` branch. Your site will be live within a few minutes.
 
-### Verify deployment
+### Troubleshooting deployment
 
-Visit your GitHub Pages URL. If you see a blank page:
-- Check that `homepage` in `package.json` matches your actual repo URL
-- The app uses `HashRouter`, so routes look like `https://yoursite.github.io/repo/#/family`
+- The app uses `HashRouter`, so routes look like `https://yoursite.github.io/repo/#/customer`
+- If you see a blank page, verify `homepage` in `package.json` matches your actual repo URL
 
 ---
 
@@ -105,28 +120,58 @@ Visit your GitHub Pages URL. If you see a blank page:
 
 ```
 nourishnet-app/
-├── public/                  # Static assets
+├── public/                     # Static assets (favicon, index.html, manifest)
 ├── src/
+│   ├── UI/                     # Page-level components and their styles
+│   │   ├── LandingPage.jsx     # First-visit language selector
+│   │   ├── WelcomePage.jsx     # Welcome / onboarding screen
+│   │   ├── PortalPage.jsx      # Tri-portal gateway (Find Food, Donate, Volunteer)
+│   │   ├── CustomerPage.jsx    # Customer portal home
+│   │   ├── FoodTypesPage.jsx   # Browse by food type
+│   │   ├── HealthTypesPage.jsx # Browse by dietary attribute
+│   │   ├── NearbyPage.jsx      # Nearby locations (geolocation)
+│   │   ├── NowAvailablePage.jsx# Currently open locations
+│   │   ├── MapPage.jsx         # Full-screen customer map
+│   │   ├── DonorPage.jsx       # Donor portal home
+│   │   ├── DonorMapPage.jsx    # Donor map view
+│   │   ├── DonorNeedsPage.jsx  # High-need areas for donors
+│   │   ├── DonateToPage.jsx    # Donate to a specific location
+│   │   ├── VolunteerPage.jsx   # Volunteer portal home
+│   │   ├── VolunteerMissionsPage.jsx  # Browse missions
+│   │   ├── VolunteerSkillsPage.jsx    # Filter by skill
+│   │   ├── VolunteerLanguagesPage.jsx # Filter by language
+│   │   ├── VolunteerUrgentPage.jsx    # Urgent volunteer needs
+│   │   ├── VolunteerNearbyPage.jsx    # Nearby volunteer opportunities
+│   │   ├── VolunteerMapPage.jsx       # Volunteer map view
+│   │   ├── AboutPage.jsx       # About / info page
+│   │   ├── FilterBar.jsx       # Dietary filter tag bar
+│   │   ├── SearchHeader.jsx    # Search input with voice search
+│   │   ├── MissionCard.jsx     # Volunteer mission card
+│   │   ├── LanguagePopover.jsx # In-app language switcher
+│   │   └── assets/             # Images and icons
 │   ├── components/
-│   │   ├── christian/       # Gateway, Layout, LanguageToggle
-│   │   ├── joe/             # VoiceSearch, FilterEngine, ImpactCalculator
-│   │   ├── ryan/            # MapView, LocationCard, HeatmapLayer
-│   │   └── shared/          # Reusable components (Button, LocationCard)
-│   ├── pages/
-│   │   ├── FamilyPortal.jsx # Customer portal — find food
-│   │   ├── DonorPortal.jsx  # Donor portal — give food
-│   │   └── VolunteerPortal.jsx # Volunteer portal — serve
+│   │   ├── christian/          # Gateway, Layout, LanguageToggle
+│   │   ├── joe/                # VoiceSearch, FilterEngine, ImpactCalculator
+│   │   ├── ryan/               # MapView, HeatmapLayer, Legend, ViewToggle
+│   │   └── shared/             # Reusable components (Button, LocationCard)
 │   ├── data/
-│   │   ├── locations_final_merged.json  # ⭐ Production dataset (737 locations)
+│   │   ├── locations_final_merged.json  # Production dataset (737 locations)
 │   │   ├── area_income_sources.json     # Economic context data
-│   │   └── ...                          # Pipeline files (see DATA_FILES_README.md)
-│   ├── locales/             # Translation files (EN, ES, ZH, FR, AM, TL)
-│   ├── utils/               # Filter logic, i18n config, preferences
-│   ├── App.js               # Root component with routing
-│   └── index.js             # Entry point
-├── FINAL_REPORT.md          # Hackathon submission report
-├── README-HACKATHON.md      # 3-day implementation plan
-└── package.json
+│   │   ├── DATA_DICTIONARY.md           # Field documentation
+│   │   ├── DATA_FILES_README.md         # Data pipeline docs
+│   │   └── schema.md                    # LocationEntry schema
+│   ├── locales/                # Translation files (en, es, zh, fr, am, tl)
+│   ├── utils/
+│   │   ├── filterUtils.js      # Filter logic (AND/OR, distance, dietary)
+│   │   ├── heatmapUtils.js     # Heatmap density calculations
+│   │   ├── i18n.js             # i18next configuration
+│   │   ├── placeCategory.js    # Auto-detect location category
+│   │   ├── preferences.js      # localStorage preference management
+│   │   └── translateHours.js   # Hours string translation
+│   ├── App.js                  # Root component with HashRouter routing
+│   └── index.js                # Entry point
+├── package.json
+└── postcss.config.js
 ```
 
 ---
@@ -138,26 +183,11 @@ nourishnet-app/
 | React 19 | UI framework |
 | React Router 6 | Client-side routing (HashRouter for GitHub Pages) |
 | Tailwind CSS 3 | Utility-first styling |
-| Leaflet.js + react-leaflet | Interactive maps |
+| Leaflet + react-leaflet | Interactive maps with heatmap overlay |
 | i18next + react-i18next | Multi-language support (6 languages) |
-| Web Speech API | Voice search |
+| Web Speech API | Voice search (browser native) |
 | fast-check | Property-based testing |
 | gh-pages | GitHub Pages deployment |
-
----
-
-## Features
-
-- **737 verified food assistance locations** across MD, DC, and VA
-- **Interactive map** with colored markers and popup details
-- **Smart filtering** by food type, dietary attributes, distance, and tags
-- **Voice search** — speak your needs in English or Spanish
-- **6 languages** — English, Spanish, Chinese, French, Amharic, Tagalog
-- **Donor wishlists** — see what each pantry needs
-- **Volunteer missions** — find opportunities matching your skills
-- **Impact calculator** — see the environmental benefit of donations
-- **Fully static** — no backend, no API keys, no cloud services required
-- **100% real data** — every location traceable to a verified source
 
 ---
 
@@ -168,12 +198,33 @@ The production dataset (`locations_final_merged.json`) contains 737 locations wi
 - Name, structured address, geocoded coordinates
 - Hours, phone, website, requirements
 - Food types (16 categories)
-- Health/dietary attributes (7 boolean flags)
+- Health/dietary attributes (7 boolean flags: halal, vegan, vegetarian, noBeef, lowGI, freshProduce, dairyFree)
+- Insecurity index for need-based prioritization
 - Donor fields (wishlist, accepts perishable, drop-off hours)
 - Volunteer fields (missions with skills/languages, volunteers needed)
 - Full source lineage (source name, URL, extraction page)
 
 See `src/data/DATA_FILES_README.md` for complete documentation of all data files and the pipeline.
+
+---
+
+## Testing
+
+The test suite includes 12 property-based and integration tests covering:
+
+- Route rendering and undefined-route redirects
+- Location data schema conformance
+- Translation key parity across all locale files
+- Language switching and preference persistence
+- User preferences localStorage round-trip
+- Tailwind config validation
+- LanguageToggle and MapView component tests
+
+Run with:
+
+```bash
+npm test
+```
 
 ---
 
@@ -184,7 +235,7 @@ See `src/data/DATA_FILES_README.md` for complete documentation of all data files
 | **Joshua** | Data Engine | Data pipeline, scraping, geocoding, schema design, enrichment, documentation |
 | **Christian** | Lead Developer | React architecture, routing, i18n, Gateway, Layout, portal integration |
 | **Joe** | Logic & Innovation | Filter engine, voice search, impact calculator, preferences, property-based tests |
-| **Ryan** | UX & Logic Support | Map integration, location cards, design system, responsive UI, smoke testing |
+| **Ryan** | UX & Logic Support | Map integration, heatmap, location cards, design system, responsive UI |
 
 ---
 
@@ -196,7 +247,7 @@ npm install --legacy-peer-deps
 ```
 
 **Map doesn't render**
-Make sure Leaflet CSS is imported. Check that `src/index.js` or `src/index.css` includes:
+Ensure Leaflet CSS is imported. Check that `src/index.css` includes:
 ```css
 @import 'leaflet/dist/leaflet.css';
 ```
@@ -204,14 +255,10 @@ Make sure Leaflet CSS is imported. Check that `src/index.js` or `src/index.css` 
 **Blank page after deploy**
 - Verify `homepage` in `package.json` matches your GitHub Pages URL
 - The app uses `HashRouter` — URLs should have `/#/` in them
-- Check the browser console for 404 errors on assets
 
 **i18n not working**
 - Verify `src/utils/i18n.js` is imported in `App.js`
 - Check that locale files exist in `src/locales/`
-
-**Only seeing 58 locations instead of 737**
-- Make sure all portal files import from `locations_final_merged.json`, not `locations_expanded.json`
 
 ---
 
@@ -221,4 +268,4 @@ Built for the NourishNet Data Challenge 2026. All data sourced from public gover
 
 ---
 
-*Built with care at the University of Maryland. April 11–13, 2026.*
+*Built with care at the University of Maryland — April 11–13, 2026.*

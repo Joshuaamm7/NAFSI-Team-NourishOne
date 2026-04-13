@@ -1,74 +1,83 @@
-.about-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; padding-bottom: 60px; }
+.about-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; }
 
 .about-heading {
   font-family: 'Inria Serif', serif; font-weight: 700; font-size: 56px;
-  color: #4a7c59; margin: 0; padding: 40px 40px 40px; text-align: center;
+  color: #4a7c59; margin: 0; padding: 40px 40px 36px; text-align: center;
 }
 
 .about-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 24px; padding: 0 40px; max-width: 1200px; margin: 0 auto;
+  gap: 24px; padding: 0 40px 60px; max-width: 1200px; margin: 0 auto;
+  align-items: start;
 }
 
-/* Card */
+/* Card — fixed height shell */
 .about-card {
   border: 1px solid rgba(74,124,89,0.25); border-radius: 20px;
   background: rgba(255,255,255,0.35); overflow: hidden;
   display: flex; flex-direction: column;
+  min-height: 420px;
   transition: box-shadow 0.3s, transform 0.3s;
 }
 .about-card:hover { box-shadow: 0 10px 32px rgba(74,124,89,0.12); transform: translateY(-4px); }
 
-/* Photo */
-.about-img-wrap { width: 100%; aspect-ratio: 1 / 1.1; overflow: hidden; }
-.about-img {
+/* Photo — large by default, shrinks when expanded */
+.about-photo-wrap {
+  width: 100%; overflow: hidden;
+  transition: height 0.5s cubic-bezier(0.16,1,0.3,1);
+  height: 300px;
+}
+.about-photo-wrap--small {
+  height: 120px;
+}
+.about-photo {
   width: 100%; height: 100%; object-fit: cover; display: block;
   border-radius: 20px 20px 0 0;
   transition: transform 0.4s ease;
 }
-.about-card:hover .about-img { transform: scale(1.03); }
+.about-card:hover .about-photo { transform: scale(1.03); }
 
-/* Info area */
-.about-info { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 4px; }
+/* Bottom info */
+.about-bottom { padding: 16px 20px 20px; flex: 1; display: flex; flex-direction: column; }
 
 .about-name-row {
-  display: flex; align-items: center; justify-content: space-between;
-  cursor: pointer;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  cursor: pointer; gap: 8px;
 }
-.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; }
-.about-chevron { transition: transform 0.3s ease; }
-.about-chevron--open { transform: rotate(90deg); }
-
+.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; display: block; }
 .about-role {
   font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-  color: #4a7c59; text-transform: uppercase;
+  color: #4a7c59; text-transform: uppercase; display: block; margin-top: 2px;
 }
 
-/* Bio expand */
-.about-bio-area {
-  max-height: 0; overflow: hidden; opacity: 0;
-  transition: max-height 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease;
+.about-arrow {
+  flex-shrink: 0; margin-top: 4px;
+  transition: transform 0.3s ease;
 }
-.about-bio-area--open { max-height: 140px; opacity: 1; margin-top: 10px; }
 
+/* Bio section — appears when expanded */
+.about-bio-section {
+  animation: bioFadeIn 0.4s ease-out;
+}
+.about-divider {
+  width: 100%; height: 1px; background: rgba(74,124,89,0.2);
+  margin: 12px 0;
+}
 .about-bio {
   font-size: 13px; color: #4a7c59; line-height: 1.6; margin: 0;
 }
 
-.about-collapse {
-  background: none; border: none; cursor: pointer; padding: 4px;
-  align-self: center; margin-top: 8px;
-  transition: transform 0.2s;
-}
-.about-collapse:hover { transform: translateY(2px); }
-
 /* Animations */
 .anim-up { opacity: 0; transform: translateY(28px); animation: aboutUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
 @keyframes aboutUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bioFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 900px) {
-  .about-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+  .about-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 40px; }
   .about-heading { font-size: 36px; padding: 24px 20px; }
+  .about-card { min-height: 360px; }
+  .about-photo-wrap { height: 240px; }
+  .about-photo-wrap--small { height: 100px; }
 }
 @media (max-width: 560px) {
   .about-grid { grid-template-columns: 1fr; }

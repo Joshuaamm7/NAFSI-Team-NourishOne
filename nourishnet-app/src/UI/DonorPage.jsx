@@ -85,20 +85,20 @@ function ImpactSection({ t }) {
 
   return (
     <section className="donor-section anim-fade-up" style={{ animationDelay: '0.15s' }}>
-      <h2 className="donor-section-title">Community Impact</h2>
+      <h2 className="donor-section-title">{t('donation.communityImpact')}</h2>
       <div className="dw-impact-grid" style={{ marginBottom: 24 }}>
-        <div className="dw-impact-card"><span className="dw-impact-val">{communityMeals.toLocaleString()}</span><span className="dw-impact-lbl">Total Meals</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">{communityCo2.toLocaleString()} lbs</span><span className="dw-impact-lbl">CO₂ Saved</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">{communityWater.toLocaleString()} gal</span><span className="dw-impact-lbl">Water Saved</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">{communityDonors}</span><span className="dw-impact-lbl">Donors</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">{communityMeals.toLocaleString()}</span><span className="dw-impact-lbl">{t('donation.totalMeals')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">{communityCo2.toLocaleString()} lbs</span><span className="dw-impact-lbl">{t('donation.co2Saved')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">{communityWater.toLocaleString()} gal</span><span className="dw-impact-lbl">{t('donation.waterSaved')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">{communityDonors}</span><span className="dw-impact-lbl">{t('donation.donors')}</span></div>
       </div>
 
-      <h2 className="donor-section-title">Your Impact</h2>
+      <h2 className="donor-section-title">{t('donation.yourImpact')}</h2>
       <div className="dw-impact-grid">
-        <div className="dw-impact-card"><span className="dw-impact-val">0</span><span className="dw-impact-lbl">Meals Provided</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">0 lbs</span><span className="dw-impact-lbl">CO₂ Saved</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">0 gal</span><span className="dw-impact-lbl">Water Saved</span></div>
-        <div className="dw-impact-card"><span className="dw-impact-val">0</span><span className="dw-impact-lbl">Donations</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">0</span><span className="dw-impact-lbl">{t('donation.mealsProvided')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">0 lbs</span><span className="dw-impact-lbl">{t('donation.co2Saved')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">0 gal</span><span className="dw-impact-lbl">{t('donation.waterSaved')}</span></div>
+        <div className="dw-impact-card"><span className="dw-impact-val">0</span><span className="dw-impact-lbl">{t('donation.donations')}</span></div>
       </div>
     </section>
   );
@@ -147,8 +147,8 @@ function DonationWizard({ t, navigate }) {
       <section className="donor-wizard anim-fade-up anim-d1">
         <div className="dw-thankyou">
           <span className="dw-thankyou-icon">🎉</span>
-          <h2 className="dw-thankyou-title">Thank You for Your Donation!</h2>
-          <p className="dw-thankyou-msg">Your generosity makes a real difference in our community. Together, we're building a world where no one goes hungry.</p>
+          <h2 className="dw-thankyou-title">{t('donation.thankYouDonation')}</h2>
+          <p className="dw-thankyou-msg">{t('donation.thankYouMsg')}</p>
           {donationType === 'food' && lbs > 0 && (
             <div className="dw-impact-mini" style={{ justifyContent: 'center', marginTop: 12 }}>
               <span>🍽️ ~{meals} meals</span><span>🌿 ~{co2} lbs CO₂</span><span>💧 ~{water} gal water</span>
@@ -162,108 +162,108 @@ function DonationWizard({ t, navigate }) {
   return (
     <section className="donor-wizard anim-fade-up anim-d1">
       <div className="dw-header">
-        <h2 className="donor-section-title">{step === 0 ? 'Start a Donation' : step === 5 ? '✅ Donation Summary' : `Step ${step} of 4`}</h2>
+        <h2 className="donor-section-title">{step === 0 ? t('donation.startDonation') : step === 5 ? `✅ ${t('donation.donationSummary')}` : t('donation.stepOf', { step, total: 4 })}</h2>
         {step > 0 && step < 5 && (<div className="dw-progress">{[1,2,3,4].map(s => (<span key={s} className={`dw-dot${step >= s ? ' dw-dot--active' : ''}`} />))}</div>)}
       </div>
 
       {step === 0 && (
         <div className="dw-step">
-          <p className="dw-question">What would you like to donate?</p>
+          <p className="dw-question">{t('donation.whatDonate')}</p>
           <div className="dw-choice-row">
-            <button className="dw-choice-btn" onClick={() => { setDonationType('food'); setStep(1); }}><span className="dw-choice-icon">🍎</span><span className="dw-choice-label">Food Resources</span></button>
-            <button className="dw-choice-btn" onClick={() => { setDonationType('money'); setStep(1); }}><span className="dw-choice-icon">💰</span><span className="dw-choice-label">Monetary Donation</span></button>
+            <button className="dw-choice-btn" onClick={() => { setDonationType('food'); setStep(1); }}><span className="dw-choice-icon">🍎</span><span className="dw-choice-label">{t('donation.foodResources')}</span></button>
+            <button className="dw-choice-btn" onClick={() => { setDonationType('money'); setStep(1); }}><span className="dw-choice-icon">💰</span><span className="dw-choice-label">{t('donation.monetaryDonation')}</span></button>
           </div>
         </div>
       )}
 
       {step === 1 && donationType === 'food' && (
         <div className="dw-step">
-          <p className="dw-question">📦 What are you donating?</p>
+          <p className="dw-question">📦 {t('donation.whatDonating')}</p>
           <div className="dw-upload-row">
             <button className="dw-upload-box" onClick={() => fileInputRef.current?.click()}><span className="dw-upload-icon">📷</span><span>{t('ui.takePhoto')}</span></button>
             <input ref={fileInputRef} type="file" accept="image/*" capture="environment" style={{ display: 'none' }} onChange={handlePhoto} />
             <button className="dw-upload-box" onClick={handleTypeItems}><span className="dw-upload-icon">📝</span><span>{t('ui.typeItems')}</span></button>
           </div>
           {photoPreview && (<div className="dw-photo-preview"><img src={photoPreview} alt="Preview" className="dw-photo-img" /><button className="dw-photo-remove" onClick={() => setPhotoPreview(null)}>✕</button></div>)}
-          <textarea ref={textareaRef} className="dw-textarea" placeholder="Describe items..." value={items} onChange={e => setItems(e.target.value)} rows={3} />
-          <div className="dw-qty-row"><label className="dw-label">Estimated weight</label><input className="dw-input" type="number" placeholder="e.g. 25" value={lbs} onChange={e => setLbs(e.target.value)} /><span className="dw-unit">lbs</span></div>
-          {lbs > 0 && (<div className="dw-impact-mini"><span>🍽️ ~{meals} meals</span><span>🌿 ~{co2} lbs CO₂</span><span>💧 ~{water} gal water</span></div>)}
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(0)}>← Back</button><button className="dw-next" onClick={() => setStep(2)} disabled={!items && !lbs}>Next →</button></div>
+          <textarea ref={textareaRef} className="dw-textarea" placeholder={t('donation.describeItems')} value={items} onChange={e => setItems(e.target.value)} rows={3} />
+          <div className="dw-qty-row"><label className="dw-label">{t('donation.estimatedWeight')}</label><input className="dw-input" type="number" placeholder="e.g. 25" value={lbs} onChange={e => setLbs(e.target.value)} /><span className="dw-unit">lbs</span></div>
+          {lbs > 0 && (<div className="dw-impact-mini"><span>🍽️ ~{meals} {t('donation.meals')}</span><span>🌿 ~{co2} lbs CO₂</span><span>💧 ~{water} gal</span></div>)}
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(0)}>← {t('donation.back')}</button><button className="dw-next" onClick={() => setStep(2)} disabled={!items && !lbs}>{t('donation.next')} →</button></div>
         </div>
       )}
 
       {step === 1 && donationType === 'money' && (
         <div className="dw-step">
-          <p className="dw-question">💰 How much would you like to donate?</p>
+          <p className="dw-question">💰 {t('donation.howMuchDonate')}</p>
           <div className="dw-money-row">
             {['10','25','50','100'].map(amt => (<button key={amt} className={`dw-money-btn${moneyAmount === amt ? ' dw-money-btn--active' : ''}`} onClick={() => setMoneyAmount(amt)}>${amt}</button>))}
           </div>
-          <div className="dw-qty-row"><label className="dw-label">Custom</label><span className="dw-unit">$</span><input className="dw-input" type="number" placeholder="Other" value={moneyAmount} onChange={e => setMoneyAmount(e.target.value)} /></div>
-          {moneyAmount > 0 && (<div className="dw-impact-mini"><span>🍽️ ~{Math.round(Number(moneyAmount) * 3)} meals</span></div>)}
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(0)}>← Back</button><button className="dw-next" onClick={() => setStep(4)} disabled={!moneyAmount}>Next →</button></div>
+          <div className="dw-qty-row"><label className="dw-label">{t('donation.custom')}</label><span className="dw-unit">$</span><input className="dw-input" type="number" placeholder={t('donation.other')} value={moneyAmount} onChange={e => setMoneyAmount(e.target.value)} /></div>
+          {moneyAmount > 0 && (<div className="dw-impact-mini"><span>🍽️ ~{Math.round(Number(moneyAmount) * 3)} {t('donation.meals')}</span></div>)}
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(0)}>← {t('donation.back')}</button><button className="dw-next" onClick={() => setStep(4)} disabled={!moneyAmount}>{t('donation.next')} →</button></div>
         </div>
       )}
 
       {step === 2 && (
         <div className="dw-step">
-          <p className="dw-question">📅 When can you deliver/have it picked up?</p>
+          <p className="dw-question">📅 {t('donation.whenDeliver')}</p>
           <div className="dw-date-row">
-            <div className="dw-field"><label className="dw-label">Date</label><input className="dw-input dw-input--wide" type="date" value={date} onChange={e => setDate(e.target.value)} /></div>
-            <div className="dw-field"><label className="dw-label">Time</label><input className="dw-input dw-input--wide" type="time" value={time} onChange={e => setTime(e.target.value)} /></div>
+            <div className="dw-field"><label className="dw-label">{t('donation.date')}</label><input className="dw-input dw-input--wide" type="date" value={date} onChange={e => setDate(e.target.value)} /></div>
+            <div className="dw-field"><label className="dw-label">{t('donation.time')}</label><input className="dw-input dw-input--wide" type="time" value={time} onChange={e => setTime(e.target.value)} /></div>
           </div>
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(1)}>← Back</button><button className="dw-next" onClick={() => setStep(3)} disabled={!date}>Next →</button></div>
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(1)}>← {t('donation.back')}</button><button className="dw-next" onClick={() => setStep(3)} disabled={!date}>{t('donation.next')} →</button></div>
         </div>
       )}
 
       {step === 3 && (
         <div className="dw-step">
-          <p className="dw-question">🚗 How will the donation be delivered?</p>
+          <p className="dw-question">🚗 {t('donation.howDelivered')}</p>
           <div className="dw-method-row">
-            {[['self-drive','🚗','Self-Drive',"I'll drop it off"],['volunteer-pickup','🤝','Volunteer Pickup','A volunteer picks up'],['mail','📦','Ship / Mail',"I'll ship it"]].map(([key,icon,label,desc]) => (
+            {[['self-drive','🚗','selfDrive','selfDriveDesc'],['volunteer-pickup','🤝','volunteerPickup','volunteerPickupDesc'],['mail','📦','shipMail','shipMailDesc']].map(([key,icon,labelKey,descKey]) => (
               <button key={key} className={`dw-method-btn${method === key ? ' dw-method-btn--active' : ''}`} onClick={() => setMethod(key)}>
-                <span className="dw-method-icon">{icon}</span><span>{label}</span><span className="dw-method-desc">{desc}</span>
+                <span className="dw-method-icon">{icon}</span><span>{t(`donation.${labelKey}`)}</span><span className="dw-method-desc">{t(`donation.${descKey}`)}</span>
               </button>
             ))}
           </div>
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(2)}>← Back</button><button className="dw-next" onClick={() => setStep(4)} disabled={!method}>Next →</button></div>
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(2)}>← {t('donation.back')}</button><button className="dw-next" onClick={() => setStep(4)} disabled={!method}>{t('donation.next')} →</button></div>
         </div>
       )}
 
       {step === 4 && (
         <div className="dw-step">
-          <p className="dw-question">📍 Where would you like to donate?</p>
+          <p className="dw-question">📍 {t('donation.whereDonate')}</p>
           <div className="dw-loc-grid">
             {nearbyLocs.map(loc => (<button key={loc.id} className={`dw-loc-btn${selectedLoc?.id === loc.id ? ' dw-loc-btn--active' : ''}`} onClick={() => setSelectedLoc(loc)}>
               <span className="dw-loc-name">{loc.name}</span><span className="dw-loc-addr">{[loc.address?.street, loc.address?.city].filter(Boolean).join(', ')}</span>
-              {loc.insecurityIndex >= 4 && <span className="dw-loc-badge">High Need (Level {loc.insecurityIndex})</span>}
+              {loc.insecurityIndex >= 4 && <span className="dw-loc-badge">{t('donation.highNeedLevel', { level: loc.insecurityIndex })}</span>}
             </button>))}
           </div>
-          <button className="dw-browse-btn" onClick={() => navigate('/donor/map')}>🗺️ Browse on Map</button>
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(donationType === 'money' ? 1 : 3)}>← Back</button><button className="dw-next" onClick={() => setStep(5)} disabled={!selectedLoc}>Review →</button></div>
+          <button className="dw-browse-btn" onClick={() => navigate('/donor/map')}>🗺️ {t('donation.browseOnMap')}</button>
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(donationType === 'money' ? 1 : 3)}>← {t('donation.back')}</button><button className="dw-next" onClick={() => setStep(5)} disabled={!selectedLoc}>{t('donation.review')} →</button></div>
         </div>
       )}
 
       {step === 5 && (
         <div className="dw-step">
           <div className="dw-summary">
-            <div className="dw-summary-row"><span className="dw-summary-label">Type</span><span>{donationType === 'food' ? '🍎 Food' : '💰 Money'}</span></div>
-            {donationType === 'food' && items && <div className="dw-summary-row"><span className="dw-summary-label">Items</span><span>{items}</span></div>}
-            {donationType === 'food' && lbs && <div className="dw-summary-row"><span className="dw-summary-label">Weight</span><span>{lbs} lbs</span></div>}
-            {donationType === 'money' && <div className="dw-summary-row"><span className="dw-summary-label">Amount</span><span>${moneyAmount}</span></div>}
-            {date && <div className="dw-summary-row"><span className="dw-summary-label">Date</span><span>{date} {time}</span></div>}
-            {method && <div className="dw-summary-row"><span className="dw-summary-label">Delivery</span><span>{method}</span></div>}
-            {selectedLoc && <div className="dw-summary-row"><span className="dw-summary-label">Location</span><span>{selectedLoc.name}</span></div>}
+            <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.type')}</span><span>{donationType === 'food' ? `🍎 ${t('donation.food')}` : `💰 ${t('donation.money')}`}</span></div>
+            {donationType === 'food' && items && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.items')}</span><span>{items}</span></div>}
+            {donationType === 'food' && lbs && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.weight')}</span><span>{lbs} lbs</span></div>}
+            {donationType === 'money' && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.amount')}</span><span>${moneyAmount}</span></div>}
+            {date && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.date')}</span><span>{date} {time}</span></div>}
+            {method && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.delivery')}</span><span>{method}</span></div>}
+            {selectedLoc && <div className="dw-summary-row"><span className="dw-summary-label">{t('donation.location')}</span><span>{selectedLoc.name}</span></div>}
           </div>
           {donationType === 'food' && lbs > 0 && (
-            <div className="dw-impact-final"><h3 className="dw-impact-title">Your Impact</h3>
+            <div className="dw-impact-final"><h3 className="dw-impact-title">{t('donation.yourImpact')}</h3>
               <div className="dw-impact-grid">
-                <div className="dw-impact-card"><span className="dw-impact-val">{meals}</span><span className="dw-impact-lbl">Meals</span></div>
-                <div className="dw-impact-card"><span className="dw-impact-val">{co2} lbs</span><span className="dw-impact-lbl">CO₂ Saved</span></div>
-                <div className="dw-impact-card"><span className="dw-impact-val">{water} gal</span><span className="dw-impact-lbl">Water Saved</span></div>
+                <div className="dw-impact-card"><span className="dw-impact-val">{meals}</span><span className="dw-impact-lbl">{t('donation.meals')}</span></div>
+                <div className="dw-impact-card"><span className="dw-impact-val">{co2} lbs</span><span className="dw-impact-lbl">{t('donation.co2Saved')}</span></div>
+                <div className="dw-impact-card"><span className="dw-impact-val">{water} gal</span><span className="dw-impact-lbl">{t('donation.waterSaved')}</span></div>
               </div>
             </div>
           )}
-          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(4)}>← Back</button><button className="dw-confirm" onClick={handleConfirm}>✅ Confirm Donation</button></div>
+          <div className="dw-nav"><button className="dw-back" onClick={() => setStep(4)}>← {t('donation.back')}</button><button className="dw-confirm" onClick={handleConfirm}>✅ {t('donation.confirmDonation')}</button></div>
         </div>
       )}
     </section>
@@ -292,9 +292,9 @@ function DonorLocCard({ loc, t, navigate }) {
       <div className="donor-loc-meta"><span>🕐 {loc.hours || t('ui.contactForHours')} 🔁 {t('ui.ongoing')}</span><span>📍 {addr}</span></div>
       <div className={`donor-loc-expand${expanded ? ' donor-loc-expand--open' : ''}`}>
         <div className="donor-loc-expand-inner">
-          {website && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">🔗 Website</span><a href={website} target="_blank" rel="noopener noreferrer" className="donor-loc-detail-link">{website}</a></div>)}
-          {requirements && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">📋 Requirements</span><span className="donor-loc-detail-value">{requirements}</span></div>)}
-          {(sourceName || sourceUrl) && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">📄 Source</span>{sourceUrl ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="donor-loc-detail-link">{sourceName || sourceUrl}</a> : <span className="donor-loc-detail-value">{sourceName}</span>}</div>)}
+          {website && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">🔗 {t('donation.website')}</span><a href={website} target="_blank" rel="noopener noreferrer" className="donor-loc-detail-link">{website}</a></div>)}
+          {requirements && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">📋 {t('donation.requirements')}</span><span className="donor-loc-detail-value">{requirements}</span></div>)}
+          {(sourceName || sourceUrl) && (<div className="donor-loc-detail-row"><span className="donor-loc-detail-label">📄 {t('donation.source')}</span>{sourceUrl ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="donor-loc-detail-link">{sourceName || sourceUrl}</a> : <span className="donor-loc-detail-value">{sourceName}</span>}</div>)}
           <button className="donor-loc-map-btn" onClick={() => navigate(`/donor/map?loc=${loc.id}`)}>🗺️ {t('ui.showInMap')}</button>
         </div>
       </div>

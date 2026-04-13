@@ -1,0 +1,179 @@
+/* ── Portal Page ── */
+.portal-root {
+  min-height: 100vh;
+  background: #dcfce8;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Header ── */
+.portal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.portal-logo {
+  font-family: 'Inria Serif', serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: #4a7c59;
+}
+
+.portal-lang-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #4a7c59;
+  border-radius: 30px;
+  padding: 8px 20px;
+}
+
+.portal-lang-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #dcfce8;
+}
+
+.portal-lang-arrow {
+  width: 14px;
+  height: 14px;
+  transform: scaleX(-1);
+}
+
+/* ── Marquee ── */
+.portal-marquee {
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.portal-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: portalMarquee 50s linear infinite;
+}
+
+.portal-marquee-text {
+  font-family: 'Inria Serif', serif;
+  font-weight: 700;
+  font-size: 80px;
+  color: #4a7c59;
+  white-space: nowrap;
+}
+
+@keyframes portalMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Cards ── */
+.portal-cards {
+  display: flex;
+  gap: 24px;
+  padding: 24px 40px 60px;
+  flex: 1;
+  align-items: stretch;
+}
+
+.portal-card {
+  flex: 1;
+  border: 2px solid #4a7c59;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.portal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(74, 124, 89, 0.15);
+}
+
+.portal-card-img-wrap {
+  height: 220px;
+  overflow: hidden;
+}
+
+.portal-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portal-card-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.portal-card-title {
+  font-family: 'Inria Serif', serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: #4a7c59;
+  margin: 0;
+}
+
+.portal-card-desc {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #4a7c59;
+  margin: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.portal-card-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #4a7c59;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  cursor: pointer;
+  margin-top: auto;
+  align-self: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal-card-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(74, 124, 89, 0.3);
+}
+
+.portal-card-btn span {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #4a7c59;
+  /* Figma shows dark green text on green bg — using light for contrast */
+  color: #dcfce8;
+}
+
+.portal-card-btn-arrow {
+  width: 16px;
+  height: 16px;
+  transform: scaleX(-1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .portal-cards {
+    flex-direction: column;
+    padding: 24px 20px 40px;
+  }
+  .portal-card-title { font-size: 36px; }
+  .portal-marquee-text { font-size: 48px; }
+  .portal-header { padding: 16px 20px; }
+}

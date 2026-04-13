@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './LandingPage.css';
-
 import bgImage from './assets/bg-landing.jpg';
 import arrowIcon from './assets/arrow-right.svg';
 
@@ -43,18 +42,16 @@ function LandingPage() {
   }, [i18n]);
 
   const handleContinue = useCallback(() => {
-    navigate('/');
+    navigate('/welcome');
   }, [navigate]);
 
   return (
     <div className="landing-root">
-      {/* Background image */}
       <div className="landing-bg">
         <img src={bgImage} alt="" className="landing-bg-img" />
         <div className="landing-bg-overlay" />
       </div>
 
-      {/* Content */}
       <div className="landing-content">
         <h1 className="landing-title">NourishOne</h1>
 
@@ -73,7 +70,6 @@ function LandingPage() {
   );
 }
 
-/* ── Language Grid (Screen 1) ── */
 function LanguageGrid({ onSelect }) {
   return (
     <div className="lang-grid">
@@ -91,28 +87,14 @@ function LanguageGrid({ onSelect }) {
   );
 }
 
-/* ── Selected View (Screen 2) ── */
 function SelectedView({ lang, animating, onAnimEnd, onContinue }) {
   return (
-    <div className={`selected-view ${animating ? 'selected-view--enter' : ''}`} onAnimationEnd={onAnimEnd}>
-      {/* Left merged panel — 4 cards become one */}
-      <button
-        className="selected-panel selected-panel--info"
-        onClick={onContinue}
-        aria-label={`Continue with ${lang.label}`}
-      >
+    <div className={`selected-view${animating ? ' selected-view--enter' : ''}`} onAnimationEnd={onAnimEnd}>
+      <div className="selected-panel selected-panel--info">
         <span className="selected-panel-lang">{lang.label}</span>
-        <span className="selected-panel-msg">
-          {LANGUAGE_MESSAGES[lang.code]}
-        </span>
-      </button>
-
-      {/* Right merged panel — 2 cards become one with arrow */}
-      <button
-        className="selected-panel selected-panel--arrow"
-        onClick={onContinue}
-        aria-label="Continue"
-      >
+        <span className="selected-panel-msg">{LANGUAGE_MESSAGES[lang.code]}</span>
+      </div>
+      <button className="selected-panel selected-panel--arrow" onClick={onContinue} aria-label="Continue">
         <img src={arrowIcon} alt="Continue" className="selected-arrow-icon" />
       </button>
     </div>

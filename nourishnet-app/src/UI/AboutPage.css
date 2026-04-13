@@ -1,52 +1,57 @@
 .about-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; }
-.about-heading { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 56px; color: #4a7c59; margin: 0; padding: 40px 40px 36px; text-align: center; }
+.about-heading { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 56px; color: #4a7c59; margin: 0; padding: 40px 40px 48px; text-align: center; }
 .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 0 40px 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
 
-/* Card shell — fixed height */
-.about-card {
+/* Slot — contains both cards stacked */
+.about-slot { position: relative; padding-top: 20px; }
+
+/* Photo card — overlapping square on top */
+.about-photo-card {
+  position: relative; z-index: 2;
+  width: 85%; aspect-ratio: 1; margin: 0 auto;
+  border-radius: 20px; overflow: hidden;
+  transition: width 0.5s cubic-bezier(0.16,1,0.3,1), margin 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.about-photo-card--small {
+  width: 60%;
+  margin: 0 auto;
+}
+.about-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Background card — behind photo, extends below */
+.about-bg-card {
+  position: relative; z-index: 1;
+  margin-top: -40px;
   border: 1px solid rgba(74,124,89,0.25); border-radius: 20px;
-  background: rgba(255,255,255,0.35); overflow: hidden; cursor: pointer;
-  height: 440px; display: flex; flex-direction: column;
-  transition: box-shadow 0.3s, transform 0.3s;
+  background: rgba(255,255,255,0.4);
+  padding: 56px 20px 20px;
+  transition: padding 0.4s ease;
 }
-.about-card:hover { box-shadow: 0 10px 32px rgba(74,124,89,0.12); transform: translateY(-4px); }
+.about-bg-card--expanded { padding-top: 20px; }
 
-/* ── Collapsed: big photo + footer ── */
-.about-photo-big {
-  flex: 1; overflow: hidden; min-height: 0;
+/* Info row */
+.about-info { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.about-name-block { display: flex; flex-direction: column; gap: 4px; }
+.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; }
+.about-role-badge {
+  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  color: #4a7c59; text-transform: uppercase;
+  background: rgba(74,124,89,0.1); padding: 4px 10px; border-radius: 8px;
+  width: fit-content;
 }
-.about-photo-big img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  border-radius: 20px 20px 0 0; transition: transform 0.4s;
-}
-.about-card:hover .about-photo-big img { transform: scale(1.03); }
+.about-toggle-btn { background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
+.about-toggle-btn:hover { transform: scale(1.15); }
 
-.about-footer {
-  padding: 16px 20px; display: flex; align-items: flex-start;
-  justify-content: space-between; gap: 8px; flex-shrink: 0;
-}
-
-/* ── Expanded: small square photo + info + bio ── */
-.about-expanded {
-  padding: 20px; display: flex; flex-direction: column; height: 100%;
-  animation: expandIn 0.4s ease-out;
-}
-.about-photo-sm {
-  width: 100px; height: 100px; border-radius: 15px; object-fit: cover;
-  flex-shrink: 0; margin-bottom: 12px;
-}
-.about-divider { width: 100%; height: 1px; background: rgba(74,124,89,0.2); margin: 10px 0; }
-.about-bio { font-size: 13px; color: #4a7c59; line-height: 1.6; margin: 0; flex: 1; overflow-y: auto; }
-.about-collapse-row { display: flex; justify-content: center; padding-top: 8px; flex-shrink: 0; }
-
-/* Shared */
-.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; display: block; }
-.about-role { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #4a7c59; text-transform: uppercase; display: block; margin-top: 2px; }
+/* Bio area */
+.about-bio-area { animation: bioSlide 0.4s ease-out; }
+.about-divider { width: 100%; height: 1px; background: rgba(74,124,89,0.2); margin: 14px 0; }
+.about-bio { font-size: 13px; color: #4a7c59; line-height: 1.65; margin: 0; }
+.about-collapse-btn { display: flex; justify-content: flex-end; width: 100%; background: none; border: none; cursor: pointer; padding: 8px 0 0; }
 
 /* Animations */
 .anim-up { opacity: 0; transform: translateY(28px); animation: aboutUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
 @keyframes aboutUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes expandIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bioSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-@media (max-width: 900px) { .about-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 40px; } .about-heading { font-size: 36px; } .about-card { height: 380px; } }
-@media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .about-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 40px; } .about-heading { font-size: 36px; } }
+@media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; max-width: 320px; } }

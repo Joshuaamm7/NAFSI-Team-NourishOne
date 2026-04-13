@@ -17,12 +17,6 @@ const TEAM = [
     bio: 'Computer Engineering at University of Washington. Creator of Taiwan\'s #1 earthquake warning iOS app with 2M+ users, with experience in firmware, robotics, and full-stack development.' },
 ];
 
-const Chevron = ({ up }) => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    {up ? <polyline points="18 15 12 9 6 15" /> : <polyline points="9 6 15 12 9 18" />}
-  </svg>
-);
-
 function AboutPage() {
   const [expanded, setExpanded] = useState(null);
   const toggle = (id) => setExpanded(expanded === id ? null : id);
@@ -35,26 +29,36 @@ function AboutPage() {
         {TEAM.map((m, i) => {
           const open = expanded === m.id;
           return (
-            <div key={m.id} className="about-card anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}
-              onClick={() => toggle(m.id)}>
-              {!open ? (
-                <>
-                  <div className="about-photo-big"><img src={m.img} alt={m.name} /></div>
-                  <div className="about-footer">
-                    <div><span className="about-name">{m.name}</span><span className="about-role">{m.role}</span></div>
-                    <Chevron up={false} />
+            <div key={m.id} className="about-slot anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}>
+              {/* Photo card — floats on top */}
+              <div className={`about-photo-card${open ? ' about-photo-card--small' : ''}`}>
+                <img src={m.img} alt={m.name} className="about-img" />
+              </div>
+              {/* Background card — sits behind, extends below */}
+              <div className={`about-bg-card${open ? ' about-bg-card--expanded' : ''}`}>
+                <div className="about-info">
+                  <div className="about-name-block">
+                    <span className="about-name">{m.name}</span>
+                    <span className="about-role-badge">{m.role}</span>
                   </div>
-                </>
-              ) : (
-                <div className="about-expanded">
-                  <img src={m.img} alt={m.name} className="about-photo-sm" />
-                  <span className="about-name">{m.name}</span>
-                  <span className="about-role">{m.role}</span>
-                  <div className="about-divider" />
-                  <p className="about-bio">{m.bio}</p>
-                  <div className="about-collapse-row"><Chevron up={true} /></div>
+                  <button className="about-toggle-btn" onClick={() => toggle(m.id)} aria-label={open ? 'Collapse' : 'Expand'}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      {open ? <polyline points="18 15 12 9 6 15" /> : <polyline points="9 6 15 12 9 18" />}
+                    </svg>
+                  </button>
                 </div>
-              )}
+                {open && (
+                  <div className="about-bio-area">
+                    <div className="about-divider" />
+                    <p className="about-bio">{m.bio}</p>
+                    <button className="about-collapse-btn" onClick={() => toggle(m.id)}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}

@@ -45,30 +45,30 @@ function FilterBar({ allFoodTypes, onFilter, totalCount, filteredCount }) {
       <div className="fb-header">
         <button className="fb-toggle" onClick={() => setOpen(!open)}>
           <span className="fb-toggle-text">
-            🔍 Filter & Sort
+            🔍 {t('ui.filterAndSort', 'Filter & Sort')}
             {hasFilters && <span className="fb-badge">{selectedHealth.size + selectedFood.size}</span>}
           </span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
-        {hasFilters && <span className="fb-active-text">Showing {filteredCount} of {totalCount}</span>}
+        {hasFilters && <span className="fb-active-text">{t('ui.showingOf', { filtered: filteredCount, total: totalCount })}</span>}
       </div>
 
       <div className={`fb-body${open ? ' fb-body--open' : ''}`}>
         <div className="fb-body-inner">
           {/* Sort */}
           <div className="fb-section">
-            <label className="fb-label">Sort By</label>
+            <label className="fb-label">{t('ui.sortBy', 'Sort By')}</label>
             <div className="fb-pills">
-              <button className={`fb-pill${sort === 'name' ? ' fb-pill--active' : ''}`} onClick={() => changeSort('name')}>Name (A-Z)</button>
-              <button className={`fb-pill${sort === 'distance' ? ' fb-pill--active' : ''}`} onClick={() => changeSort('distance')}>Insecurity Index</button>
+              <button className={`fb-pill${sort === 'name' ? ' fb-pill--active' : ''}`} onClick={() => changeSort('name')}>{t('ui.nameAZ', 'Name (A-Z)')}</button>
+              <button className={`fb-pill${sort === 'distance' ? ' fb-pill--active' : ''}`} onClick={() => changeSort('distance')}>{t('ui.insecurityIndex', 'Insecurity Index')}</button>
             </div>
           </div>
 
           {/* Health Attributes */}
           <div className="fb-section">
-            <label className="fb-label">Health Attributes</label>
+            <label className="fb-label">{t('ui.healthAttribute', 'Health Attributes')}</label>
             <div className="fb-pills">
               {HEALTH_ATTRS.map(a => (
                 <button key={a} className={`fb-pill${selectedHealth.has(a) ? ' fb-pill--active' : ''}`} onClick={() => toggleHealth(a)}>
@@ -81,11 +81,11 @@ function FilterBar({ allFoodTypes, onFilter, totalCount, filteredCount }) {
           {/* Food Types */}
           {allFoodTypes && allFoodTypes.length > 0 && (
             <div className="fb-section">
-              <label className="fb-label">Food Types</label>
+              <label className="fb-label">{t('ui.foodType', 'Food Types')}</label>
               <div className="fb-pills">
                 {allFoodTypes.slice(0, 20).map(ft => (
                   <button key={ft} className={`fb-pill${selectedFood.has(ft) ? ' fb-pill--active' : ''}`} onClick={() => toggleFood(ft)}>
-                    {ft}
+                    {t(`foodType.${ft.toLowerCase()}`, ft)}
                   </button>
                 ))}
               </div>
@@ -93,7 +93,7 @@ function FilterBar({ allFoodTypes, onFilter, totalCount, filteredCount }) {
           )}
 
           {hasFilters && (
-            <button className="fb-clear" onClick={clearAll}>Clear All Filters</button>
+            <button className="fb-clear" onClick={clearAll}>{t('ui.clearFilter', 'Clear All Filters')}</button>
           )}
         </div>
       </div>

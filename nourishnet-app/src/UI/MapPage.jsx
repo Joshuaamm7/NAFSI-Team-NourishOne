@@ -316,7 +316,7 @@ function MapPage() {
             <label className="mp-filter-label">{t('ui.foodType')}</label>
             <div className="mp-tag-list">
               {ALL_FOOD_TYPES.map(ft => (
-                <button key={ft} className={`mp-tag${selectedFoodTypes.has(ft) ? ' mp-tag--active' : ''}`} onClick={() => toggleFoodType(ft)}>{ft}</button>
+                <button key={ft} className={`mp-tag${selectedFoodTypes.has(ft) ? ' mp-tag--active' : ''}`} onClick={() => toggleFoodType(ft)}>{t(`foodType.${ft.toLowerCase()}`, ft)}</button>
               ))}
             </div>
           </div>
@@ -393,7 +393,7 @@ function MapPage() {
                   </div>
                 </div>
                 <div className="mp-detail-bottom">
-                  <div className="mp-detail-tags">{(currentCard.foodTypes || []).slice(0, 5).map(ft => (<span key={ft} className="mp-detail-tag">{ft}</span>))}</div>
+                  <div className="mp-detail-tags">{(currentCard.foodTypes || []).slice(0, 5).map(ft => (<span key={ft} className="mp-detail-tag">{t(`foodType.${ft.toLowerCase()}`, ft)}</span>))}</div>
                   <a className="mp-detail-dir" href={dirUrl} target="_blank" rel="noopener noreferrer">{t('ui.getDirections')}</a>
                 </div>
                 <div className="mp-detail-counter">{cardIndex + 1} / {filtered.length}</div>

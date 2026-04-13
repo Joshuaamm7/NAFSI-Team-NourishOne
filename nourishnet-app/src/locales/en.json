@@ -212,6 +212,11 @@
     "openNow": "Open Now",
     "closed": "Closed",
     "sortByNeeds": "Sort by Needs",
+    "sortBy": "Sort By",
+    "nameAZ": "Name (A-Z)",
+    "insecurityIndex": "Insecurity Index",
+    "filterAndSort": "Filter & Sort",
+    "showingOf": "Showing {{filtered}} of {{total}}",
     "oneTool": "One Tool.",
     "oneMission": "One Mission."
   },

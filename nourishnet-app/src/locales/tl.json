@@ -212,6 +212,11 @@
     "openNow": "Bukas Ngayon",
     "closed": "Sarado",
     "sortByNeeds": "Ayusin Ayon sa mga Pangangailangan",
+    "sortBy": "Ayusin Ayon sa",
+    "nameAZ": "Pangalan (A-Z)",
+    "insecurityIndex": "Index ng Kawalan ng Seguridad sa Pagkain",
+    "filterAndSort": "Salain at Ayusin",
+    "showingOf": "Ipinapakita ang {{filtered}} sa {{total}}",
     "oneTool": "Isang Kasangkapan.",
     "oneMission": "Isang Misyon."
   },

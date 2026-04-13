@@ -212,6 +212,11 @@
     "openNow": "አሁን ክፍት ነው",
     "closed": "ዝግ ነው",
     "sortByNeeds": "በፍላጎቶች ደርድር",
+    "sortBy": "ደርድር በ",
+    "nameAZ": "ስም (ሀ-ፐ)",
+    "insecurityIndex": "የምግብ ዋስትና ማጣት ጠቋሚ",
+    "filterAndSort": "አጣራ እና ደርድር",
+    "showingOf": "{{filtered}} ከ {{total}} እያሳየ",
     "oneTool": "አንድ መሳሪያ።",
     "oneMission": "አንድ ተልዕኮ።"
   },

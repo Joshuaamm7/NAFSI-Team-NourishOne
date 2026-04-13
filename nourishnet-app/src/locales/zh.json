@@ -212,6 +212,11 @@
     "openNow": "营业中",
     "closed": "已关闭",
     "sortByNeeds": "按需求排序",
+    "sortBy": "排序方式",
+    "nameAZ": "名称 (A-Z)",
+    "insecurityIndex": "食品不安全指数",
+    "filterAndSort": "筛选和排序",
+    "showingOf": "显示 {{filtered}} / {{total}}",
     "oneTool": "同一工具。",
     "oneMission": "同一使命。"
   },

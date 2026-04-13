@@ -17,6 +17,12 @@ const TEAM = [
     bio: 'Computer Engineering at University of Washington. Creator of Taiwan\'s #1 earthquake warning iOS app with 2M+ users, with experience in firmware, robotics, and full-stack development.' },
 ];
 
+const Chevron = ({ up }) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    {up ? <polyline points="18 15 12 9 6 15" /> : <polyline points="9 6 15 12 9 18" />}
+  </svg>
+);
+
 function AboutPage() {
   const [expanded, setExpanded] = useState(null);
   const toggle = (id) => setExpanded(expanded === id ? null : id);
@@ -29,31 +35,26 @@ function AboutPage() {
         {TEAM.map((m, i) => {
           const open = expanded === m.id;
           return (
-            <div key={m.id} className="about-card anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}>
-              <div className={`about-photo-wrap${open ? ' about-photo-wrap--small' : ''}`}>
-                <img src={m.img} alt={m.name} className="about-photo" />
-              </div>
-              <div className="about-bottom">
-                <div className="about-name-row" onClick={() => toggle(m.id)}>
-                  <div>
-                    <span className="about-name">{m.name}</span>
-                    <span className="about-role">{m.role}</span>
+            <div key={m.id} className="about-card anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}
+              onClick={() => toggle(m.id)}>
+              {!open ? (
+                <>
+                  <div className="about-photo-big"><img src={m.img} alt={m.name} /></div>
+                  <div className="about-footer">
+                    <div><span className="about-name">{m.name}</span><span className="about-role">{m.role}</span></div>
+                    <Chevron up={false} />
                   </div>
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2"
-                    strokeLinecap="round" strokeLinejoin="round"
-                    className={`about-arrow${open ? ' about-arrow--up' : ''}`}>
-                    {open
-                      ? <polyline points="18 15 12 9 6 15" />
-                      : <polyline points="9 6 15 12 9 18" />}
-                  </svg>
+                </>
+              ) : (
+                <div className="about-expanded">
+                  <img src={m.img} alt={m.name} className="about-photo-sm" />
+                  <span className="about-name">{m.name}</span>
+                  <span className="about-role">{m.role}</span>
+                  <div className="about-divider" />
+                  <p className="about-bio">{m.bio}</p>
+                  <div className="about-collapse-row"><Chevron up={true} /></div>
                 </div>
-                {open && (
-                  <div className="about-bio-section">
-                    <div className="about-divider" />
-                    <p className="about-bio">{m.bio}</p>
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           );
         })}

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import './WelcomePage.css';
+import LanguagePopover from './LanguagePopover';
 
 import imgDaria from './assets/daria-strategy.jpg';
 import imgNico from './assets/nico-smit.jpg';
@@ -34,14 +34,8 @@ const FLOAT_IMAGES = [
 
 function WelcomePage() {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
   const mouseRef = useRef({ x: 0, y: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-  const langLabel = (() => {
-    const map = { en: 'English', es: 'Español', zh: '中文', fr: 'Français', am: 'Amharic', tl: 'Tagalog' };
-    return map[i18n.language] || 'English';
-  })();
 
   useEffect(() => {
     let raf;
@@ -80,10 +74,7 @@ function WelcomePage() {
         <button className="welcome-back" onClick={() => navigate('/')} aria-label="Back">
           <img src={arrowIcon} alt="" className="welcome-back-icon" />
         </button>
-        <div className="welcome-lang-badge">
-          <span className="welcome-lang-text">{langLabel}</span>
-          <span className="welcome-lang-caret">›</span>
-        </div>
+        <LanguagePopover />
       </header>
 
       {/* Floating images */}

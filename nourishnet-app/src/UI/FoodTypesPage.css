@@ -1,0 +1,14 @@
+.ft-root { min-height: 100vh; background: #dcfce8; font-family: 'Inter', sans-serif; }
+.ft-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; }
+.ft-back { background: none; border: none; cursor: pointer; padding: 8px; display: flex; }
+.ft-back-icon { width: 24px; height: 24px; }
+.ft-logo { font-family: 'Inria Serif', serif; font-weight: 400; font-size: 30px; color: #4a7c59; }
+.ft-title { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 36px; color: #4a7c59; margin: 0; padding: 16px 40px; }
+.ft-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; padding: 16px 40px 40px; }
+.ft-card {
+  border: 1px solid #4a7c59; border-radius: 30px; background: transparent;
+  padding: 20px; cursor: pointer; text-align: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.ft-card:hover { background: rgba(74,124,89,0.06); transform: translateY(-2px); }
+.ft-card-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; color: #4a7c59; }

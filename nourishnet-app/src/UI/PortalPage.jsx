@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import './PortalPage.css';
 import arrowIcon from './assets/arrow-right.svg';
+import LanguagePopover from './LanguagePopover';
 
 const PORTALS = [
   {
@@ -10,7 +10,7 @@ const PORTALS = [
     title: 'Find Food',
     desc: 'Locate Food pantries, meal programs, and assistance near you',
     btn: "I'm a Customer",
-    route: '/family',
+    route: '/customer',
   },
   {
     key: 'donor',
@@ -30,12 +30,6 @@ const PORTALS = [
 
 function PortalPage() {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
-
-  const langLabel = (() => {
-    const map = { en: 'English', es: 'Español', zh: '中文', fr: 'Français', am: 'Amharic', tl: 'Tagalog' };
-    return map[i18n.language] || 'English';
-  })();
 
   return (
     <div className="portal-root">
@@ -45,10 +39,7 @@ function PortalPage() {
           <img src={arrowIcon} alt="" className="portal-back-icon" />
         </button>
         <span className="portal-logo">NourishOne</span>
-        <div className="portal-lang-badge">
-          <span className="portal-lang-text">{langLabel}</span>
-          <span className="portal-lang-caret">›</span>
-        </div>
+        <LanguagePopover />
       </header>
 
       {/* Portal cards */}

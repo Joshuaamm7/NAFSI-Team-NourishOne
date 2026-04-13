@@ -29,36 +29,30 @@ function AboutPage() {
         {TEAM.map((m, i) => {
           const open = expanded === m.id;
           return (
-            <div key={m.id} className="about-slot anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}>
-              {/* Photo card — floats on top */}
-              <div className={`about-photo-card${open ? ' about-photo-card--small' : ''}`}>
-                <img src={m.img} alt={m.name} className="about-img" />
+            <div key={m.id} className="about-card anim-up" style={{ animationDelay: `${0.1 + i * 0.08}s` }}>
+              <img src={m.img} alt={m.name} className={`about-img${open ? ' about-img--small' : ''}`} />
+              <div className="about-name-row">
+                <div>
+                  <span className="about-name">{m.name}</span>
+                  <span className="about-role">{m.role}</span>
+                </div>
+                <button className="about-arrow-btn" onClick={() => toggle(m.id)}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 6 15 12 9 18" />
+                  </svg>
+                </button>
               </div>
-              {/* Background card — sits behind, extends below */}
-              <div className={`about-bg-card${open ? ' about-bg-card--expanded' : ''}`}>
-                <div className="about-info">
-                  <div className="about-name-block">
-                    <span className="about-name">{m.name}</span>
-                    <span className="about-role-badge">{m.role}</span>
-                  </div>
-                  <button className="about-toggle-btn" onClick={() => toggle(m.id)} aria-label={open ? 'Collapse' : 'Expand'}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a7c59" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      {open ? <polyline points="18 15 12 9 6 15" /> : <polyline points="9 6 15 12 9 18" />}
+              {open && (
+                <div className="about-expand">
+                  <div className="about-line" />
+                  <p className="about-bio">{m.bio}</p>
+                  <button className="about-close" onClick={() => toggle(m.id)}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </button>
                 </div>
-                {open && (
-                  <div className="about-bio-area">
-                    <div className="about-divider" />
-                    <p className="about-bio">{m.bio}</p>
-                    <button className="about-collapse-btn" onClick={() => toggle(m.id)}>
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
-                    </button>
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           );
         })}

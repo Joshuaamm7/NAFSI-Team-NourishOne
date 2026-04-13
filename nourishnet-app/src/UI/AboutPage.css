@@ -2,56 +2,55 @@
 .about-heading { font-family: 'Inria Serif', serif; font-weight: 700; font-size: 56px; color: #4a7c59; margin: 0; padding: 40px 40px 48px; text-align: center; }
 .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding: 0 40px 60px; max-width: 1200px; margin: 0 auto; align-items: start; }
 
-/* Slot — contains both cards stacked */
-.about-slot { position: relative; padding-top: 20px; }
-
-/* Photo card — overlapping square on top */
-.about-photo-card {
-  position: relative; z-index: 2;
-  width: 85%; aspect-ratio: 1; margin: 0 auto;
-  border-radius: 20px; overflow: hidden;
-  transition: width 0.5s cubic-bezier(0.16,1,0.3,1), margin 0.5s cubic-bezier(0.16,1,0.3,1);
-}
-.about-photo-card--small {
-  width: 60%;
-  margin: 0 auto;
-}
-.about-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-/* Background card — behind photo, extends below */
-.about-bg-card {
-  position: relative; z-index: 1;
-  margin-top: -40px;
+/* Single background card containing everything */
+.about-card {
   border: 1px solid rgba(74,124,89,0.25); border-radius: 20px;
-  background: rgba(255,255,255,0.4);
-  padding: 56px 20px 20px;
-  transition: padding 0.4s ease;
+  background: rgba(255,255,255,0.4); padding: 16px;
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
-.about-bg-card--expanded { padding-top: 20px; }
+.about-card:hover { box-shadow: 0 10px 32px rgba(74,124,89,0.12); transform: translateY(-4px); }
 
-/* Info row */
-.about-info { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
-.about-name-block { display: flex; flex-direction: column; gap: 4px; }
-.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; }
-.about-role-badge {
+/* Image inside the card — large by default, shrinks on expand */
+.about-img {
+  width: 100%; aspect-ratio: 1; object-fit: cover;
+  border-radius: 15px; display: block;
+  transition: width 0.5s cubic-bezier(0.16,1,0.3,1), height 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+.about-img--small {
+  width: 55%; aspect-ratio: 1;
+}
+
+/* Name row with arrow */
+.about-name-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding-top: 14px; gap: 8px;
+}
+.about-name { font-weight: 700; font-size: 18px; color: #1a1a1a; display: block; }
+.about-role {
   display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
   color: #4a7c59; text-transform: uppercase;
   background: rgba(74,124,89,0.1); padding: 4px 10px; border-radius: 8px;
-  width: fit-content;
+  margin-top: 4px;
 }
-.about-toggle-btn { background: none; border: none; cursor: pointer; padding: 4px; flex-shrink: 0; margin-top: 2px; transition: transform 0.2s; }
-.about-toggle-btn:hover { transform: scale(1.15); }
+.about-arrow-btn {
+  background: none; border: none; cursor: pointer; padding: 4px;
+  flex-shrink: 0; margin-top: 2px; transition: transform 0.2s;
+}
+.about-arrow-btn:hover { transform: scale(1.15); }
 
-/* Bio area */
-.about-bio-area { animation: bioSlide 0.4s ease-out; }
-.about-divider { width: 100%; height: 1px; background: rgba(74,124,89,0.2); margin: 14px 0; }
+/* Expanded bio area */
+.about-expand { animation: bioIn 0.4s ease-out; }
+.about-line { width: 100%; height: 1px; background: rgba(74,124,89,0.2); margin: 14px 0; }
 .about-bio { font-size: 13px; color: #4a7c59; line-height: 1.65; margin: 0; }
-.about-collapse-btn { display: flex; justify-content: flex-end; width: 100%; background: none; border: none; cursor: pointer; padding: 8px 0 0; }
+.about-close {
+  display: flex; justify-content: flex-end; width: 100%;
+  background: none; border: none; cursor: pointer; padding: 10px 0 0;
+}
 
-/* Animations */
-.anim-up { opacity: 0; transform: translateY(28px); animation: aboutUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
-@keyframes aboutUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes bioSlide { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.anim-up { opacity: 0; transform: translateY(28px); animation: aUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
+@keyframes aUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bioIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
 @media (max-width: 900px) { .about-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 40px; } .about-heading { font-size: 36px; } }
 @media (max-width: 560px) { .about-grid { grid-template-columns: 1fr; max-width: 320px; } }

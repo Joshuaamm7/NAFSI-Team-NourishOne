@@ -166,6 +166,10 @@
     "takePhoto": "Prendre une Photo",
     "typeItems": "Saisir les Articles",
     "quantity": "Quantité",
-    "donateBtn": "DONNER"
+    "donateBtn": "DONNER",
+    "nowAvailable": "Disponible Maintenant",
+    "dietaryOptions": "Options Alimentaires",
+    "openNow": "Ouvert Maintenant",
+    "closed": "Fermé"
   }
 }

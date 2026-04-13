@@ -166,6 +166,10 @@
     "takePhoto": "Take a Photo",
     "typeItems": "Type Items",
     "quantity": "Quantity",
-    "donateBtn": "DONATE"
+    "donateBtn": "DONATE",
+    "nowAvailable": "Now Available",
+    "dietaryOptions": "Dietary Options",
+    "openNow": "Open Now",
+    "closed": "Closed"
   }
 }

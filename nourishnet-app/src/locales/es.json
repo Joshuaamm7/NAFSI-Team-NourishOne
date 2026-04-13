@@ -166,6 +166,10 @@
     "takePhoto": "Tomar una Foto",
     "typeItems": "Escribir Artículos",
     "quantity": "Cantidad",
-    "donateBtn": "DONAR"
+    "donateBtn": "DONAR",
+    "nowAvailable": "Disponible Ahora",
+    "dietaryOptions": "Opciones Dietéticas",
+    "openNow": "Abierto Ahora",
+    "closed": "Cerrado"
   }
 }

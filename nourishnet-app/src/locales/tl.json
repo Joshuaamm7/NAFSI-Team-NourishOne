@@ -166,6 +166,10 @@
     "takePhoto": "Kumuha ng Larawan",
     "typeItems": "I-type ang mga Bagay",
     "quantity": "Dami",
-    "donateBtn": "MAG-DONATE"
+    "donateBtn": "MAG-DONATE",
+    "nowAvailable": "Available Na",
+    "dietaryOptions": "Mga Pagpipilian sa Diyeta",
+    "openNow": "Bukas Ngayon",
+    "closed": "Sarado"
   }
 }

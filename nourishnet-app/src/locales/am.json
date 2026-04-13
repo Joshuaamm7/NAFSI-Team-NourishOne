@@ -166,6 +166,10 @@
     "takePhoto": "ፎቶ ያንሱ",
     "typeItems": "ዕቃዎችን ይጻፉ",
     "quantity": "ብዛት",
-    "donateBtn": "ለግሱ"
+    "donateBtn": "ለግሱ",
+    "nowAvailable": "አሁን ይገኛል",
+    "dietaryOptions": "የአመጋገብ አማራጮች",
+    "openNow": "አሁን ክፍት ነው",
+    "closed": "ዝግ ነው"
   }
 }

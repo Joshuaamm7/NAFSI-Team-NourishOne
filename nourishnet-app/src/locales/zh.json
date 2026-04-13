@@ -166,6 +166,10 @@
     "takePhoto": "拍照",
     "typeItems": "输入物品",
     "quantity": "数量",
-    "donateBtn": "捐赠"
+    "donateBtn": "捐赠",
+    "nowAvailable": "现在可用",
+    "dietaryOptions": "饮食选项",
+    "openNow": "营业中",
+    "closed": "已关闭"
   }
 }

@@ -1,5 +1,6 @@
-import React, { useRef, useCallback, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './WelcomePage.css';
 
 import imgDaria from './assets/daria-strategy.jpg';
@@ -17,27 +18,30 @@ import imgAaron from './assets/aaron-doucett.jpg';
 import arrowIcon from './assets/arrow-right.svg';
 
 const FLOAT_IMAGES = [
-  { src: imgDaria, alt: 'Community food sharing', x: 5, y: 8, size: 180, depth: 0.03 },
-  { src: imgNico, alt: 'Volunteers working', x: 75, y: 5, size: 160, depth: 0.04 },
-  { src: imgJoelCommunity, alt: 'Community gathering', x: 20, y: 55, size: 150, depth: 0.025 },
-  { src: imgJoelGroup, alt: 'Group volunteering', x: 82, y: 60, size: 170, depth: 0.035 },
-  { src: imgJoelVolunteer, alt: 'Volunteer effort', x: 50, y: 80, size: 140, depth: 0.02 },
-  { src: imgMelanie, alt: 'Food preparation', x: 88, y: 35, size: 130, depth: 0.045 },
-  { src: imgMegan, alt: 'Meal service', x: 8, y: 35, size: 140, depth: 0.03 },
-  { src: imgElaine, alt: 'Community support', x: 35, y: 10, size: 120, depth: 0.05 },
-  { src: imgDonna1, alt: 'Food donation', x: 60, y: 15, size: 130, depth: 0.04 },
-  { src: imgDonna2, alt: 'Helping hands', x: 15, y: 78, size: 120, depth: 0.035 },
-  { src: imgJacob, alt: 'Community kitchen', x: 70, y: 75, size: 150, depth: 0.025 },
-  { src: imgAaron, alt: 'Food distribution', x: 45, y: 45, size: 110, depth: 0.05 },
+  { src: imgElaine, alt: 'Store shelves', x: 3, y: 12, w: 180, h: 220, depth: 0.03 },
+  { src: imgDaria, alt: 'Volunteers sorting', x: 25, y: 4, w: 160, h: 120, depth: 0.04 },
+  { src: imgMegan, alt: 'Canned goods', x: 42, y: 8, w: 130, h: 110, depth: 0.025 },
+  { src: imgNico, alt: 'Food bank', x: 62, y: 2, w: 170, h: 130, depth: 0.035 },
+  { src: imgAaron, alt: 'Grocery store', x: 88, y: 5, w: 140, h: 170, depth: 0.02 },
+  { src: imgJoelCommunity, alt: 'Community boxes', x: 12, y: 42, w: 180, h: 150, depth: 0.045 },
+  { src: imgDonna2, alt: 'Fresh produce', x: 75, y: 30, w: 170, h: 140, depth: 0.03 },
+  { src: imgMelanie, alt: 'Sorting donations', x: 88, y: 55, w: 130, h: 160, depth: 0.04 },
+  { src: imgJacob, alt: 'Delivery truck', x: 18, y: 75, w: 150, h: 110, depth: 0.035 },
+  { src: imgDonna1, alt: 'Tomatoes', x: 38, y: 78, w: 140, h: 130, depth: 0.05 },
+  { src: imgJoelGroup, alt: 'Vegetables', x: 78, y: 78, w: 160, h: 130, depth: 0.025 },
+  { src: imgJoelVolunteer, alt: 'Food distribution', x: 0, y: 72, w: 120, h: 100, depth: 0.04 },
 ];
-
-const MARQUEE_TEXT = 'One Community. One Table. One Family. ';
 
 function WelcomePage() {
   const navigate = useNavigate();
-  const containerRef = useRef(null);
+  const { i18n } = useTranslation();
   const mouseRef = useRef({ x: 0, y: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const langLabel = (() => {
+    const map = { en: 'English', es: 'Español', zh: '中文', fr: 'Français', am: 'Amharic', tl: 'Tagalog' };
+    return map[i18n.language] || 'English';
+  })();
 
   useEffect(() => {
     let raf;
@@ -54,8 +58,8 @@ function WelcomePage() {
     };
     const tick = () => {
       setOffset((prev) => ({
-        x: prev.x + (mouseRef.current.x - prev.x) * 0.08,
-        y: prev.y + (mouseRef.current.y - prev.y) * 0.08,
+        x: prev.x + (mouseRef.current.x - prev.x) * 0.06,
+        y: prev.y + (mouseRef.current.y - prev.y) * 0.06,
       }));
       raf = requestAnimationFrame(tick);
     };
@@ -69,12 +73,19 @@ function WelcomePage() {
     };
   }, []);
 
-  const handleStart = useCallback(() => {
-    navigate('/portal');
-  }, [navigate]);
-
   return (
-    <div className="welcome-root" ref={containerRef}>
+    <div className="welcome-root">
+      {/* Header */}
+      <header className="welcome-header">
+        <button className="welcome-back" onClick={() => navigate('/')} aria-label="Back">
+          <img src={arrowIcon} alt="" className="welcome-back-icon" />
+        </button>
+        <div className="welcome-lang-badge">
+          <span className="welcome-lang-text">{langLabel}</span>
+          <span className="welcome-lang-caret">›</span>
+        </div>
+      </header>
+
       {/* Floating images */}
       <div className="welcome-images">
         {FLOAT_IMAGES.map((img, i) => (
@@ -84,8 +95,8 @@ function WelcomePage() {
             style={{
               left: `${img.x}%`,
               top: `${img.y}%`,
-              width: img.size,
-              height: img.size,
+              width: img.w,
+              height: img.h,
               transform: `translate(${offset.x * img.depth * 800}px, ${offset.y * img.depth * 800}px)`,
             }}
           >
@@ -96,19 +107,13 @@ function WelcomePage() {
 
       {/* Center content */}
       <div className="welcome-center">
-        <h1 className="welcome-title">NourishOne</h1>
-        <button className="welcome-start-btn" onClick={handleStart} aria-label="Start">
-          <span className="welcome-start-text">Start</span>
+        <h1 className="welcome-title">
+          One Community.<br />One Table.<br />One Family.
+        </h1>
+        <button className="welcome-start-btn" onClick={() => navigate('/portal')} aria-label="Start">
+          <span className="welcome-start-text">START</span>
           <img src={arrowIcon} alt="" className="welcome-start-arrow" />
         </button>
-      </div>
-
-      {/* Infinite marquee */}
-      <div className="welcome-marquee">
-        <div className="welcome-marquee-track">
-          <span className="welcome-marquee-text">{MARQUEE_TEXT.repeat(6)}</span>
-          <span className="welcome-marquee-text">{MARQUEE_TEXT.repeat(6)}</span>
-        </div>
       </div>
     </div>
   );

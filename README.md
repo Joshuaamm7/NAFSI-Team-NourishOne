@@ -57,7 +57,7 @@ Built in 72 hours for the **NourishNet Data Challenge 2026** at the University o
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NAFSI-Team-NourishSync.git
+git clone https://github.com/Joshuaamm7/NAFSI-Team-NourishOne.git
 cd NAFSI-Team-NourishSync/nourishnet-app
 ```
 

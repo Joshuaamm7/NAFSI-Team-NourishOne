@@ -1,5 +1,10 @@
 # 🥦 NourishOne
 
+## Project Context
+
+This project was originally built by Team NourishOne for the NourishNet Data Challenge 2026 Hackathon.  
+My primary contribution was data engineering, including cleaning, merging, geocoding, schema design, enrichment, and documentation for 737 verified food pantry locations.
+
 **One Tool. One Community. One Mission.**
 
 Connecting families, donors, and volunteers to food resources across metropolitan Washington, DC.
